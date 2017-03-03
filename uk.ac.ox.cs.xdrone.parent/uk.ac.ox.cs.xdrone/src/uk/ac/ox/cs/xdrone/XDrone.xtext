@@ -1,0 +1,49 @@
+grammar uk.ac.ox.cs.xdrone.XDrone with org.eclipse.xtext.common.Terminals
+
+generate xDrone "http://www.ac.uk/ox/cs/xdrone/XDrone"
+
+ 
+import "http://www.eclipse.org/xtext/xbase/Xbase"
+ 
+Program :
+  subPrograms+= Fun*
+  main = Main
+;
+  
+Fun:
+  'fun' name=ID 
+  ('input' (parameters += Parameter)*)?
+  body=Body;
+
+Parameter:
+	name = ID
+	type = Type
+;
+
+Type:
+	'number'
+;
+ 
+Main :
+  'main' name = ID
+  ('input' (parameters += Parameter)*)?
+  'begin' 
+  (expressions+=Expression ';'?)*
+  ('return' Expression)?
+  'end'
+; 
+ 
+Body returns BlockExpression:
+  {BlockExpression}
+  'begin'
+  (expressions+=Expression ';'?)*
+  ('return' Expression)?
+  'end'
+;
+
+Expression:
+	'home' | 'emergencyStop'
+;
+  
+Executable:
+  Program | Fun;
