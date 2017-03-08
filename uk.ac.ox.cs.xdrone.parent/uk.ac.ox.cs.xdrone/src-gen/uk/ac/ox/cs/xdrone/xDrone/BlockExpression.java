@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.BlockExpression#getExpressions <em>Expressions</em>}</li>
+ *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.BlockExpression#getCommands <em>Commands</em>}</li>
  * </ul>
  *
  * @see uk.ac.ox.cs.xdrone.xDrone.XDronePackage#getBlockExpression()
@@ -26,19 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface BlockExpression extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Expressions</b></em>' attribute list.
+   * Returns the value of the '<em><b>Commands</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expressions</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Commands</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expressions</em>' attribute list.
-   * @see uk.ac.ox.cs.xdrone.xDrone.XDronePackage#getBlockExpression_Expressions()
+   * @return the value of the '<em>Commands</em>' attribute list.
+   * @see uk.ac.ox.cs.xdrone.xDrone.XDronePackage#getBlockExpression_Commands()
    * @model unique="false"
    * @generated
    */
-  EList<String> getExpressions();
+  EList<String> getCommands();
 
 } // BlockExpression

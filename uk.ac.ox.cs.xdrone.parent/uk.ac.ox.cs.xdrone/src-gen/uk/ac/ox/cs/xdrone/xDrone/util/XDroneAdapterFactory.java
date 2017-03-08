@@ -10,7 +10,16 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import uk.ac.ox.cs.xdrone.xDrone.*;
+import uk.ac.ox.cs.xdrone.xDrone.Addition;
+import uk.ac.ox.cs.xdrone.xDrone.BlockExpression;
+import uk.ac.ox.cs.xdrone.xDrone.Executable;
+import uk.ac.ox.cs.xdrone.xDrone.Expression;
+import uk.ac.ox.cs.xdrone.xDrone.Fun;
+import uk.ac.ox.cs.xdrone.xDrone.Main;
+import uk.ac.ox.cs.xdrone.xDrone.Multiplication;
+import uk.ac.ox.cs.xdrone.xDrone.Parameter;
+import uk.ac.ox.cs.xdrone.xDrone.Program;
+import uk.ac.ox.cs.xdrone.xDrone.XDronePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -104,6 +113,26 @@ public class XDroneAdapterFactory extends AdapterFactoryImpl
       public Adapter caseExecutable(Executable object)
       {
         return createExecutableAdapter();
+      }
+      @Override
+      public Adapter caseExpression(Expression object)
+      {
+        return createExpressionAdapter();
+      }
+      @Override
+      public Adapter caseNumber(uk.ac.ox.cs.xdrone.xDrone.Number object)
+      {
+        return createNumberAdapter();
+      }
+      @Override
+      public Adapter caseAddition(Addition object)
+      {
+        return createAdditionAdapter();
+      }
+      @Override
+      public Adapter caseMultiplication(Multiplication object)
+      {
+        return createMultiplicationAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -213,6 +242,66 @@ public class XDroneAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExecutableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.Expression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.ox.cs.xdrone.xDrone.Expression
+   * @generated
+   */
+  public Adapter createExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.Number <em>Number</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.ox.cs.xdrone.xDrone.Number
+   * @generated
+   */
+  public Adapter createNumberAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.Addition <em>Addition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.ox.cs.xdrone.xDrone.Addition
+   * @generated
+   */
+  public Adapter createAdditionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.Multiplication <em>Multiplication</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.ox.cs.xdrone.xDrone.Multiplication
+   * @generated
+   */
+  public Adapter createMultiplicationAdapter()
   {
     return null;
   }

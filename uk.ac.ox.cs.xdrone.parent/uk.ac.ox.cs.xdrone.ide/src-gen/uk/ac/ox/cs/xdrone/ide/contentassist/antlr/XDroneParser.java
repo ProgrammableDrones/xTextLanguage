@@ -35,8 +35,9 @@ public class XDroneParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
+					put(grammarAccess.getCommandAccess().getAlternatives(), "rule__Command__Alternatives");
 					put(grammarAccess.getExecutableAccess().getAlternatives(), "rule__Executable__Alternatives");
+					put(grammarAccess.getPrimaryAccess().getAlternatives(), "rule__Primary__Alternatives");
 					put(grammarAccess.getProgramAccess().getGroup(), "rule__Program__Group__0");
 					put(grammarAccess.getFunAccess().getGroup(), "rule__Fun__Group__0");
 					put(grammarAccess.getFunAccess().getGroup_2(), "rule__Fun__Group_2__0");
@@ -48,6 +49,11 @@ public class XDroneParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBodyAccess().getGroup(), "rule__Body__Group__0");
 					put(grammarAccess.getBodyAccess().getGroup_2(), "rule__Body__Group_2__0");
 					put(grammarAccess.getBodyAccess().getGroup_3(), "rule__Body__Group_3__0");
+					put(grammarAccess.getAdditionAccess().getGroup(), "rule__Addition__Group__0");
+					put(grammarAccess.getAdditionAccess().getGroup_1(), "rule__Addition__Group_1__0");
+					put(grammarAccess.getMultiplicationAccess().getGroup(), "rule__Multiplication__Group__0");
+					put(grammarAccess.getMultiplicationAccess().getGroup_1(), "rule__Multiplication__Group_1__0");
+					put(grammarAccess.getPrimaryAccess().getGroup_1(), "rule__Primary__Group_1__0");
 					put(grammarAccess.getProgramAccess().getSubProgramsAssignment_0(), "rule__Program__SubProgramsAssignment_0");
 					put(grammarAccess.getProgramAccess().getMainAssignment_1(), "rule__Program__MainAssignment_1");
 					put(grammarAccess.getFunAccess().getNameAssignment_1(), "rule__Fun__NameAssignment_1");
@@ -57,8 +63,11 @@ public class XDroneParser extends AbstractContentAssistParser {
 					put(grammarAccess.getParameterAccess().getTypeAssignment_1(), "rule__Parameter__TypeAssignment_1");
 					put(grammarAccess.getMainAccess().getNameAssignment_1(), "rule__Main__NameAssignment_1");
 					put(grammarAccess.getMainAccess().getParametersAssignment_2_1(), "rule__Main__ParametersAssignment_2_1");
-					put(grammarAccess.getMainAccess().getExpressionsAssignment_4_0(), "rule__Main__ExpressionsAssignment_4_0");
-					put(grammarAccess.getBodyAccess().getExpressionsAssignment_2_0(), "rule__Body__ExpressionsAssignment_2_0");
+					put(grammarAccess.getMainAccess().getCommandsAssignment_4_0(), "rule__Main__CommandsAssignment_4_0");
+					put(grammarAccess.getBodyAccess().getCommandsAssignment_2_0(), "rule__Body__CommandsAssignment_2_0");
+					put(grammarAccess.getAdditionAccess().getRightAssignment_1_2(), "rule__Addition__RightAssignment_1_2");
+					put(grammarAccess.getMultiplicationAccess().getRightAssignment_1_2(), "rule__Multiplication__RightAssignment_1_2");
+					put(grammarAccess.getNumberAccess().getValueAssignment(), "rule__Number__ValueAssignment");
 				}
 			};
 		}

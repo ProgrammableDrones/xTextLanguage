@@ -22,36 +22,41 @@ public abstract class AbstractXDroneSyntacticSequencer extends AbstractSyntactic
 
 	protected XDroneGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Body_SemicolonKeyword_2_1_q;
-	protected AbstractElementAlias match_Body___ReturnKeyword_3_0_ExpressionParserRuleCall_3_1__q;
+	protected AbstractElementAlias match_Body___ReturnKeyword_3_0_CommandParserRuleCall_3_1__q;
 	protected AbstractElementAlias match_Fun_InputKeyword_2_0_q;
 	protected AbstractElementAlias match_Main_InputKeyword_2_0_q;
 	protected AbstractElementAlias match_Main_SemicolonKeyword_4_1_q;
-	protected AbstractElementAlias match_Main___ReturnKeyword_5_0_ExpressionParserRuleCall_5_1__q;
+	protected AbstractElementAlias match_Main___ReturnKeyword_5_0_CommandParserRuleCall_5_1__q;
+	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_a;
+	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (XDroneGrammarAccess) access;
 		match_Body_SemicolonKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getBodyAccess().getSemicolonKeyword_2_1());
-		match_Body___ReturnKeyword_3_0_ExpressionParserRuleCall_3_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getBodyAccess().getReturnKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getBodyAccess().getExpressionParserRuleCall_3_1()));
+		match_Body___ReturnKeyword_3_0_CommandParserRuleCall_3_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getBodyAccess().getReturnKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getBodyAccess().getCommandParserRuleCall_3_1()));
 		match_Fun_InputKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getFunAccess().getInputKeyword_2_0());
 		match_Main_InputKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getMainAccess().getInputKeyword_2_0());
 		match_Main_SemicolonKeyword_4_1_q = new TokenAlias(false, true, grammarAccess.getMainAccess().getSemicolonKeyword_4_1());
-		match_Main___ReturnKeyword_5_0_ExpressionParserRuleCall_5_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getMainAccess().getReturnKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getMainAccess().getExpressionParserRuleCall_5_1()));
+		match_Main___ReturnKeyword_5_0_CommandParserRuleCall_5_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getMainAccess().getReturnKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getMainAccess().getCommandParserRuleCall_5_1()));
+		match_Primary_LeftParenthesisKeyword_1_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
+		match_Primary_LeftParenthesisKeyword_1_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getExpressionRule())
-			return getExpressionToken(semanticObject, ruleCall, node);
+		if (ruleCall.getRule() == grammarAccess.getCommandRule())
+			return getCommandToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
 	/**
-	 * Expression:
-	 * 	'home' | 'emergencyStop'
+	 * Command:
+	 * 	'home' | 'emergencyStop' | 'UP' | 'DOWN' | 'LEFT' | 'RIGHT' | 
+	 * 	'FORWARD' | 'BACKWARD'
 	 * ;
 	 */
-	protected String getExpressionToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+	protected String getCommandToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
 		return "home";
@@ -65,16 +70,20 @@ public abstract class AbstractXDroneSyntacticSequencer extends AbstractSyntactic
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_Body_SemicolonKeyword_2_1_q.equals(syntax))
 				emit_Body_SemicolonKeyword_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Body___ReturnKeyword_3_0_ExpressionParserRuleCall_3_1__q.equals(syntax))
-				emit_Body___ReturnKeyword_3_0_ExpressionParserRuleCall_3_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Body___ReturnKeyword_3_0_CommandParserRuleCall_3_1__q.equals(syntax))
+				emit_Body___ReturnKeyword_3_0_CommandParserRuleCall_3_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Fun_InputKeyword_2_0_q.equals(syntax))
 				emit_Fun_InputKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Main_InputKeyword_2_0_q.equals(syntax))
 				emit_Main_InputKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Main_SemicolonKeyword_4_1_q.equals(syntax))
 				emit_Main_SemicolonKeyword_4_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Main___ReturnKeyword_5_0_ExpressionParserRuleCall_5_1__q.equals(syntax))
-				emit_Main___ReturnKeyword_5_0_ExpressionParserRuleCall_5_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Main___ReturnKeyword_5_0_CommandParserRuleCall_5_1__q.equals(syntax))
+				emit_Main___ReturnKeyword_5_0_CommandParserRuleCall_5_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Primary_LeftParenthesisKeyword_1_0_a.equals(syntax))
+				emit_Primary_LeftParenthesisKeyword_1_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Primary_LeftParenthesisKeyword_1_0_p.equals(syntax))
+				emit_Primary_LeftParenthesisKeyword_1_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -84,8 +93,8 @@ public abstract class AbstractXDroneSyntacticSequencer extends AbstractSyntactic
 	 *     ';'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     expressions+=Expression (ambiguity) ('return' Expression)? 'end' (rule end)
-	 *     expressions+=Expression (ambiguity) expressions+=Expression
+	 *     commands+=Command (ambiguity) ('return' Command)? 'end' (rule end)
+	 *     commands+=Command (ambiguity) commands+=Command
 	 */
 	protected void emit_Body_SemicolonKeyword_2_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -93,13 +102,13 @@ public abstract class AbstractXDroneSyntacticSequencer extends AbstractSyntactic
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ('return' Expression)?
+	 *     ('return' Command)?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'begin' (ambiguity) 'end' (rule start)
-	 *     expressions+=Expression ';'? (ambiguity) 'end' (rule end)
+	 *     commands+=Command ';'? (ambiguity) 'end' (rule end)
 	 */
-	protected void emit_Body___ReturnKeyword_3_0_ExpressionParserRuleCall_3_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Body___ReturnKeyword_3_0_CommandParserRuleCall_3_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -119,8 +128,8 @@ public abstract class AbstractXDroneSyntacticSequencer extends AbstractSyntactic
 	 *     'input'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=ID (ambiguity) 'begin' ('return' Expression)? 'end' (rule end)
-	 *     name=ID (ambiguity) 'begin' expressions+=Expression
+	 *     name=ID (ambiguity) 'begin' ('return' Command)? 'end' (rule end)
+	 *     name=ID (ambiguity) 'begin' commands+=Command
 	 */
 	protected void emit_Main_InputKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -131,8 +140,8 @@ public abstract class AbstractXDroneSyntacticSequencer extends AbstractSyntactic
 	 *     ';'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     expressions+=Expression (ambiguity) ('return' Expression)? 'end' (rule end)
-	 *     expressions+=Expression (ambiguity) expressions+=Expression
+	 *     commands+=Command (ambiguity) ('return' Command)? 'end' (rule end)
+	 *     commands+=Command (ambiguity) commands+=Command
 	 */
 	protected void emit_Main_SemicolonKeyword_4_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -140,14 +149,39 @@ public abstract class AbstractXDroneSyntacticSequencer extends AbstractSyntactic
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ('return' Expression)?
+	 *     ('return' Command)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     expressions+=Expression ';'? (ambiguity) 'end' (rule end)
+	 *     commands+=Command ';'? (ambiguity) 'end' (rule end)
 	 *     name=ID 'input'? 'begin' (ambiguity) 'end' (rule end)
 	 *     parameters+=Parameter 'begin' (ambiguity) 'end' (rule end)
 	 */
-	protected void emit_Main___ReturnKeyword_5_0_ExpressionParserRuleCall_5_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Main___ReturnKeyword_5_0_CommandParserRuleCall_5_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '('*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) value=INT
+	 *     (rule start) (ambiguity) {Addition.left=}
+	 *     (rule start) (ambiguity) {Multiplication.left=}
+	 */
+	protected void emit_Primary_LeftParenthesisKeyword_1_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '('+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) {Addition.left=}
+	 *     (rule start) (ambiguity) {Multiplication.left=}
+	 */
+	protected void emit_Primary_LeftParenthesisKeyword_1_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

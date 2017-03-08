@@ -15,9 +15,11 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import uk.ac.ox.cs.xdrone.services.XDroneGrammarAccess;
+import uk.ac.ox.cs.xdrone.xDrone.Addition;
 import uk.ac.ox.cs.xdrone.xDrone.BlockExpression;
 import uk.ac.ox.cs.xdrone.xDrone.Fun;
 import uk.ac.ox.cs.xdrone.xDrone.Main;
+import uk.ac.ox.cs.xdrone.xDrone.Multiplication;
 import uk.ac.ox.cs.xdrone.xDrone.Program;
 import uk.ac.ox.cs.xdrone.xDrone.XDronePackage;
 
@@ -35,6 +37,9 @@ public abstract class AbstractXDroneSemanticSequencer extends AbstractDelegating
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == XDronePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case XDronePackage.ADDITION:
+				sequence_Addition(context, (Addition) semanticObject); 
+				return; 
 			case XDronePackage.BLOCK_EXPRESSION:
 				sequence_Body(context, (BlockExpression) semanticObject); 
 				return; 
@@ -43,6 +48,12 @@ public abstract class AbstractXDroneSemanticSequencer extends AbstractDelegating
 				return; 
 			case XDronePackage.MAIN:
 				sequence_Main(context, (Main) semanticObject); 
+				return; 
+			case XDronePackage.MULTIPLICATION:
+				sequence_Multiplication(context, (Multiplication) semanticObject); 
+				return; 
+			case XDronePackage.NUMBER:
+				sequence_Number(context, (uk.ac.ox.cs.xdrone.xDrone.Number) semanticObject); 
 				return; 
 			case XDronePackage.PARAMETER:
 				sequence_Parameter(context, (uk.ac.ox.cs.xdrone.xDrone.Parameter) semanticObject); 
@@ -57,10 +68,35 @@ public abstract class AbstractXDroneSemanticSequencer extends AbstractDelegating
 	
 	/**
 	 * Contexts:
+	 *     Addition returns Addition
+	 *     Addition.Addition_1_0 returns Addition
+	 *     Multiplication returns Addition
+	 *     Multiplication.Multiplication_1_0 returns Addition
+	 *     Primary returns Addition
+	 *
+	 * Constraint:
+	 *     (left=Addition_Addition_1_0 right=Multiplication)
+	 */
+	protected void sequence_Addition(ISerializationContext context, Addition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, XDronePackage.Literals.ADDITION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XDronePackage.Literals.ADDITION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, XDronePackage.Literals.ADDITION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XDronePackage.Literals.ADDITION__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAdditionAccess().getAdditionLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getAdditionAccess().getRightMultiplicationParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Body returns BlockExpression
 	 *
 	 * Constraint:
-	 *     expressions+=Expression*
+	 *     commands+=Command*
 	 */
 	protected void sequence_Body(ISerializationContext context, BlockExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -85,10 +121,58 @@ public abstract class AbstractXDroneSemanticSequencer extends AbstractDelegating
 	 *     Main returns Main
 	 *
 	 * Constraint:
-	 *     (name=ID parameters+=Parameter* expressions+=Expression*)
+	 *     (name=ID parameters+=Parameter* commands+=Command*)
 	 */
 	protected void sequence_Main(ISerializationContext context, Main semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Addition returns Multiplication
+	 *     Addition.Addition_1_0 returns Multiplication
+	 *     Multiplication returns Multiplication
+	 *     Multiplication.Multiplication_1_0 returns Multiplication
+	 *     Primary returns Multiplication
+	 *
+	 * Constraint:
+	 *     (left=Multiplication_Multiplication_1_0 right=Primary)
+	 */
+	protected void sequence_Multiplication(ISerializationContext context, Multiplication semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, XDronePackage.Literals.MULTIPLICATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XDronePackage.Literals.MULTIPLICATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, XDronePackage.Literals.MULTIPLICATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XDronePackage.Literals.MULTIPLICATION__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMultiplicationAccess().getMultiplicationLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getMultiplicationAccess().getRightPrimaryParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Addition returns Number
+	 *     Addition.Addition_1_0 returns Number
+	 *     Multiplication returns Number
+	 *     Multiplication.Multiplication_1_0 returns Number
+	 *     Primary returns Number
+	 *     Number returns Number
+	 *
+	 * Constraint:
+	 *     value=INT
+	 */
+	protected void sequence_Number(ISerializationContext context, uk.ac.ox.cs.xdrone.xDrone.Number semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, XDronePackage.Literals.NUMBER__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XDronePackage.Literals.NUMBER__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNumberAccess().getValueINTTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	

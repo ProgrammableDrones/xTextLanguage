@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.Main#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.Main#getParameters <em>Parameters</em>}</li>
- *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.Main#getExpressions <em>Expressions</em>}</li>
+ *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.Main#getCommands <em>Commands</em>}</li>
  * </ul>
  *
  * @see uk.ac.ox.cs.xdrone.xDrone.XDronePackage#getMain()
@@ -70,19 +70,19 @@ public interface Main extends EObject
   EList<Parameter> getParameters();
 
   /**
-   * Returns the value of the '<em><b>Expressions</b></em>' attribute list.
+   * Returns the value of the '<em><b>Commands</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expressions</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Commands</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expressions</em>' attribute list.
-   * @see uk.ac.ox.cs.xdrone.xDrone.XDronePackage#getMain_Expressions()
+   * @return the value of the '<em>Commands</em>' attribute list.
+   * @see uk.ac.ox.cs.xdrone.xDrone.XDronePackage#getMain_Commands()
    * @model unique="false"
    * @generated
    */
-  EList<String> getExpressions();
+  EList<String> getCommands();
 
 } // Main

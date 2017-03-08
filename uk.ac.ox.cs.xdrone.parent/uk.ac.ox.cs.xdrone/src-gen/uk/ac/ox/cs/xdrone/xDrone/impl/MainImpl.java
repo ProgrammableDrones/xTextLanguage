@@ -34,7 +34,7 @@ import uk.ac.ox.cs.xdrone.xDrone.XDronePackage;
  * <ul>
  *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.impl.MainImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.impl.MainImpl#getParameters <em>Parameters</em>}</li>
- *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.impl.MainImpl#getExpressions <em>Expressions</em>}</li>
+ *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.impl.MainImpl#getCommands <em>Commands</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,14 +72,14 @@ public class MainImpl extends MinimalEObjectImpl.Container implements Main
   protected EList<Parameter> parameters;
 
   /**
-   * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' attribute list.
+   * The cached value of the '{@link #getCommands() <em>Commands</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpressions()
+   * @see #getCommands()
    * @generated
    * @ordered
    */
-  protected EList<String> expressions;
+  protected EList<String> commands;
 
   /**
    * <!-- begin-user-doc -->
@@ -144,13 +144,13 @@ public class MainImpl extends MinimalEObjectImpl.Container implements Main
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getExpressions()
+  public EList<String> getCommands()
   {
-    if (expressions == null)
+    if (commands == null)
     {
-      expressions = new EDataTypeEList<String>(String.class, this, XDronePackage.MAIN__EXPRESSIONS);
+      commands = new EDataTypeEList<String>(String.class, this, XDronePackage.MAIN__COMMANDS);
     }
-    return expressions;
+    return commands;
   }
 
   /**
@@ -183,8 +183,8 @@ public class MainImpl extends MinimalEObjectImpl.Container implements Main
         return getName();
       case XDronePackage.MAIN__PARAMETERS:
         return getParameters();
-      case XDronePackage.MAIN__EXPRESSIONS:
-        return getExpressions();
+      case XDronePackage.MAIN__COMMANDS:
+        return getCommands();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -207,9 +207,9 @@ public class MainImpl extends MinimalEObjectImpl.Container implements Main
         getParameters().clear();
         getParameters().addAll((Collection<? extends Parameter>)newValue);
         return;
-      case XDronePackage.MAIN__EXPRESSIONS:
-        getExpressions().clear();
-        getExpressions().addAll((Collection<? extends String>)newValue);
+      case XDronePackage.MAIN__COMMANDS:
+        getCommands().clear();
+        getCommands().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -231,8 +231,8 @@ public class MainImpl extends MinimalEObjectImpl.Container implements Main
       case XDronePackage.MAIN__PARAMETERS:
         getParameters().clear();
         return;
-      case XDronePackage.MAIN__EXPRESSIONS:
-        getExpressions().clear();
+      case XDronePackage.MAIN__COMMANDS:
+        getCommands().clear();
         return;
     }
     super.eUnset(featureID);
@@ -252,8 +252,8 @@ public class MainImpl extends MinimalEObjectImpl.Container implements Main
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case XDronePackage.MAIN__PARAMETERS:
         return parameters != null && !parameters.isEmpty();
-      case XDronePackage.MAIN__EXPRESSIONS:
-        return expressions != null && !expressions.isEmpty();
+      case XDronePackage.MAIN__COMMANDS:
+        return commands != null && !commands.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -271,8 +271,8 @@ public class MainImpl extends MinimalEObjectImpl.Container implements Main
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", expressions: ");
-    result.append(expressions);
+    result.append(", commands: ");
+    result.append(commands);
     result.append(')');
     return result.toString();
   }

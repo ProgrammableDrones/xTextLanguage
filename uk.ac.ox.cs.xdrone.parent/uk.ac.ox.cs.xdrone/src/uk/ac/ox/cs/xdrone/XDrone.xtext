@@ -28,22 +28,48 @@ Main :
   'main' name = ID
   ('input' (parameters += Parameter)*)?
   'begin' 
-  (expressions+=Expression ';'?)*
-  ('return' Expression)?
+  (commands+=Command ';'?)*
+  ('return' Command)?
   'end'
 ; 
  
 Body returns BlockExpression:
   {BlockExpression}
   'begin'
-  (expressions+=Expression ';'?)*
-  ('return' Expression)?
+  (commands+=Command ';'?)*
+  ('return' Command)?
   'end'
 ;
 
-Expression:
-	'home' | 'emergencyStop'
+Command:
+	'home' | 'emergencyStop' | 'UP' | 'DOWN' | 'LEFT' | 'RIGHT' | 
+	'FORWARD' | 'BACKWARD'
 ;
   
 Executable:
   Program | Fun;
+  
+  
+
+/*
+ * Here we have the expression handling
+ */
+ 
+Addition returns Expression:
+ 	Multiplication ({Addition.left=current} '+' right = Multiplication)*
+;
+ 
+Multiplication returns Expression:
+	Primary ({Multiplication.left = current} '*' right = Primary)*
+;
+
+Primary returns Expression:
+	Number | '(' Addition ')'
+;
+
+Number: value = INT;
+ 
+/*
+ * End of Expression Handling
+ */
+  

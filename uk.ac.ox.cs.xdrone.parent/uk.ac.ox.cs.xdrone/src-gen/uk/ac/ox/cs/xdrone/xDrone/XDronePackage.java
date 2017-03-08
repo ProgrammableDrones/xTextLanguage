@@ -225,13 +225,13 @@ public interface XDronePackage extends EPackage
   int MAIN__PARAMETERS = 1;
 
   /**
-   * The feature id for the '<em><b>Expressions</b></em>' attribute list.
+   * The feature id for the '<em><b>Commands</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MAIN__EXPRESSIONS = 2;
+  int MAIN__COMMANDS = 2;
 
   /**
    * The number of structural features of the '<em>Main</em>' class.
@@ -253,13 +253,13 @@ public interface XDronePackage extends EPackage
   int BLOCK_EXPRESSION = 4;
 
   /**
-   * The feature id for the '<em><b>Expressions</b></em>' attribute list.
+   * The feature id for the '<em><b>Commands</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BLOCK_EXPRESSION__EXPRESSIONS = 0;
+  int BLOCK_EXPRESSION__COMMANDS = 0;
 
   /**
    * The number of structural features of the '<em>Block Expression</em>' class.
@@ -269,6 +269,127 @@ public interface XDronePackage extends EPackage
    * @ordered
    */
   int BLOCK_EXPRESSION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.ExpressionImpl <em>Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.ExpressionImpl
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getExpression()
+   * @generated
+   */
+  int EXPRESSION = 6;
+
+  /**
+   * The number of structural features of the '<em>Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.NumberImpl <em>Number</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.NumberImpl
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getNumber()
+   * @generated
+   */
+  int NUMBER = 7;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER__VALUE = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Number</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.AdditionImpl <em>Addition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.AdditionImpl
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getAddition()
+   * @generated
+   */
+  int ADDITION = 8;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITION__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITION__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Addition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.MultiplicationImpl <em>Multiplication</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.MultiplicationImpl
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getMultiplication()
+   * @generated
+   */
+  int MULTIPLICATION = 9;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATION__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATION__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Multiplication</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
 
   /**
@@ -411,15 +532,15 @@ public interface XDronePackage extends EPackage
   EReference getMain_Parameters();
 
   /**
-   * Returns the meta object for the attribute list '{@link uk.ac.ox.cs.xdrone.xDrone.Main#getExpressions <em>Expressions</em>}'.
+   * Returns the meta object for the attribute list '{@link uk.ac.ox.cs.xdrone.xDrone.Main#getCommands <em>Commands</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Expressions</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Main#getExpressions()
+   * @return the meta object for the attribute list '<em>Commands</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.Main#getCommands()
    * @see #getMain()
    * @generated
    */
-  EAttribute getMain_Expressions();
+  EAttribute getMain_Commands();
 
   /**
    * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.BlockExpression <em>Block Expression</em>}'.
@@ -432,15 +553,15 @@ public interface XDronePackage extends EPackage
   EClass getBlockExpression();
 
   /**
-   * Returns the meta object for the attribute list '{@link uk.ac.ox.cs.xdrone.xDrone.BlockExpression#getExpressions <em>Expressions</em>}'.
+   * Returns the meta object for the attribute list '{@link uk.ac.ox.cs.xdrone.xDrone.BlockExpression#getCommands <em>Commands</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Expressions</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.BlockExpression#getExpressions()
+   * @return the meta object for the attribute list '<em>Commands</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.BlockExpression#getCommands()
    * @see #getBlockExpression()
    * @generated
    */
-  EAttribute getBlockExpression_Expressions();
+  EAttribute getBlockExpression_Commands();
 
   /**
    * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.Executable <em>Executable</em>}'.
@@ -451,6 +572,101 @@ public interface XDronePackage extends EPackage
    * @generated
    */
   EClass getExecutable();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.Expression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.Expression
+   * @generated
+   */
+  EClass getExpression();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.Number <em>Number</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Number</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.Number
+   * @generated
+   */
+  EClass getNumber();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.ox.cs.xdrone.xDrone.Number#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.Number#getValue()
+   * @see #getNumber()
+   * @generated
+   */
+  EAttribute getNumber_Value();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.Addition <em>Addition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Addition</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.Addition
+   * @generated
+   */
+  EClass getAddition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.ox.cs.xdrone.xDrone.Addition#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.Addition#getLeft()
+   * @see #getAddition()
+   * @generated
+   */
+  EReference getAddition_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.ox.cs.xdrone.xDrone.Addition#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.Addition#getRight()
+   * @see #getAddition()
+   * @generated
+   */
+  EReference getAddition_Right();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.Multiplication <em>Multiplication</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multiplication</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.Multiplication
+   * @generated
+   */
+  EClass getMultiplication();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.ox.cs.xdrone.xDrone.Multiplication#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.Multiplication#getLeft()
+   * @see #getMultiplication()
+   * @generated
+   */
+  EReference getMultiplication_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.ox.cs.xdrone.xDrone.Multiplication#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.Multiplication#getRight()
+   * @see #getMultiplication()
+   * @generated
+   */
+  EReference getMultiplication_Right();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -588,12 +804,12 @@ public interface XDronePackage extends EPackage
     EReference MAIN__PARAMETERS = eINSTANCE.getMain_Parameters();
 
     /**
-     * The meta object literal for the '<em><b>Expressions</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Commands</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MAIN__EXPRESSIONS = eINSTANCE.getMain_Expressions();
+    EAttribute MAIN__COMMANDS = eINSTANCE.getMain_Commands();
 
     /**
      * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.BlockExpressionImpl <em>Block Expression</em>}' class.
@@ -606,12 +822,12 @@ public interface XDronePackage extends EPackage
     EClass BLOCK_EXPRESSION = eINSTANCE.getBlockExpression();
 
     /**
-     * The meta object literal for the '<em><b>Expressions</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Commands</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BLOCK_EXPRESSION__EXPRESSIONS = eINSTANCE.getBlockExpression_Expressions();
+    EAttribute BLOCK_EXPRESSION__COMMANDS = eINSTANCE.getBlockExpression_Commands();
 
     /**
      * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.ExecutableImpl <em>Executable</em>}' class.
@@ -622,6 +838,86 @@ public interface XDronePackage extends EPackage
      * @generated
      */
     EClass EXECUTABLE = eINSTANCE.getExecutable();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.ExpressionImpl <em>Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.ExpressionImpl
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getExpression()
+     * @generated
+     */
+    EClass EXPRESSION = eINSTANCE.getExpression();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.NumberImpl <em>Number</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.NumberImpl
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getNumber()
+     * @generated
+     */
+    EClass NUMBER = eINSTANCE.getNumber();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NUMBER__VALUE = eINSTANCE.getNumber_Value();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.AdditionImpl <em>Addition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.AdditionImpl
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getAddition()
+     * @generated
+     */
+    EClass ADDITION = eINSTANCE.getAddition();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADDITION__LEFT = eINSTANCE.getAddition_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADDITION__RIGHT = eINSTANCE.getAddition_Right();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.MultiplicationImpl <em>Multiplication</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.MultiplicationImpl
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getMultiplication()
+     * @generated
+     */
+    EClass MULTIPLICATION = eINSTANCE.getMultiplication();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTIPLICATION__LEFT = eINSTANCE.getMultiplication_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTIPLICATION__RIGHT = eINSTANCE.getMultiplication_Right();
 
   }
 

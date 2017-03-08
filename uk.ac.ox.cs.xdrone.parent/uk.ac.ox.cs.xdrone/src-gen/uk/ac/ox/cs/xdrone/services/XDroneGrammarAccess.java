@@ -150,21 +150,21 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParametersParameterParserRuleCall_2_1_0 = (RuleCall)cParametersAssignment_2_1.eContents().get(0);
 		private final Keyword cBeginKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cExpressionsAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final RuleCall cExpressionsExpressionParserRuleCall_4_0_0 = (RuleCall)cExpressionsAssignment_4_0.eContents().get(0);
+		private final Assignment cCommandsAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final RuleCall cCommandsCommandParserRuleCall_4_0_0 = (RuleCall)cCommandsAssignment_4_0.eContents().get(0);
 		private final Keyword cSemicolonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cReturnKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final RuleCall cExpressionParserRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
+		private final RuleCall cCommandParserRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
 		private final Keyword cEndKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Main:
 		//	'main' name=ID ('input' parameters+=Parameter*)?
-		//	'begin' (expressions+=Expression ';'?)* ('return' Expression)?
+		//	'begin' (commands+=Command ';'?)* ('return' Command)?
 		//	'end';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'main' name=ID ('input' parameters+=Parameter*)? 'begin' (expressions+=Expression ';'?)* ('return' Expression)? 'end'
+		//'main' name=ID ('input' parameters+=Parameter*)? 'begin' (commands+=Command ';'?)* ('return' Command)? 'end'
 		public Group getGroup() { return cGroup; }
 		
 		//'main'
@@ -191,26 +191,26 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 		//'begin'
 		public Keyword getBeginKeyword_3() { return cBeginKeyword_3; }
 		
-		//(expressions+=Expression ';'?)*
+		//(commands+=Command ';'?)*
 		public Group getGroup_4() { return cGroup_4; }
 		
-		//expressions+=Expression
-		public Assignment getExpressionsAssignment_4_0() { return cExpressionsAssignment_4_0; }
+		//commands+=Command
+		public Assignment getCommandsAssignment_4_0() { return cCommandsAssignment_4_0; }
 		
-		//Expression
-		public RuleCall getExpressionsExpressionParserRuleCall_4_0_0() { return cExpressionsExpressionParserRuleCall_4_0_0; }
+		//Command
+		public RuleCall getCommandsCommandParserRuleCall_4_0_0() { return cCommandsCommandParserRuleCall_4_0_0; }
 		
 		//';'?
 		public Keyword getSemicolonKeyword_4_1() { return cSemicolonKeyword_4_1; }
 		
-		//('return' Expression)?
+		//('return' Command)?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//'return'
 		public Keyword getReturnKeyword_5_0() { return cReturnKeyword_5_0; }
 		
-		//Expression
-		public RuleCall getExpressionParserRuleCall_5_1() { return cExpressionParserRuleCall_5_1; }
+		//Command
+		public RuleCall getCommandParserRuleCall_5_1() { return cCommandParserRuleCall_5_1; }
 		
 		//'end'
 		public Keyword getEndKeyword_6() { return cEndKeyword_6; }
@@ -221,21 +221,21 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cBlockExpressionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cBeginKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Assignment cExpressionsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cExpressionsExpressionParserRuleCall_2_0_0 = (RuleCall)cExpressionsAssignment_2_0.eContents().get(0);
+		private final Assignment cCommandsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cCommandsCommandParserRuleCall_2_0_0 = (RuleCall)cCommandsAssignment_2_0.eContents().get(0);
 		private final Keyword cSemicolonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cReturnKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final RuleCall cExpressionParserRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
+		private final RuleCall cCommandParserRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
 		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Body BlockExpression:
 		//	{BlockExpression}
-		//	'begin' (expressions+=Expression ';'?)* ('return' Expression)?
+		//	'begin' (commands+=Command ';'?)* ('return' Command)?
 		//	'end'
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{BlockExpression} 'begin' (expressions+=Expression ';'?)* ('return' Expression)? 'end'
+		//{BlockExpression} 'begin' (commands+=Command ';'?)* ('return' Command)? 'end'
 		public Group getGroup() { return cGroup; }
 		
 		//{BlockExpression}
@@ -244,41 +244,48 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 		//'begin'
 		public Keyword getBeginKeyword_1() { return cBeginKeyword_1; }
 		
-		//(expressions+=Expression ';'?)*
+		//(commands+=Command ';'?)*
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//expressions+=Expression
-		public Assignment getExpressionsAssignment_2_0() { return cExpressionsAssignment_2_0; }
+		//commands+=Command
+		public Assignment getCommandsAssignment_2_0() { return cCommandsAssignment_2_0; }
 		
-		//Expression
-		public RuleCall getExpressionsExpressionParserRuleCall_2_0_0() { return cExpressionsExpressionParserRuleCall_2_0_0; }
+		//Command
+		public RuleCall getCommandsCommandParserRuleCall_2_0_0() { return cCommandsCommandParserRuleCall_2_0_0; }
 		
 		//';'?
 		public Keyword getSemicolonKeyword_2_1() { return cSemicolonKeyword_2_1; }
 		
-		//('return' Expression)?
+		//('return' Command)?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//'return'
 		public Keyword getReturnKeyword_3_0() { return cReturnKeyword_3_0; }
 		
-		//Expression
-		public RuleCall getExpressionParserRuleCall_3_1() { return cExpressionParserRuleCall_3_1; }
+		//Command
+		public RuleCall getCommandParserRuleCall_3_1() { return cCommandParserRuleCall_3_1; }
 		
 		//'end'
 		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
 	}
-	public class ExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.ox.cs.xdrone.XDrone.Expression");
+	public class CommandElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.ox.cs.xdrone.XDrone.Command");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Keyword cHomeKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cEmergencyStopKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cUPKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cDOWNKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cLEFTKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cRIGHTKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cFORWARDKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Keyword cBACKWARDKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
 		
-		//Expression:
-		//	'home' | 'emergencyStop';
+		//Command:
+		//	'home' | 'emergencyStop' | 'UP' | 'DOWN' | 'LEFT' | 'RIGHT' |
+		//	'FORWARD' | 'BACKWARD';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'home' | 'emergencyStop'
+		//'home' | 'emergencyStop' | 'UP' | 'DOWN' | 'LEFT' | 'RIGHT' | 'FORWARD' | 'BACKWARD'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//'home'
@@ -286,6 +293,24 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'emergencyStop'
 		public Keyword getEmergencyStopKeyword_1() { return cEmergencyStopKeyword_1; }
+		
+		//'UP'
+		public Keyword getUPKeyword_2() { return cUPKeyword_2; }
+		
+		//'DOWN'
+		public Keyword getDOWNKeyword_3() { return cDOWNKeyword_3; }
+		
+		//'LEFT'
+		public Keyword getLEFTKeyword_4() { return cLEFTKeyword_4; }
+		
+		//'RIGHT'
+		public Keyword getRIGHTKeyword_5() { return cRIGHTKeyword_5; }
+		
+		//'FORWARD'
+		public Keyword getFORWARDKeyword_6() { return cFORWARDKeyword_6; }
+		
+		//'BACKWARD'
+		public Keyword getBACKWARDKeyword_7() { return cBACKWARDKeyword_7; }
 	}
 	public class ExecutableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.ox.cs.xdrone.XDrone.Executable");
@@ -306,6 +331,124 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 		//Fun
 		public RuleCall getFunParserRuleCall_1() { return cFunParserRuleCall_1; }
 	}
+	public class AdditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.ox.cs.xdrone.XDrone.Addition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cMultiplicationParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cAdditionLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cPlusSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightMultiplicationParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		
+		/// *
+		// * Here we have the expression handling
+		// * / Addition Expression:
+		//	Multiplication ({Addition.left=current} '+' right=Multiplication)*
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Multiplication ({Addition.left=current} '+' right=Multiplication)*
+		public Group getGroup() { return cGroup; }
+		
+		//Multiplication
+		public RuleCall getMultiplicationParserRuleCall_0() { return cMultiplicationParserRuleCall_0; }
+		
+		//({Addition.left=current} '+' right=Multiplication)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{Addition.left=current}
+		public Action getAdditionLeftAction_1_0() { return cAdditionLeftAction_1_0; }
+		
+		//'+'
+		public Keyword getPlusSignKeyword_1_1() { return cPlusSignKeyword_1_1; }
+		
+		//right=Multiplication
+		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
+		
+		//Multiplication
+		public RuleCall getRightMultiplicationParserRuleCall_1_2_0() { return cRightMultiplicationParserRuleCall_1_2_0; }
+	}
+	public class MultiplicationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.ox.cs.xdrone.XDrone.Multiplication");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cPrimaryParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cMultiplicationLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cAsteriskKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightPrimaryParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		
+		//Multiplication Expression:
+		//	Primary ({Multiplication.left=current} '*' right=Primary)*
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Primary ({Multiplication.left=current} '*' right=Primary)*
+		public Group getGroup() { return cGroup; }
+		
+		//Primary
+		public RuleCall getPrimaryParserRuleCall_0() { return cPrimaryParserRuleCall_0; }
+		
+		//({Multiplication.left=current} '*' right=Primary)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{Multiplication.left=current}
+		public Action getMultiplicationLeftAction_1_0() { return cMultiplicationLeftAction_1_0; }
+		
+		//'*'
+		public Keyword getAsteriskKeyword_1_1() { return cAsteriskKeyword_1_1; }
+		
+		//right=Primary
+		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
+		
+		//Primary
+		public RuleCall getRightPrimaryParserRuleCall_1_2_0() { return cRightPrimaryParserRuleCall_1_2_0; }
+	}
+	public class PrimaryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.ox.cs.xdrone.XDrone.Primary");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cNumberParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cAdditionParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		
+		//Primary Expression:
+		//	Number | '(' Addition ')'
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Number | '(' Addition ')'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Number
+		public RuleCall getNumberParserRuleCall_0() { return cNumberParserRuleCall_0; }
+		
+		//'(' Addition ')'
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
+		
+		//Addition
+		public RuleCall getAdditionParserRuleCall_1_1() { return cAdditionParserRuleCall_1_1; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_1_2() { return cRightParenthesisKeyword_1_2; }
+	}
+	public class NumberElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.ox.cs.xdrone.XDrone.Number");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueINTTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//Number:
+		//	value=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//value=INT
+		public Assignment getValueAssignment() { return cValueAssignment; }
+		
+		//INT
+		public RuleCall getValueINTTerminalRuleCall_0() { return cValueINTTerminalRuleCall_0; }
+	}
 	
 	
 	private final ProgramElements pProgram;
@@ -314,8 +457,12 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 	private final TypeElements pType;
 	private final MainElements pMain;
 	private final BodyElements pBody;
-	private final ExpressionElements pExpression;
+	private final CommandElements pCommand;
 	private final ExecutableElements pExecutable;
+	private final AdditionElements pAddition;
+	private final MultiplicationElements pMultiplication;
+	private final PrimaryElements pPrimary;
+	private final NumberElements pNumber;
 	
 	private final Grammar grammar;
 	
@@ -332,8 +479,12 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 		this.pType = new TypeElements();
 		this.pMain = new MainElements();
 		this.pBody = new BodyElements();
-		this.pExpression = new ExpressionElements();
+		this.pCommand = new CommandElements();
 		this.pExecutable = new ExecutableElements();
+		this.pAddition = new AdditionElements();
+		this.pMultiplication = new MultiplicationElements();
+		this.pPrimary = new PrimaryElements();
+		this.pNumber = new NumberElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -408,7 +559,7 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Main:
 	//	'main' name=ID ('input' parameters+=Parameter*)?
-	//	'begin' (expressions+=Expression ';'?)* ('return' Expression)?
+	//	'begin' (commands+=Command ';'?)* ('return' Command)?
 	//	'end';
 	public MainElements getMainAccess() {
 		return pMain;
@@ -420,7 +571,7 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Body BlockExpression:
 	//	{BlockExpression}
-	//	'begin' (expressions+=Expression ';'?)* ('return' Expression)?
+	//	'begin' (commands+=Command ';'?)* ('return' Command)?
 	//	'end'
 	public BodyElements getBodyAccess() {
 		return pBody;
@@ -430,14 +581,15 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 		return getBodyAccess().getRule();
 	}
 	
-	//Expression:
-	//	'home' | 'emergencyStop';
-	public ExpressionElements getExpressionAccess() {
-		return pExpression;
+	//Command:
+	//	'home' | 'emergencyStop' | 'UP' | 'DOWN' | 'LEFT' | 'RIGHT' |
+	//	'FORWARD' | 'BACKWARD';
+	public CommandElements getCommandAccess() {
+		return pCommand;
 	}
 	
-	public ParserRule getExpressionRule() {
-		return getExpressionAccess().getRule();
+	public ParserRule getCommandRule() {
+		return getCommandAccess().getRule();
 	}
 	
 	//Executable:
@@ -448,6 +600,48 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getExecutableRule() {
 		return getExecutableAccess().getRule();
+	}
+	
+	/// *
+	// * Here we have the expression handling
+	// * / Addition Expression:
+	//	Multiplication ({Addition.left=current} '+' right=Multiplication)*
+	public AdditionElements getAdditionAccess() {
+		return pAddition;
+	}
+	
+	public ParserRule getAdditionRule() {
+		return getAdditionAccess().getRule();
+	}
+	
+	//Multiplication Expression:
+	//	Primary ({Multiplication.left=current} '*' right=Primary)*
+	public MultiplicationElements getMultiplicationAccess() {
+		return pMultiplication;
+	}
+	
+	public ParserRule getMultiplicationRule() {
+		return getMultiplicationAccess().getRule();
+	}
+	
+	//Primary Expression:
+	//	Number | '(' Addition ')'
+	public PrimaryElements getPrimaryAccess() {
+		return pPrimary;
+	}
+	
+	public ParserRule getPrimaryRule() {
+		return getPrimaryAccess().getRule();
+	}
+	
+	//Number:
+	//	value=INT;
+	public NumberElements getNumberAccess() {
+		return pNumber;
+	}
+	
+	public ParserRule getNumberRule() {
+		return getNumberAccess().getRule();
 	}
 	
 	//terminal ID:

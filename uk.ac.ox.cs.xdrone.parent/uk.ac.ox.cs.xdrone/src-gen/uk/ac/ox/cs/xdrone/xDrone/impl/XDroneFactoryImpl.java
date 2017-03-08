@@ -11,7 +11,17 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import uk.ac.ox.cs.xdrone.xDrone.*;
+import uk.ac.ox.cs.xdrone.xDrone.Addition;
+import uk.ac.ox.cs.xdrone.xDrone.BlockExpression;
+import uk.ac.ox.cs.xdrone.xDrone.Executable;
+import uk.ac.ox.cs.xdrone.xDrone.Expression;
+import uk.ac.ox.cs.xdrone.xDrone.Fun;
+import uk.ac.ox.cs.xdrone.xDrone.Main;
+import uk.ac.ox.cs.xdrone.xDrone.Multiplication;
+import uk.ac.ox.cs.xdrone.xDrone.Parameter;
+import uk.ac.ox.cs.xdrone.xDrone.Program;
+import uk.ac.ox.cs.xdrone.xDrone.XDroneFactory;
+import uk.ac.ox.cs.xdrone.xDrone.XDronePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,6 +81,10 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
       case XDronePackage.MAIN: return createMain();
       case XDronePackage.BLOCK_EXPRESSION: return createBlockExpression();
       case XDronePackage.EXECUTABLE: return createExecutable();
+      case XDronePackage.EXPRESSION: return createExpression();
+      case XDronePackage.NUMBER: return createNumber();
+      case XDronePackage.ADDITION: return createAddition();
+      case XDronePackage.MULTIPLICATION: return createMultiplication();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -140,6 +154,50 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
   {
     ExecutableImpl executable = new ExecutableImpl();
     return executable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression createExpression()
+  {
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public uk.ac.ox.cs.xdrone.xDrone.Number createNumber()
+  {
+    NumberImpl number = new NumberImpl();
+    return number;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Addition createAddition()
+  {
+    AdditionImpl addition = new AdditionImpl();
+    return addition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Multiplication createMultiplication()
+  {
+    MultiplicationImpl multiplication = new MultiplicationImpl();
+    return multiplication;
   }
 
   /**

@@ -22,11 +22,23 @@
     <genClasses ecoreClass="XDrone.ecore#//Main">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//Main/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XDrone.ecore#//Main/parameters"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//Main/expressions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//Main/commands"/>
     </genClasses>
     <genClasses ecoreClass="XDrone.ecore#//BlockExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//BlockExpression/expressions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//BlockExpression/commands"/>
     </genClasses>
     <genClasses ecoreClass="XDrone.ecore#//Executable"/>
+    <genClasses ecoreClass="XDrone.ecore#//Expression"/>
+    <genClasses ecoreClass="XDrone.ecore#//Number">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//Number/value"/>
+    </genClasses>
+    <genClasses ecoreClass="XDrone.ecore#//Addition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XDrone.ecore#//Addition/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XDrone.ecore#//Addition/right"/>
+    </genClasses>
+    <genClasses ecoreClass="XDrone.ecore#//Multiplication">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XDrone.ecore#//Multiplication/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XDrone.ecore#//Multiplication/right"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
