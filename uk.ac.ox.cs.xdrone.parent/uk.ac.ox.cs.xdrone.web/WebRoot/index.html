@@ -6,11 +6,20 @@
 	<link rel="stylesheet" type="text/css" href="xtext/2.10.0/xtext-ace.css"/>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<script src="webjars/requirejs/2.2.0/require.min.js"></script>
-	<script type="text/javascript">
+<script type="text/javascript">
 		var baseUrl = window.location.pathname;
 		var fileIndex = baseUrl.indexOf("index.html");
 		if (fileIndex > 0)
 			baseUrl = baseUrl.slice(0, fileIndex);
+			
+		console.log("base url: "+baseUrl);
+		
+		
+		if (!location.origin)
+   			location.origin = location.protocol + "//" + location.host;
+		
+		console.log("origin: "+location.origin);
+		
 		require.config({
 			baseUrl: baseUrl,
 			paths: {
@@ -20,11 +29,46 @@
 			}
 		});
 		require(["webjars/ace/1.2.2/src/ace"], function() {
-			require(["xtext/xtext-ace"], function(xtext) {
-				xtext.createEditor({
-					baseUrl: baseUrl,
+			require(["xtext/xtext-ace"], function(xtext) {				
+				var editor = xtext.createEditor({
+					serviceUrl: baseUrl+"xtext-service",
+					//serviceUrl: "/booster/xtext-service",
 					syntaxDefinition: "xtext-resources/generated/mode-xdrone"
 				});
+				
+				jQuery('#save-button').bind("click", function(e){
+					var data = {
+						resource : editor.xtextServices.options.resourceId,
+						fullText : editor.getValue()
+					};	
+					console.log(data);
+									
+					jQuery.post(baseUrl+'/xtext-service/save?resource='+editor.xtextServices.options.resourceId, data, function(result){
+						console.log("saved resource");
+					}); 
+					e.preventDefault();
+					
+
+					}
+				
+				);
+								
+				jQuery('#deploy-button').bind("click", function(e){
+					var data = {
+						resource : editor.xtextServices.options.resourceId,
+						fullText : editor.getValue()
+					};	
+					console.log(data);	
+					jQuery.post(baseUrl+'/xtext-service/save?resource='+editor.xtextServices.options.resourceId, data, function(result){
+						console.log("saved resource");
+					}); 				
+					jQuery.post(baseUrl+'/xtext-service/deploy?resource='+editor.xtextServices.options.resourceId, data, function(result){
+						console.log("deploying resource");
+					}); 
+					e.preventDefault();
+				}
+				
+				);
 			});
 		});
 	</script>
@@ -33,11 +77,15 @@
 
 <div class="container">
 	<div class="header">
+	<input type="button" name="Save" value="Save" id="save-button"/> 
 		<h1>Example XDrone Web Editor</h1>
 	</div>
+	
 	<div class="content">
 		<div id="xtext-editor" data-editor-xtext-lang="xdrone"></div>
+		
 	</div>
+	
 </div>
 
 </body>

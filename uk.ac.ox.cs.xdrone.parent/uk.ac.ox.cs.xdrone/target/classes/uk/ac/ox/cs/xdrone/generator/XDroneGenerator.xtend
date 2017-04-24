@@ -8,6 +8,7 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import uk.ac.ox.cs.xdrone.xDrone.Fun
+import uk.ac.ox.cs.xdrone.xDrone.Main
 
 /**
  * Generates code from your model files on save.
@@ -17,10 +18,18 @@ import uk.ac.ox.cs.xdrone.xDrone.Fun
 class XDroneGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		fsa.generateFile('functions.txt', 'Defined functions: ' + 
+		var result = "";
+		if (resource.allContents
+				.filter(typeof(Main)) != null) {
+					result += "public static void main(String[] args) {}"
+				}
+		
+		fsa.generateFile('functions.txt', 'Defined functions: ' + result)
+			/* 
 			resource.allContents
-				.filter(typeof(Fun))
+				.filter(typeof(Main))
 				.map[name]
-				.join(', '))
+				.join(', ')
+				)*/
 	}
 }

@@ -3,6 +3,7 @@
  */
 package uk.ac.ox.cs.xdrone.generator;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterators;
 import java.util.Iterator;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -11,9 +12,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
-import org.eclipse.xtext.xbase.lib.Functions.Function1;
-import org.eclipse.xtext.xbase.lib.IteratorExtensions;
-import uk.ac.ox.cs.xdrone.xDrone.Fun;
+import uk.ac.ox.cs.xdrone.xDrone.Main;
 
 /**
  * Generates code from your model files on save.
@@ -24,14 +23,14 @@ import uk.ac.ox.cs.xdrone.xDrone.Fun;
 public class XDroneGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    String result = "";
     TreeIterator<EObject> _allContents = resource.getAllContents();
-    Iterator<Fun> _filter = Iterators.<Fun>filter(_allContents, Fun.class);
-    final Function1<Fun, String> _function = (Fun it) -> {
-      return it.getName();
-    };
-    Iterator<String> _map = IteratorExtensions.<Fun, String>map(_filter, _function);
-    String _join = IteratorExtensions.join(_map, ", ");
-    String _plus = ("Defined functions: " + _join);
-    fsa.generateFile("functions.txt", _plus);
+    Iterator<Main> _filter = Iterators.<Main>filter(_allContents, Main.class);
+    boolean _notEquals = (!Objects.equal(_filter, null));
+    if (_notEquals) {
+      String _result = result;
+      result = (_result + "public static void main(String[] args) {}");
+    }
+    fsa.generateFile("functions.txt", ("Defined functions: " + result));
   }
 }
