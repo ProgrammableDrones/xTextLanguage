@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<artifacts size='1'>
+  <artifact classifier='osgi.bundle' id='uk.ac.ox.cs.xdrone.ide' version='1.0.0.201704251525'>
+    <properties size='5'>
+      <property name='artifact.size' value='36395'/>
+      <property name='download.size' value='36395'/>
+      <property name='maven-groupId' value='uk.ac.ox.cs.xdrone'/>
+      <property name='maven-artifactId' value='uk.ac.ox.cs.xdrone.ide'/>
+      <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+    </properties>
+  </artifact>
+</artifacts>

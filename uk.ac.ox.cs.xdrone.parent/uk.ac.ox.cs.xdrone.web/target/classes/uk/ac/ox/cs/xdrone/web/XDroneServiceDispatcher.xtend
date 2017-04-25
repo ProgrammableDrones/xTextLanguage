@@ -13,29 +13,43 @@ import org.eclipse.xtext.web.server.InvalidRequestException
 import org.eclipse.xtext.web.server.XtextServiceDispatcher
 import org.eclipse.xtext.web.server.persistence.IResourceBaseProvider
 import org.eclipse.xtext.web.server.model.DocumentStateResult
-
+import org.eclipse.xtext.web.server.generator.GeneratorService
 
 class XDroneServiceDispatcher extends XtextServiceDispatcher {
 
     @Inject IResourceBaseProvider resourceBaseProvider
+    
+    @Inject
+    private GeneratorService generatorService;
 
     override protected createServiceDescriptor(String serviceType, IServiceContext context) {
         switch serviceType {
             case 'deploy':
                 getDeployService(context)
-            case 'save':
-            	getStoreResourceService(context)
+            case 'compile':
+            	getCompileService(context)
             default:
                 super.createServiceDescriptor(serviceType, context)
         }
     }
     
-    
-	protected def getStoreResourceService(IServiceContext context) throws InvalidRequestException {
+	
+	protected def getCompileService(IServiceContext context) throws InvalidRequestException {
 		val resourceId = context.getParameter('resource')
 		if (resourceId === null)
 			throw new InvalidRequestException('The parameter \'resource\' is required.')
 		
+		val document = getDocumentAccess(context)
+		println(document)
+		new ServiceDescriptor => [
+			service = [
+				try {
+					generatorService.getResult(document)
+				} catch (Throwable throwable) {
+					handleError(throwable)
+				}
+			]
+		]
 	}
 
 	protected def getDeployService(IServiceContext context) throws InvalidRequestException {
@@ -60,10 +74,10 @@ class XDroneServiceDispatcher extends XtextServiceDispatcher {
 						}
 						val document = getResourceDocument(resourceId, context)
 						
-						println("preparing to run command: /bin/bash -c /booster2/booster-deploy.sh "+file.getAbsolutePath()+" > /tmp/booster.log")
+						println("preparing to run command: /bin/bash -c /xdrone/booster-deploy.sh "+file.getAbsolutePath()+" > /tmp/xdrone.log")
 						
 						val pb = new ProcessBuilder().inheritIO()
-						.command("/bin/bash", "-c", "/booster2/booster-deploy.sh "+file.getAbsolutePath()+" > /tmp/booster.log").start();
+						.command("/bin/bash", "-c", "/xdrone/xdrone-deploy.sh "+file.getAbsolutePath()+" > /tmp/xdrone.log").start();
 						
 						if (!pb.alive){
 							println("exit code: "+pb.exitValue)

@@ -9,6 +9,12 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import uk.ac.ox.cs.xdrone.xDrone.Fun
 import uk.ac.ox.cs.xdrone.xDrone.Main
+import org.eclipse.xtext.generator.JavaIoFileSystemAccess
+import com.google.inject.Guice
+import org.eclipse.xtext.service.AbstractGenericModule
+import org.eclipse.xtext.parser.IEncodingProvider
+import java.io.IOException
+import java.io.PrintWriter
 
 /**
  * Generates code from your model files on save.
@@ -23,8 +29,37 @@ class XDroneGenerator extends AbstractGenerator {
 				.filter(typeof(Main)) != null) {
 					result += "public static void main(String[] args) {}"
 				}
+
 		
-		fsa.generateFile('functions.txt', 'Defined functions: ' + result)
+		try {
+		    var writer = new PrintWriter("/tmp/result567.java", "UTF-8");
+		    writer.println(result);
+		    writer.close();
+		} catch (IOException e) {
+		   // do something
+		}
+		
+		
+		
+		/*
+		var fsa1 = new JavaIoFileSystemAccess();
+		
+		Guice.createInjector(new AbstractGenericModule() {
+			
+			public Class<? extends IEncodingProvider> bindIEncodingProvider() {
+				return IEncodingProvider.Runtime.class;
+			}
+			
+		}).injectMembers(fsa);
+		
+
+		fsa1.setOutputPath("/tmp");
+		fsa1.generateFile("xxxx.txt", "contents");
+		*/
+		
+		//fsa.setOutputPath('/tmp')
+		//fsa.generateFile('result567.java', result)
+		
 			/* 
 			resource.allContents
 				.filter(typeof(Main))

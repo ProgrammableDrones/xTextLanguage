@@ -1,0 +1,6 @@
+uk/ac/ox/cs/xdrone/web/XDroneResourceHandler.class
+uk/ac/ox/cs/xdrone/web/ServerLauncher.class
+uk/ac/ox/cs/xdrone/web/XDroneServlet.class
+uk/ac/ox/cs/xdrone/web/XDroneWebModule.class
+uk/ac/ox/cs/xdrone/web/XDroneWebSetup.class
+uk/ac/ox/cs/xdrone/web/XDroneServiceDispatcher.class

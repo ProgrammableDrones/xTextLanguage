@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<units size='1'>
+  <unit id='uk.ac.ox.cs.xdrone' version='1.0.0.201704251525'>
+    <update id='uk.ac.ox.cs.xdrone' range='[0.0.0,1.0.0.201704251525)' severity='0'/>
+    <properties size='5'>
+      <property name='org.eclipse.equinox.p2.name' value='uk.ac.ox.cs.xdrone'/>
+      <property name='org.eclipse.equinox.p2.provider' value='My Company'/>
+      <property name='maven-groupId' value='uk.ac.ox.cs.xdrone'/>
+      <property name='maven-artifactId' value='uk.ac.ox.cs.xdrone'/>
+      <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+    </properties>
+    <provides size='15'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='uk.ac.ox.cs.xdrone' version='1.0.0.201704251525'/>
+      <provided namespace='osgi.bundle' name='uk.ac.ox.cs.xdrone' version='1.0.0.201704251525'/>
+      <provided namespace='java.package' name='uk.ac.ox.cs.xdrone.parser.antlr.internal' version='0.0.0'/>
+      <provided namespace='java.package' name='uk.ac.ox.cs.xdrone.generator' version='0.0.0'/>
+      <provided namespace='java.package' name='uk.ac.ox.cs.xdrone' version='0.0.0'/>
+      <provided namespace='java.package' name='uk.ac.ox.cs.xdrone.xDrone.impl' version='0.0.0'/>
+      <provided namespace='java.package' name='uk.ac.ox.cs.xdrone.serializer' version='0.0.0'/>
+      <provided namespace='java.package' name='uk.ac.ox.cs.xdrone.parser.antlr' version='0.0.0'/>
+      <provided namespace='java.package' name='uk.ac.ox.cs.xdrone.scoping' version='0.0.0'/>
+      <provided namespace='java.package' name='uk.ac.ox.cs.xdrone.validation' version='0.0.0'/>
+      <provided namespace='java.package' name='uk.ac.ox.cs.xdrone.services' version='0.0.0'/>
+      <provided namespace='java.package' name='uk.ac.ox.cs.xdrone.xDrone' version='0.0.0'/>
+      <provided namespace='java.package' name='uk.ac.ox.cs.xdrone.xDrone.util' version='0.0.0'/>
+      <provided namespace='java.package' name='uk.ac.ox.cs.xdrone.formatting2' version='0.0.0'/>
+      <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+    </provides>
+    <requires size='10'>
+      <required namespace='osgi.bundle' name='org.eclipse.xtext' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.xtext.xbase' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.equinox.common' range='3.5.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.emf.ecore' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.xtext.xbase.lib' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.antlr.runtime' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.xtext.util' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.xtend.lib' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.emf.common' range='0.0.0'/>
+      <required namespace='java.package' name='org.apache.log4j' range='0.0.0'/>
+    </requires>
+    <artifacts size='1'>
+      <artifact classifier='osgi.bundle' id='uk.ac.ox.cs.xdrone' version='1.0.0.201704251525'/>
+    </artifacts>
+    <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+    <touchpointData size='1'>
+      <instructions size='1'>
+        <instruction key='manifest'>
+          Bundle-SymbolicName: uk.ac.ox.cs.xdrone; singleton:=true&#xA;Bundle-Version: 1.0.0.201704251525&#xA;
+        </instruction>
+      </instructions>
+    </touchpointData>
+  </unit>
+</units>

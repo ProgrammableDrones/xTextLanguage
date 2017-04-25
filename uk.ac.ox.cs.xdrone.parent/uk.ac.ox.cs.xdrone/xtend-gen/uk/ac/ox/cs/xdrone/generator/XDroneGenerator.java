@@ -5,6 +5,8 @@ package uk.ac.ox.cs.xdrone.generator;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterators;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Iterator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -12,6 +14,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import uk.ac.ox.cs.xdrone.xDrone.Main;
 
 /**
@@ -31,6 +34,16 @@ public class XDroneGenerator extends AbstractGenerator {
       String _result = result;
       result = (_result + "public static void main(String[] args) {}");
     }
-    fsa.generateFile("functions.txt", ("Defined functions: " + result));
+    try {
+      PrintWriter writer = new PrintWriter("/tmp/result567.java", "UTF-8");
+      writer.println(result);
+      writer.close();
+    } catch (final Throwable _t) {
+      if (_t instanceof IOException) {
+        final IOException e = (IOException)_t;
+      } else {
+        throw Exceptions.sneakyThrow(_t);
+      }
+    }
   }
 }

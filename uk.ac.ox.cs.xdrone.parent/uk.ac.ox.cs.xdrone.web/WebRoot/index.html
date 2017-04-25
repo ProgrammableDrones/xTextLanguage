@@ -18,7 +18,10 @@
 		if (!location.origin)
    			location.origin = location.protocol + "//" + location.host;
 		
+		
+		
 		console.log("origin: "+location.origin);
+		baseUrl = location.origin + '/'
 		
 		require.config({
 			baseUrl: baseUrl,
@@ -43,7 +46,7 @@
 					};	
 					console.log(data);
 									
-					jQuery.post(baseUrl+'/xtext-service/save?resource='+editor.xtextServices.options.resourceId, data, function(result){
+					jQuery.post(baseUrl + 'xtext-service/save?resource='+editor.xtextServices.options.resourceId, data, function(result){
 						console.log("saved resource");
 					}); 
 					e.preventDefault();
@@ -59,12 +62,24 @@
 						fullText : editor.getValue()
 					};	
 					console.log(data);	
-					jQuery.post(baseUrl+'/xtext-service/save?resource='+editor.xtextServices.options.resourceId, data, function(result){
+					jQuery.post(baseUrl+'xtext-service/save?resource='+editor.xtextServices.options.resourceId, data, function(result){
 						console.log("saved resource");
 					}); 				
-					jQuery.post(baseUrl+'/xtext-service/deploy?resource='+editor.xtextServices.options.resourceId, data, function(result){
+					jQuery.post(baseUrl+'xtext-service/deploy?resource='+editor.xtextServices.options.resourceId, data, function(result){
 						console.log("deploying resource");
 					}); 
+					e.preventDefault();
+				});
+				
+				jQuery('#compile-button').bind("click", function(e){
+					var data = {
+						resource : editor.xtextServices.options.resourceId,
+						fullText : editor.getValue()
+					};	
+					console.log(data);	
+					jQuery.post(baseUrl+'xtext-service/compile?resource='+editor.xtextServices.options.resourceId, data, function(result){
+						console.log("resource generated");
+					}); 				
 					e.preventDefault();
 				}
 				
@@ -77,8 +92,12 @@
 
 <div class="container">
 	<div class="header">
-	<input type="button" name="Save" value="Save" id="save-button"/> 
-		<h1>Example XDrone Web Editor</h1>
+	<input type="button" name="Save" value="Save" id="save-button"/>
+	<input type="button" name="Compile" value="Compile" id="compile-button"/>
+	<input type="button" name="Deploy" value="Deploy" id="deploy-button"/>
+	<input type="button" name="EMERGENCY STOP" value="EMERGENCY STOP" id="stop-button"/>
+	
+		<h1>XDrone Web Editor</h1>
 	</div>
 	
 	<div class="content">

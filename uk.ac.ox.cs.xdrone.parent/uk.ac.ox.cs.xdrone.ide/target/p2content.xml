@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<units size='1'>
+  <unit id='uk.ac.ox.cs.xdrone.ide' version='1.0.0.201704251525'>
+    <update id='uk.ac.ox.cs.xdrone.ide' range='[0.0.0,1.0.0.201704251525)' severity='0'/>
+    <properties size='5'>
+      <property name='org.eclipse.equinox.p2.name' value='uk.ac.ox.cs.xdrone.ide'/>
+      <property name='org.eclipse.equinox.p2.provider' value='My Company'/>
+      <property name='maven-groupId' value='uk.ac.ox.cs.xdrone'/>
+      <property name='maven-artifactId' value='uk.ac.ox.cs.xdrone.ide'/>
+      <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+    </properties>
+    <provides size='5'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='uk.ac.ox.cs.xdrone.ide' version='1.0.0.201704251525'/>
+      <provided namespace='osgi.bundle' name='uk.ac.ox.cs.xdrone.ide' version='1.0.0.201704251525'/>
+      <provided namespace='java.package' name='uk.ac.ox.cs.xdrone.ide.contentassist.antlr' version='0.0.0'/>
+      <provided namespace='java.package' name='uk.ac.ox.cs.xdrone.ide.contentassist.antlr.internal' version='0.0.0'/>
+      <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+    </provides>
+    <requires size='3'>
+      <required namespace='osgi.bundle' name='uk.ac.ox.cs.xdrone' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.xtext.ide' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.xtext.xbase.ide' range='0.0.0'/>
+    </requires>
+    <artifacts size='1'>
+      <artifact classifier='osgi.bundle' id='uk.ac.ox.cs.xdrone.ide' version='1.0.0.201704251525'/>
+    </artifacts>
+    <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+    <touchpointData size='1'>
+      <instructions size='1'>
+        <instruction key='manifest'>
+          Bundle-SymbolicName: uk.ac.ox.cs.xdrone.ide; singleton:=true&#xA;Bundle-Version: 1.0.0.201704251525&#xA;
+        </instruction>
+      </instructions>
+    </touchpointData>
+  </unit>
+</units>

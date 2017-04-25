@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: uk.ac.ox.cs.xdrone.ui; singleton:=true
+Export-Package: uk.ac.ox.cs.xdrone.ui.internal,uk.ac.ox.cs.xdrone.ui.q
+ uickfix,uk.ac.ox.cs.xdrone.ui.contentassist
+Bundle-Name: uk.ac.ox.cs.xdrone.ui
+Bundle-Version: 1.0.0.201704251525
+Require-Bundle: uk.ac.ox.cs.xdrone,uk.ac.ox.cs.xdrone.ide,org.eclipse.
+ xtext.ui,org.eclipse.xtext.ui.shared,org.eclipse.xtext.ui.codetemplat
+ es.ui,org.eclipse.ui.editors;bundle-version="3.5.0",org.eclipse.ui.id
+ e;bundle-version="3.5.0",org.eclipse.ui,org.eclipse.compare,org.eclip
+ se.xtext.builder,org.eclipse.xtend.lib;resolution:=optional,org.eclip
+ se.xtext.xbase.lib
+Bundle-ManifestVersion: 2
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Activator: uk.ac.ox.cs.xdrone.ui.internal.XdroneActivator
+Bundle-Vendor: My Company
+Import-Package: org.apache.log4j
+

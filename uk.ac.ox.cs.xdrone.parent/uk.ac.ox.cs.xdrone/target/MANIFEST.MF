@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: uk.ac.ox.cs.xdrone; singleton:=true
+Export-Package: uk.ac.ox.cs.xdrone.parser.antlr.internal,uk.ac.ox.cs.x
+ drone.generator,uk.ac.ox.cs.xdrone,uk.ac.ox.cs.xdrone.xDrone.impl,uk.
+ ac.ox.cs.xdrone.serializer,uk.ac.ox.cs.xdrone.parser.antlr,uk.ac.ox.c
+ s.xdrone.scoping,uk.ac.ox.cs.xdrone.validation,uk.ac.ox.cs.xdrone.ser
+ vices,uk.ac.ox.cs.xdrone.xDrone,uk.ac.ox.cs.xdrone.xDrone.util,uk.ac.
+ ox.cs.xdrone.formatting2
+Bundle-Name: uk.ac.ox.cs.xdrone
+Bundle-Version: 1.0.0.201704251525
+Require-Bundle: org.eclipse.xtext,org.eclipse.xtext.xbase,org.eclipse.
+ equinox.common;bundle-version="3.5.0",org.eclipse.emf.ecore,org.eclip
+ se.xtext.xbase.lib,org.antlr.runtime,org.eclipse.xtext.util,org.eclip
+ se.xtend.lib,org.eclipse.emf.common
+Bundle-ManifestVersion: 2
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: My Company
+Import-Package: org.apache.log4j
+
