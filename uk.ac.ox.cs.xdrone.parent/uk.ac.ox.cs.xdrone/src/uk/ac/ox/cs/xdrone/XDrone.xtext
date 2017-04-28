@@ -6,70 +6,54 @@ generate xDrone "http://www.ac.uk/ox/cs/xdrone/XDrone"
 import "http://www.eclipse.org/xtext/xbase/Xbase"
  
 Program :
-  subPrograms+= Fun*
   main = Main
 ;
   
-Fun:
-  'fun' name=ID 
-  ('input' (parameters += Parameter)*)?
-  body=Body;
-
-Parameter:
-	name = ID
-	type = Type
-;
-
-Type:
-	'number'
-;
  
 Main :
-  'main' name = ID
-  ('input' (parameters += Parameter)*)?
+  'xdrone' name = ID
   'begin' 
   (commands+=Command ';'?)*
-  ('return' Command)?
   'end'
 ; 
  
-Body returns BlockExpression:
-  {BlockExpression}
-  'begin'
-  (commands+=Command ';'?)*
-  ('return' Command)?
-  'end'
-;
 
 Command:
-	'home' | 'emergencyStop' | 'UP' | 'DOWN' | 'LEFT' | 'RIGHT' | 
-	'FORWARD' | 'BACKWARD'
-;
-  
-Executable:
-  Program | Fun;
-  
-  
-
-/*
- * Here we have the expression handling
- */
- 
-Addition returns Expression:
- 	Multiplication ({Addition.left=current} '+' right = Multiplication)*
-;
- 
-Multiplication returns Expression:
-	Primary ({Multiplication.left = current} '*' right = Primary)*
+	  {Command} HOME 
+	| {Command} EMERGENCY
+	| UP 
+	| DOWN 
+	| LEFT 
+	| RIGHT 
+	| FORWARD 
+	| BACKWARD
+	| ROTATE
+	
 ;
 
-Primary returns Expression:
-	Number | '(' Addition ')'
-;
-
-Number: value = INT;
- 
-/*
- * End of Expression Handling
- */
+HOME : 'home';
+EMERGENCY: 'emergencyStop';  
   
+UP: 
+	'UP' '('milliseconds = INT')'
+;
+DOWN: 
+	'DOWN' '('milliseconds = INT')'
+;
+LEFT: 
+	'LEFT' '('milliseconds = INT')'
+;
+RIGHT: 
+	'RIGHT' '('milliseconds = INT')'
+;
+FORWARD: 
+	'FORWARD' '('milliseconds = INT')'
+;
+BACKWARD: 
+	'BACKWARD' '('milliseconds = INT')'
+;
+ROTATE: 
+	'ROTATE' '('degrees = INT')'
+;
+  
+   

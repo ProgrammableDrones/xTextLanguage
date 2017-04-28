@@ -1,48 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="xDrone" nsURI="http://www.ac.uk/ox/cs/xdrone/XDrone" nsPrefix="xDrone">
-  <eClassifiers xsi:type="ecore:EClass" name="Program" eSuperTypes="#//Executable">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="subPrograms" upperBound="-1"
-        eType="#//Fun" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Program">
     <eStructuralFeatures xsi:type="ecore:EReference" name="main" eType="#//Main" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Fun" eSuperTypes="#//Executable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="#//Parameter" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//BlockExpression"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Main">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="#//Parameter" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commands" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"
+        eType="#//Command" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BlockExpression">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commands" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Command"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UP" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="milliseconds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Executable"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Number" eSuperTypes="#//Expression">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DOWN" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="milliseconds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Addition" eSuperTypes="#//Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expression"
-        containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LEFT" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="milliseconds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Multiplication" eSuperTypes="#//Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expression"
-        containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RIGHT" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="milliseconds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FORWARD" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="milliseconds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BACKWARD" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="milliseconds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ROTATE" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="degrees" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>

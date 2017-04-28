@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.Main#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.Main#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.Main#getCommands <em>Commands</em>}</li>
  * </ul>
  *
@@ -54,35 +53,19 @@ public interface Main extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.ox.cs.xdrone.xDrone.Parameter}.
+   * Returns the value of the '<em><b>Commands</b></em>' containment reference list.
+   * The list contents are of type {@link uk.ac.ox.cs.xdrone.xDrone.Command}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Commands</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Parameters</em>' containment reference list.
-   * @see uk.ac.ox.cs.xdrone.xDrone.XDronePackage#getMain_Parameters()
+   * @return the value of the '<em>Commands</em>' containment reference list.
+   * @see uk.ac.ox.cs.xdrone.xDrone.XDronePackage#getMain_Commands()
    * @model containment="true"
    * @generated
    */
-  EList<Parameter> getParameters();
-
-  /**
-   * Returns the value of the '<em><b>Commands</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Commands</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Commands</em>' attribute list.
-   * @see uk.ac.ox.cs.xdrone.xDrone.XDronePackage#getMain_Commands()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getCommands();
+  EList<Command> getCommands();
 
 } // Main

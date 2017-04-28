@@ -8,16 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import uk.ac.ox.cs.xdrone.xDrone.Addition;
-import uk.ac.ox.cs.xdrone.xDrone.BlockExpression;
-import uk.ac.ox.cs.xdrone.xDrone.Executable;
-import uk.ac.ox.cs.xdrone.xDrone.Expression;
-import uk.ac.ox.cs.xdrone.xDrone.Fun;
-import uk.ac.ox.cs.xdrone.xDrone.Main;
-import uk.ac.ox.cs.xdrone.xDrone.Multiplication;
-import uk.ac.ox.cs.xdrone.xDrone.Parameter;
-import uk.ac.ox.cs.xdrone.xDrone.Program;
-import uk.ac.ox.cs.xdrone.xDrone.XDronePackage;
+import uk.ac.ox.cs.xdrone.xDrone.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,22 +77,6 @@ public class XDroneSwitch<T> extends Switch<T>
       {
         Program program = (Program)theEObject;
         T result = caseProgram(program);
-        if (result == null) result = caseExecutable(program);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case XDronePackage.FUN:
-      {
-        Fun fun = (Fun)theEObject;
-        T result = caseFun(fun);
-        if (result == null) result = caseExecutable(fun);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case XDronePackage.PARAMETER:
-      {
-        Parameter parameter = (Parameter)theEObject;
-        T result = caseParameter(parameter);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -112,48 +87,66 @@ public class XDroneSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XDronePackage.BLOCK_EXPRESSION:
+      case XDronePackage.COMMAND:
       {
-        BlockExpression blockExpression = (BlockExpression)theEObject;
-        T result = caseBlockExpression(blockExpression);
+        Command command = (Command)theEObject;
+        T result = caseCommand(command);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XDronePackage.EXECUTABLE:
+      case XDronePackage.UP:
       {
-        Executable executable = (Executable)theEObject;
-        T result = caseExecutable(executable);
+        UP up = (UP)theEObject;
+        T result = caseUP(up);
+        if (result == null) result = caseCommand(up);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XDronePackage.EXPRESSION:
+      case XDronePackage.DOWN:
       {
-        Expression expression = (Expression)theEObject;
-        T result = caseExpression(expression);
+        DOWN down = (DOWN)theEObject;
+        T result = caseDOWN(down);
+        if (result == null) result = caseCommand(down);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XDronePackage.NUMBER:
+      case XDronePackage.LEFT:
       {
-        uk.ac.ox.cs.xdrone.xDrone.Number number = (uk.ac.ox.cs.xdrone.xDrone.Number)theEObject;
-        T result = caseNumber(number);
-        if (result == null) result = caseExpression(number);
+        LEFT left = (LEFT)theEObject;
+        T result = caseLEFT(left);
+        if (result == null) result = caseCommand(left);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XDronePackage.ADDITION:
+      case XDronePackage.RIGHT:
       {
-        Addition addition = (Addition)theEObject;
-        T result = caseAddition(addition);
-        if (result == null) result = caseExpression(addition);
+        RIGHT right = (RIGHT)theEObject;
+        T result = caseRIGHT(right);
+        if (result == null) result = caseCommand(right);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XDronePackage.MULTIPLICATION:
+      case XDronePackage.FORWARD:
       {
-        Multiplication multiplication = (Multiplication)theEObject;
-        T result = caseMultiplication(multiplication);
-        if (result == null) result = caseExpression(multiplication);
+        FORWARD forward = (FORWARD)theEObject;
+        T result = caseFORWARD(forward);
+        if (result == null) result = caseCommand(forward);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XDronePackage.BACKWARD:
+      {
+        BACKWARD backward = (BACKWARD)theEObject;
+        T result = caseBACKWARD(backward);
+        if (result == null) result = caseCommand(backward);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XDronePackage.ROTATE:
+      {
+        ROTATE rotate = (ROTATE)theEObject;
+        T result = caseROTATE(rotate);
+        if (result == null) result = caseCommand(rotate);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -178,38 +171,6 @@ public class XDroneSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Fun</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Fun</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFun(Fun object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseParameter(Parameter object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Main</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -226,97 +187,129 @@ public class XDroneSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Block Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Command</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Block Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Command</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBlockExpression(BlockExpression object)
+  public T caseCommand(Command object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Executable</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>UP</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Executable</em>'.
+   * @return the result of interpreting the object as an instance of '<em>UP</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseExecutable(Executable object)
+  public T caseUP(UP object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>DOWN</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>DOWN</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseExpression(Expression object)
+  public T caseDOWN(DOWN object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Number</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>LEFT</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number</em>'.
+   * @return the result of interpreting the object as an instance of '<em>LEFT</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNumber(uk.ac.ox.cs.xdrone.xDrone.Number object)
+  public T caseLEFT(LEFT object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Addition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>RIGHT</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Addition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>RIGHT</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAddition(Addition object)
+  public T caseRIGHT(RIGHT object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Multiplication</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>FORWARD</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Multiplication</em>'.
+   * @return the result of interpreting the object as an instance of '<em>FORWARD</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseMultiplication(Multiplication object)
+  public T caseFORWARD(FORWARD object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>BACKWARD</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>BACKWARD</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBACKWARD(BACKWARD object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>ROTATE</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>ROTATE</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseROTATE(ROTATE object)
   {
     return null;
   }

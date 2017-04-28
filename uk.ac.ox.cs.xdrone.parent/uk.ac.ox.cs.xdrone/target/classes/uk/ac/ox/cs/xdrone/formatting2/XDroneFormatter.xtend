@@ -7,8 +7,6 @@ import com.google.inject.Inject
 import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
 import uk.ac.ox.cs.xdrone.services.XDroneGrammarAccess
-import uk.ac.ox.cs.xdrone.xDrone.Fun
-import uk.ac.ox.cs.xdrone.xDrone.Parameter
 import uk.ac.ox.cs.xdrone.xDrone.Program
 
 class XDroneFormatter extends AbstractFormatter2 {
@@ -17,19 +15,13 @@ class XDroneFormatter extends AbstractFormatter2 {
 
 	def dispatch void format(Program program, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (Fun subPrograms : program.getSubPrograms()) {
-			subPrograms.format;
-		}
 		program.getMain.format;
 	}
 
-	def dispatch void format(Fun fun, extension IFormattableDocument document) {
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (Parameter parameters : fun.getParameters()) {
-			parameters.format;
-		}
-		fun.getBody.format;
-	}
+	///def dispatch void format(Fun fun, extension IFormattableDocument document) {
+///		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. /
+	///	fun.getBody.format;
+///	}
 	
 	// TODO: implement for Main
 }

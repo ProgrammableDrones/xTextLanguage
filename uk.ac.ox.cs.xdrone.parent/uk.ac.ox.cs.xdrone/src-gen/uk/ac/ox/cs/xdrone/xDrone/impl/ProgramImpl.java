@@ -3,22 +3,15 @@
  */
 package uk.ac.ox.cs.xdrone.xDrone.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import uk.ac.ox.cs.xdrone.xDrone.Fun;
 import uk.ac.ox.cs.xdrone.xDrone.Main;
 import uk.ac.ox.cs.xdrone.xDrone.Program;
 import uk.ac.ox.cs.xdrone.xDrone.XDronePackage;
@@ -31,24 +24,13 @@ import uk.ac.ox.cs.xdrone.xDrone.XDronePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.impl.ProgramImpl#getSubPrograms <em>Sub Programs</em>}</li>
  *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.impl.ProgramImpl#getMain <em>Main</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ProgramImpl extends ExecutableImpl implements Program
+public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 {
-  /**
-   * The cached value of the '{@link #getSubPrograms() <em>Sub Programs</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSubPrograms()
-   * @generated
-   * @ordered
-   */
-  protected EList<Fun> subPrograms;
-
   /**
    * The cached value of the '{@link #getMain() <em>Main</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -78,20 +60,6 @@ public class ProgramImpl extends ExecutableImpl implements Program
   protected EClass eStaticClass()
   {
     return XDronePackage.Literals.PROGRAM;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Fun> getSubPrograms()
-  {
-    if (subPrograms == null)
-    {
-      subPrograms = new EObjectContainmentEList<Fun>(Fun.class, this, XDronePackage.PROGRAM__SUB_PROGRAMS);
-    }
-    return subPrograms;
   }
 
   /**
@@ -152,8 +120,6 @@ public class ProgramImpl extends ExecutableImpl implements Program
   {
     switch (featureID)
     {
-      case XDronePackage.PROGRAM__SUB_PROGRAMS:
-        return ((InternalEList<?>)getSubPrograms()).basicRemove(otherEnd, msgs);
       case XDronePackage.PROGRAM__MAIN:
         return basicSetMain(null, msgs);
     }
@@ -170,8 +136,6 @@ public class ProgramImpl extends ExecutableImpl implements Program
   {
     switch (featureID)
     {
-      case XDronePackage.PROGRAM__SUB_PROGRAMS:
-        return getSubPrograms();
       case XDronePackage.PROGRAM__MAIN:
         return getMain();
     }
@@ -183,16 +147,11 @@ public class ProgramImpl extends ExecutableImpl implements Program
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case XDronePackage.PROGRAM__SUB_PROGRAMS:
-        getSubPrograms().clear();
-        getSubPrograms().addAll((Collection<? extends Fun>)newValue);
-        return;
       case XDronePackage.PROGRAM__MAIN:
         setMain((Main)newValue);
         return;
@@ -210,9 +169,6 @@ public class ProgramImpl extends ExecutableImpl implements Program
   {
     switch (featureID)
     {
-      case XDronePackage.PROGRAM__SUB_PROGRAMS:
-        getSubPrograms().clear();
-        return;
       case XDronePackage.PROGRAM__MAIN:
         setMain((Main)null);
         return;
@@ -230,8 +186,6 @@ public class ProgramImpl extends ExecutableImpl implements Program
   {
     switch (featureID)
     {
-      case XDronePackage.PROGRAM__SUB_PROGRAMS:
-        return subPrograms != null && !subPrograms.isEmpty();
       case XDronePackage.PROGRAM__MAIN:
         return main != null;
     }

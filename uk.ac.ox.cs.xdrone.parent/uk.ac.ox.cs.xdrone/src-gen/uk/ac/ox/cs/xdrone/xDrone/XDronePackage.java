@@ -58,25 +58,6 @@ public interface XDronePackage extends EPackage
   XDronePackage eINSTANCE = uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl.init();
 
   /**
-   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.ExecutableImpl <em>Executable</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.ox.cs.xdrone.xDrone.impl.ExecutableImpl
-   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getExecutable()
-   * @generated
-   */
-  int EXECUTABLE = 5;
-
-  /**
-   * The number of structural features of the '<em>Executable</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXECUTABLE_FEATURE_COUNT = 0;
-
-  /**
    * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.ProgramImpl <em>Program</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -87,22 +68,13 @@ public interface XDronePackage extends EPackage
   int PROGRAM = 0;
 
   /**
-   * The feature id for the '<em><b>Sub Programs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROGRAM__SUB_PROGRAMS = EXECUTABLE_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Main</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROGRAM__MAIN = EXECUTABLE_FEATURE_COUNT + 1;
+  int PROGRAM__MAIN = 0;
 
   /**
    * The number of structural features of the '<em>Program</em>' class.
@@ -111,90 +83,7 @@ public interface XDronePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROGRAM_FEATURE_COUNT = EXECUTABLE_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.FunImpl <em>Fun</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.ox.cs.xdrone.xDrone.impl.FunImpl
-   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getFun()
-   * @generated
-   */
-  int FUN = 1;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUN__NAME = EXECUTABLE_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUN__PARAMETERS = EXECUTABLE_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Body</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUN__BODY = EXECUTABLE_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Fun</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUN_FEATURE_COUNT = EXECUTABLE_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.ParameterImpl <em>Parameter</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.ox.cs.xdrone.xDrone.impl.ParameterImpl
-   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getParameter()
-   * @generated
-   */
-  int PARAMETER = 2;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARAMETER__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARAMETER__TYPE = 1;
-
-  /**
-   * The number of structural features of the '<em>Parameter</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARAMETER_FEATURE_COUNT = 2;
+  int PROGRAM_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.MainImpl <em>Main</em>}' class.
@@ -204,7 +93,7 @@ public interface XDronePackage extends EPackage
    * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getMain()
    * @generated
    */
-  int MAIN = 3;
+  int MAIN = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -216,22 +105,13 @@ public interface XDronePackage extends EPackage
   int MAIN__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+   * The feature id for the '<em><b>Commands</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MAIN__PARAMETERS = 1;
-
-  /**
-   * The feature id for the '<em><b>Commands</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAIN__COMMANDS = 2;
+  int MAIN__COMMANDS = 1;
 
   /**
    * The number of structural features of the '<em>Main</em>' class.
@@ -240,156 +120,222 @@ public interface XDronePackage extends EPackage
    * @generated
    * @ordered
    */
-  int MAIN_FEATURE_COUNT = 3;
+  int MAIN_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.BlockExpressionImpl <em>Block Expression</em>}' class.
+   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.CommandImpl <em>Command</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.ox.cs.xdrone.xDrone.impl.BlockExpressionImpl
-   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getBlockExpression()
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.CommandImpl
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getCommand()
    * @generated
    */
-  int BLOCK_EXPRESSION = 4;
+  int COMMAND = 2;
 
   /**
-   * The feature id for the '<em><b>Commands</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BLOCK_EXPRESSION__COMMANDS = 0;
-
-  /**
-   * The number of structural features of the '<em>Block Expression</em>' class.
+   * The number of structural features of the '<em>Command</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BLOCK_EXPRESSION_FEATURE_COUNT = 1;
+  int COMMAND_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.ExpressionImpl <em>Expression</em>}' class.
+   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.UPImpl <em>UP</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.ox.cs.xdrone.xDrone.impl.ExpressionImpl
-   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getExpression()
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.UPImpl
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getUP()
    * @generated
    */
-  int EXPRESSION = 6;
+  int UP = 3;
 
   /**
-   * The number of structural features of the '<em>Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.NumberImpl <em>Number</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.ox.cs.xdrone.xDrone.impl.NumberImpl
-   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getNumber()
-   * @generated
-   */
-  int NUMBER = 7;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Milliseconds</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMBER__VALUE = EXPRESSION_FEATURE_COUNT + 0;
+  int UP__MILLISECONDS = COMMAND_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Number</em>' class.
+   * The number of structural features of the '<em>UP</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMBER_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+  int UP_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.AdditionImpl <em>Addition</em>}' class.
+   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.DOWNImpl <em>DOWN</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.ox.cs.xdrone.xDrone.impl.AdditionImpl
-   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getAddition()
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.DOWNImpl
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getDOWN()
    * @generated
    */
-  int ADDITION = 8;
+  int DOWN = 4;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITION__LEFT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * The feature id for the '<em><b>Milliseconds</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ADDITION__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+  int DOWN__MILLISECONDS = COMMAND_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Addition</em>' class.
+   * The number of structural features of the '<em>DOWN</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ADDITION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+  int DOWN_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.MultiplicationImpl <em>Multiplication</em>}' class.
+   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.LEFTImpl <em>LEFT</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.ox.cs.xdrone.xDrone.impl.MultiplicationImpl
-   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getMultiplication()
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.LEFTImpl
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getLEFT()
    * @generated
    */
-  int MULTIPLICATION = 9;
+  int LEFT = 5;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATION__LEFT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * The feature id for the '<em><b>Milliseconds</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MULTIPLICATION__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+  int LEFT__MILLISECONDS = COMMAND_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Multiplication</em>' class.
+   * The number of structural features of the '<em>LEFT</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MULTIPLICATION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+  int LEFT_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.RIGHTImpl <em>RIGHT</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.RIGHTImpl
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getRIGHT()
+   * @generated
+   */
+  int RIGHT = 6;
+
+  /**
+   * The feature id for the '<em><b>Milliseconds</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RIGHT__MILLISECONDS = COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>RIGHT</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RIGHT_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.FORWARDImpl <em>FORWARD</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.FORWARDImpl
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getFORWARD()
+   * @generated
+   */
+  int FORWARD = 7;
+
+  /**
+   * The feature id for the '<em><b>Milliseconds</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORWARD__MILLISECONDS = COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>FORWARD</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORWARD_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.BACKWARDImpl <em>BACKWARD</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.BACKWARDImpl
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getBACKWARD()
+   * @generated
+   */
+  int BACKWARD = 8;
+
+  /**
+   * The feature id for the '<em><b>Milliseconds</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BACKWARD__MILLISECONDS = COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>BACKWARD</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BACKWARD_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.ROTATEImpl <em>ROTATE</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.ROTATEImpl
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getROTATE()
+   * @generated
+   */
+  int ROTATE = 9;
+
+  /**
+   * The feature id for the '<em><b>Degrees</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROTATE__DEGREES = COMMAND_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>ROTATE</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROTATE_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
 
 
   /**
@@ -403,17 +349,6 @@ public interface XDronePackage extends EPackage
   EClass getProgram();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.ox.cs.xdrone.xDrone.Program#getSubPrograms <em>Sub Programs</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Sub Programs</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Program#getSubPrograms()
-   * @see #getProgram()
-   * @generated
-   */
-  EReference getProgram_SubPrograms();
-
-  /**
    * Returns the meta object for the containment reference '{@link uk.ac.ox.cs.xdrone.xDrone.Program#getMain <em>Main</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -423,81 +358,6 @@ public interface XDronePackage extends EPackage
    * @generated
    */
   EReference getProgram_Main();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.Fun <em>Fun</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Fun</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Fun
-   * @generated
-   */
-  EClass getFun();
-
-  /**
-   * Returns the meta object for the attribute '{@link uk.ac.ox.cs.xdrone.xDrone.Fun#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Fun#getName()
-   * @see #getFun()
-   * @generated
-   */
-  EAttribute getFun_Name();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.ox.cs.xdrone.xDrone.Fun#getParameters <em>Parameters</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Parameters</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Fun#getParameters()
-   * @see #getFun()
-   * @generated
-   */
-  EReference getFun_Parameters();
-
-  /**
-   * Returns the meta object for the containment reference '{@link uk.ac.ox.cs.xdrone.xDrone.Fun#getBody <em>Body</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Body</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Fun#getBody()
-   * @see #getFun()
-   * @generated
-   */
-  EReference getFun_Body();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.Parameter <em>Parameter</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Parameter</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Parameter
-   * @generated
-   */
-  EClass getParameter();
-
-  /**
-   * Returns the meta object for the attribute '{@link uk.ac.ox.cs.xdrone.xDrone.Parameter#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Parameter#getName()
-   * @see #getParameter()
-   * @generated
-   */
-  EAttribute getParameter_Name();
-
-  /**
-   * Returns the meta object for the attribute '{@link uk.ac.ox.cs.xdrone.xDrone.Parameter#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Parameter#getType()
-   * @see #getParameter()
-   * @generated
-   */
-  EAttribute getParameter_Type();
 
   /**
    * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.Main <em>Main</em>}'.
@@ -521,152 +381,172 @@ public interface XDronePackage extends EPackage
   EAttribute getMain_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.ox.cs.xdrone.xDrone.Main#getParameters <em>Parameters</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.ox.cs.xdrone.xDrone.Main#getCommands <em>Commands</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Parameters</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Main#getParameters()
-   * @see #getMain()
-   * @generated
-   */
-  EReference getMain_Parameters();
-
-  /**
-   * Returns the meta object for the attribute list '{@link uk.ac.ox.cs.xdrone.xDrone.Main#getCommands <em>Commands</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Commands</em>'.
+   * @return the meta object for the containment reference list '<em>Commands</em>'.
    * @see uk.ac.ox.cs.xdrone.xDrone.Main#getCommands()
    * @see #getMain()
    * @generated
    */
-  EAttribute getMain_Commands();
+  EReference getMain_Commands();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.BlockExpression <em>Block Expression</em>}'.
+   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.Command <em>Command</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Block Expression</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.BlockExpression
+   * @return the meta object for class '<em>Command</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.Command
    * @generated
    */
-  EClass getBlockExpression();
+  EClass getCommand();
 
   /**
-   * Returns the meta object for the attribute list '{@link uk.ac.ox.cs.xdrone.xDrone.BlockExpression#getCommands <em>Commands</em>}'.
+   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.UP <em>UP</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Commands</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.BlockExpression#getCommands()
-   * @see #getBlockExpression()
+   * @return the meta object for class '<em>UP</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.UP
    * @generated
    */
-  EAttribute getBlockExpression_Commands();
+  EClass getUP();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.Executable <em>Executable</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.ox.cs.xdrone.xDrone.UP#getMilliseconds <em>Milliseconds</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Executable</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Executable
+   * @return the meta object for the attribute '<em>Milliseconds</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.UP#getMilliseconds()
+   * @see #getUP()
    * @generated
    */
-  EClass getExecutable();
+  EAttribute getUP_Milliseconds();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.Expression <em>Expression</em>}'.
+   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.DOWN <em>DOWN</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Expression</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Expression
+   * @return the meta object for class '<em>DOWN</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.DOWN
    * @generated
    */
-  EClass getExpression();
+  EClass getDOWN();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.Number <em>Number</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.ox.cs.xdrone.xDrone.DOWN#getMilliseconds <em>Milliseconds</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Number</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Number
+   * @return the meta object for the attribute '<em>Milliseconds</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.DOWN#getMilliseconds()
+   * @see #getDOWN()
    * @generated
    */
-  EClass getNumber();
+  EAttribute getDOWN_Milliseconds();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.ox.cs.xdrone.xDrone.Number#getValue <em>Value</em>}'.
+   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.LEFT <em>LEFT</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Number#getValue()
-   * @see #getNumber()
+   * @return the meta object for class '<em>LEFT</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.LEFT
    * @generated
    */
-  EAttribute getNumber_Value();
+  EClass getLEFT();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.Addition <em>Addition</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.ox.cs.xdrone.xDrone.LEFT#getMilliseconds <em>Milliseconds</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Addition</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Addition
+   * @return the meta object for the attribute '<em>Milliseconds</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.LEFT#getMilliseconds()
+   * @see #getLEFT()
    * @generated
    */
-  EClass getAddition();
+  EAttribute getLEFT_Milliseconds();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.ox.cs.xdrone.xDrone.Addition#getLeft <em>Left</em>}'.
+   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.RIGHT <em>RIGHT</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Addition#getLeft()
-   * @see #getAddition()
+   * @return the meta object for class '<em>RIGHT</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.RIGHT
    * @generated
    */
-  EReference getAddition_Left();
+  EClass getRIGHT();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.ox.cs.xdrone.xDrone.Addition#getRight <em>Right</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.ox.cs.xdrone.xDrone.RIGHT#getMilliseconds <em>Milliseconds</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Addition#getRight()
-   * @see #getAddition()
+   * @return the meta object for the attribute '<em>Milliseconds</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.RIGHT#getMilliseconds()
+   * @see #getRIGHT()
    * @generated
    */
-  EReference getAddition_Right();
+  EAttribute getRIGHT_Milliseconds();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.Multiplication <em>Multiplication</em>}'.
+   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.FORWARD <em>FORWARD</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Multiplication</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Multiplication
+   * @return the meta object for class '<em>FORWARD</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.FORWARD
    * @generated
    */
-  EClass getMultiplication();
+  EClass getFORWARD();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.ox.cs.xdrone.xDrone.Multiplication#getLeft <em>Left</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.ox.cs.xdrone.xDrone.FORWARD#getMilliseconds <em>Milliseconds</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Multiplication#getLeft()
-   * @see #getMultiplication()
+   * @return the meta object for the attribute '<em>Milliseconds</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.FORWARD#getMilliseconds()
+   * @see #getFORWARD()
    * @generated
    */
-  EReference getMultiplication_Left();
+  EAttribute getFORWARD_Milliseconds();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.ox.cs.xdrone.xDrone.Multiplication#getRight <em>Right</em>}'.
+   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.BACKWARD <em>BACKWARD</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see uk.ac.ox.cs.xdrone.xDrone.Multiplication#getRight()
-   * @see #getMultiplication()
+   * @return the meta object for class '<em>BACKWARD</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.BACKWARD
    * @generated
    */
-  EReference getMultiplication_Right();
+  EClass getBACKWARD();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.ox.cs.xdrone.xDrone.BACKWARD#getMilliseconds <em>Milliseconds</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Milliseconds</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.BACKWARD#getMilliseconds()
+   * @see #getBACKWARD()
+   * @generated
+   */
+  EAttribute getBACKWARD_Milliseconds();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.ROTATE <em>ROTATE</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>ROTATE</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.ROTATE
+   * @generated
+   */
+  EClass getROTATE();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.ox.cs.xdrone.xDrone.ROTATE#getDegrees <em>Degrees</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Degrees</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.ROTATE#getDegrees()
+   * @see #getROTATE()
+   * @generated
+   */
+  EAttribute getROTATE_Degrees();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -702,80 +582,12 @@ public interface XDronePackage extends EPackage
     EClass PROGRAM = eINSTANCE.getProgram();
 
     /**
-     * The meta object literal for the '<em><b>Sub Programs</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PROGRAM__SUB_PROGRAMS = eINSTANCE.getProgram_SubPrograms();
-
-    /**
      * The meta object literal for the '<em><b>Main</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference PROGRAM__MAIN = eINSTANCE.getProgram_Main();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.FunImpl <em>Fun</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.ox.cs.xdrone.xDrone.impl.FunImpl
-     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getFun()
-     * @generated
-     */
-    EClass FUN = eINSTANCE.getFun();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUN__NAME = eINSTANCE.getFun_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUN__PARAMETERS = eINSTANCE.getFun_Parameters();
-
-    /**
-     * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUN__BODY = eINSTANCE.getFun_Body();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.ParameterImpl <em>Parameter</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.ox.cs.xdrone.xDrone.impl.ParameterImpl
-     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getParameter()
-     * @generated
-     */
-    EClass PARAMETER = eINSTANCE.getParameter();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PARAMETER__NAME = eINSTANCE.getParameter_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PARAMETER__TYPE = eINSTANCE.getParameter_Type();
 
     /**
      * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.MainImpl <em>Main</em>}' class.
@@ -796,128 +608,148 @@ public interface XDronePackage extends EPackage
     EAttribute MAIN__NAME = eINSTANCE.getMain_Name();
 
     /**
-     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Commands</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MAIN__PARAMETERS = eINSTANCE.getMain_Parameters();
+    EReference MAIN__COMMANDS = eINSTANCE.getMain_Commands();
 
     /**
-     * The meta object literal for the '<em><b>Commands</b></em>' attribute list feature.
+     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.CommandImpl <em>Command</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.CommandImpl
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getCommand()
      * @generated
      */
-    EAttribute MAIN__COMMANDS = eINSTANCE.getMain_Commands();
+    EClass COMMAND = eINSTANCE.getCommand();
 
     /**
-     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.BlockExpressionImpl <em>Block Expression</em>}' class.
+     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.UPImpl <em>UP</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.ox.cs.xdrone.xDrone.impl.BlockExpressionImpl
-     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getBlockExpression()
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.UPImpl
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getUP()
      * @generated
      */
-    EClass BLOCK_EXPRESSION = eINSTANCE.getBlockExpression();
+    EClass UP = eINSTANCE.getUP();
 
     /**
-     * The meta object literal for the '<em><b>Commands</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Milliseconds</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BLOCK_EXPRESSION__COMMANDS = eINSTANCE.getBlockExpression_Commands();
+    EAttribute UP__MILLISECONDS = eINSTANCE.getUP_Milliseconds();
 
     /**
-     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.ExecutableImpl <em>Executable</em>}' class.
+     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.DOWNImpl <em>DOWN</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.ox.cs.xdrone.xDrone.impl.ExecutableImpl
-     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getExecutable()
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.DOWNImpl
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getDOWN()
      * @generated
      */
-    EClass EXECUTABLE = eINSTANCE.getExecutable();
+    EClass DOWN = eINSTANCE.getDOWN();
 
     /**
-     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.ExpressionImpl <em>Expression</em>}' class.
+     * The meta object literal for the '<em><b>Milliseconds</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.ox.cs.xdrone.xDrone.impl.ExpressionImpl
-     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getExpression()
      * @generated
      */
-    EClass EXPRESSION = eINSTANCE.getExpression();
+    EAttribute DOWN__MILLISECONDS = eINSTANCE.getDOWN_Milliseconds();
 
     /**
-     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.NumberImpl <em>Number</em>}' class.
+     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.LEFTImpl <em>LEFT</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.ox.cs.xdrone.xDrone.impl.NumberImpl
-     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getNumber()
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.LEFTImpl
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getLEFT()
      * @generated
      */
-    EClass NUMBER = eINSTANCE.getNumber();
+    EClass LEFT = eINSTANCE.getLEFT();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Milliseconds</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NUMBER__VALUE = eINSTANCE.getNumber_Value();
+    EAttribute LEFT__MILLISECONDS = eINSTANCE.getLEFT_Milliseconds();
 
     /**
-     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.AdditionImpl <em>Addition</em>}' class.
+     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.RIGHTImpl <em>RIGHT</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.ox.cs.xdrone.xDrone.impl.AdditionImpl
-     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getAddition()
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.RIGHTImpl
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getRIGHT()
      * @generated
      */
-    EClass ADDITION = eINSTANCE.getAddition();
+    EClass RIGHT = eINSTANCE.getRIGHT();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Milliseconds</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ADDITION__LEFT = eINSTANCE.getAddition_Left();
+    EAttribute RIGHT__MILLISECONDS = eINSTANCE.getRIGHT_Milliseconds();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.FORWARDImpl <em>FORWARD</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.FORWARDImpl
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getFORWARD()
      * @generated
      */
-    EReference ADDITION__RIGHT = eINSTANCE.getAddition_Right();
+    EClass FORWARD = eINSTANCE.getFORWARD();
 
     /**
-     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.MultiplicationImpl <em>Multiplication</em>}' class.
+     * The meta object literal for the '<em><b>Milliseconds</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.ox.cs.xdrone.xDrone.impl.MultiplicationImpl
-     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getMultiplication()
      * @generated
      */
-    EClass MULTIPLICATION = eINSTANCE.getMultiplication();
+    EAttribute FORWARD__MILLISECONDS = eINSTANCE.getFORWARD_Milliseconds();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.BACKWARDImpl <em>BACKWARD</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.BACKWARDImpl
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getBACKWARD()
      * @generated
      */
-    EReference MULTIPLICATION__LEFT = eINSTANCE.getMultiplication_Left();
+    EClass BACKWARD = eINSTANCE.getBACKWARD();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Milliseconds</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MULTIPLICATION__RIGHT = eINSTANCE.getMultiplication_Right();
+    EAttribute BACKWARD__MILLISECONDS = eINSTANCE.getBACKWARD_Milliseconds();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.ROTATEImpl <em>ROTATE</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.ROTATEImpl
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getROTATE()
+     * @generated
+     */
+    EClass ROTATE = eINSTANCE.getROTATE();
+
+    /**
+     * The meta object literal for the '<em><b>Degrees</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ROTATE__DEGREES = eINSTANCE.getROTATE_Degrees();
 
   }
 

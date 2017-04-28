@@ -7,38 +7,33 @@
   <genPackages prefix="XDrone" basePackage="uk.ac.ox.cs.xdrone" disposableProviderFactory="true"
       fileExtensions="xdrone" ecorePackage="XDrone.ecore#/">
     <genClasses ecoreClass="XDrone.ecore#//Program">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XDrone.ecore#//Program/subPrograms"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XDrone.ecore#//Program/main"/>
-    </genClasses>
-    <genClasses ecoreClass="XDrone.ecore#//Fun">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//Fun/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XDrone.ecore#//Fun/parameters"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XDrone.ecore#//Fun/body"/>
-    </genClasses>
-    <genClasses ecoreClass="XDrone.ecore#//Parameter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//Parameter/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//Parameter/type"/>
     </genClasses>
     <genClasses ecoreClass="XDrone.ecore#//Main">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//Main/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XDrone.ecore#//Main/parameters"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//Main/commands"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XDrone.ecore#//Main/commands"/>
     </genClasses>
-    <genClasses ecoreClass="XDrone.ecore#//BlockExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//BlockExpression/commands"/>
+    <genClasses ecoreClass="XDrone.ecore#//Command"/>
+    <genClasses ecoreClass="XDrone.ecore#//UP">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//UP/milliseconds"/>
     </genClasses>
-    <genClasses ecoreClass="XDrone.ecore#//Executable"/>
-    <genClasses ecoreClass="XDrone.ecore#//Expression"/>
-    <genClasses ecoreClass="XDrone.ecore#//Number">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//Number/value"/>
+    <genClasses ecoreClass="XDrone.ecore#//DOWN">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//DOWN/milliseconds"/>
     </genClasses>
-    <genClasses ecoreClass="XDrone.ecore#//Addition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XDrone.ecore#//Addition/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XDrone.ecore#//Addition/right"/>
+    <genClasses ecoreClass="XDrone.ecore#//LEFT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//LEFT/milliseconds"/>
     </genClasses>
-    <genClasses ecoreClass="XDrone.ecore#//Multiplication">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XDrone.ecore#//Multiplication/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XDrone.ecore#//Multiplication/right"/>
+    <genClasses ecoreClass="XDrone.ecore#//RIGHT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//RIGHT/milliseconds"/>
+    </genClasses>
+    <genClasses ecoreClass="XDrone.ecore#//FORWARD">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//FORWARD/milliseconds"/>
+    </genClasses>
+    <genClasses ecoreClass="XDrone.ecore#//BACKWARD">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//BACKWARD/milliseconds"/>
+    </genClasses>
+    <genClasses ecoreClass="XDrone.ecore#//ROTATE">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//ROTATE/degrees"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

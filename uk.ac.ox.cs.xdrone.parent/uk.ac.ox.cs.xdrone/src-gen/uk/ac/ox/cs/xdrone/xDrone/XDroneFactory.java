@@ -33,24 +33,6 @@ public interface XDroneFactory extends EFactory
   Program createProgram();
 
   /**
-   * Returns a new object of class '<em>Fun</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Fun</em>'.
-   * @generated
-   */
-  Fun createFun();
-
-  /**
-   * Returns a new object of class '<em>Parameter</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Parameter</em>'.
-   * @generated
-   */
-  Parameter createParameter();
-
-  /**
    * Returns a new object of class '<em>Main</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -60,58 +42,76 @@ public interface XDroneFactory extends EFactory
   Main createMain();
 
   /**
-   * Returns a new object of class '<em>Block Expression</em>'.
+   * Returns a new object of class '<em>Command</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Block Expression</em>'.
+   * @return a new object of class '<em>Command</em>'.
    * @generated
    */
-  BlockExpression createBlockExpression();
+  Command createCommand();
 
   /**
-   * Returns a new object of class '<em>Executable</em>'.
+   * Returns a new object of class '<em>UP</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Executable</em>'.
+   * @return a new object of class '<em>UP</em>'.
    * @generated
    */
-  Executable createExecutable();
+  UP createUP();
 
   /**
-   * Returns a new object of class '<em>Expression</em>'.
+   * Returns a new object of class '<em>DOWN</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expression</em>'.
+   * @return a new object of class '<em>DOWN</em>'.
    * @generated
    */
-  Expression createExpression();
+  DOWN createDOWN();
 
   /**
-   * Returns a new object of class '<em>Number</em>'.
+   * Returns a new object of class '<em>LEFT</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number</em>'.
+   * @return a new object of class '<em>LEFT</em>'.
    * @generated
    */
-  Number createNumber();
+  LEFT createLEFT();
 
   /**
-   * Returns a new object of class '<em>Addition</em>'.
+   * Returns a new object of class '<em>RIGHT</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Addition</em>'.
+   * @return a new object of class '<em>RIGHT</em>'.
    * @generated
    */
-  Addition createAddition();
+  RIGHT createRIGHT();
 
   /**
-   * Returns a new object of class '<em>Multiplication</em>'.
+   * Returns a new object of class '<em>FORWARD</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Multiplication</em>'.
+   * @return a new object of class '<em>FORWARD</em>'.
    * @generated
    */
-  Multiplication createMultiplication();
+  FORWARD createFORWARD();
+
+  /**
+   * Returns a new object of class '<em>BACKWARD</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>BACKWARD</em>'.
+   * @generated
+   */
+  BACKWARD createBACKWARD();
+
+  /**
+   * Returns a new object of class '<em>ROTATE</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>ROTATE</em>'.
+   * @generated
+   */
+  ROTATE createROTATE();
 
   /**
    * Returns the package supported by this factory.

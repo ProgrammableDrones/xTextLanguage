@@ -7,7 +7,6 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import uk.ac.ox.cs.xdrone.xDrone.Fun
 import uk.ac.ox.cs.xdrone.xDrone.Main
 import org.eclipse.xtext.generator.JavaIoFileSystemAccess
 import com.google.inject.Guice
@@ -15,6 +14,8 @@ import org.eclipse.xtext.service.AbstractGenericModule
 import org.eclipse.xtext.parser.IEncodingProvider
 import java.io.IOException
 import java.io.PrintWriter
+import uk.ac.ox.cs.xdrone.xDrone.UP
+import uk.ac.ox.cs.xdrone.xDrone.Command
 
 /**
  * Generates code from your model files on save.
@@ -23,16 +24,46 @@ import java.io.PrintWriter
  */
 class XDroneGenerator extends AbstractGenerator {
 
+	def compile(Main main)'''
+		var arDrone = require('ar-drone'); 
+		var client  = arDrone.createClient();
+		«FOR f : main.commands» 
+			«f.compile»
+		«ENDFOR»
+	'''
+	
+	def compile(Command up) '''
+		«IF up instanceof UP »
+		
+		client.takeoff();
+		
+		client
+		  .after(«up.milliseconds», function() {
+		    this.clockwise(0.5);
+		  })
+		  .after(«up.milliseconds», function() {
+		    this.stop();
+		    this.land();
+	  	  });
+	  	«ENDIF»
+	'''
+	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		var result = "";
+		for(main : resource.allContents.toIterable.filter(Main)) {
+			result = main.compile.toString; 
+			fsa.generateFile('result.js', result)
+		
+		}
+
+		var main = null;
 		if (resource.allContents
 				.filter(typeof(Main)) != null) {
-					result += "public static void main(String[] args) {}"
+					////main = resource.allContents.toIterable.filter(typeof(Main))
 				}
-
 		
 		try {
-		    var writer = new PrintWriter("/tmp/result567.java", "UTF-8");
+		    var writer = new PrintWriter("/tmp/result.js", "UTF-8");
 		    writer.println(result);
 		    writer.close();
 		} catch (IOException e) {
@@ -58,7 +89,7 @@ class XDroneGenerator extends AbstractGenerator {
 		*/
 		
 		//fsa.setOutputPath('/tmp')
-		//fsa.generateFile('result567.java', result)
+		fsa.generateFile('result.js', result)
 		
 			/* 
 			resource.allContents

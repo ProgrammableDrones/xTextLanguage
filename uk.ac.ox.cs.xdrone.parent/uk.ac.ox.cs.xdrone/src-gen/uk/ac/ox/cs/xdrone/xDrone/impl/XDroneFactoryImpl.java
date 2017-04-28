@@ -11,17 +11,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import uk.ac.ox.cs.xdrone.xDrone.Addition;
-import uk.ac.ox.cs.xdrone.xDrone.BlockExpression;
-import uk.ac.ox.cs.xdrone.xDrone.Executable;
-import uk.ac.ox.cs.xdrone.xDrone.Expression;
-import uk.ac.ox.cs.xdrone.xDrone.Fun;
-import uk.ac.ox.cs.xdrone.xDrone.Main;
-import uk.ac.ox.cs.xdrone.xDrone.Multiplication;
-import uk.ac.ox.cs.xdrone.xDrone.Parameter;
-import uk.ac.ox.cs.xdrone.xDrone.Program;
-import uk.ac.ox.cs.xdrone.xDrone.XDroneFactory;
-import uk.ac.ox.cs.xdrone.xDrone.XDronePackage;
+import uk.ac.ox.cs.xdrone.xDrone.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,15 +66,15 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
     switch (eClass.getClassifierID())
     {
       case XDronePackage.PROGRAM: return createProgram();
-      case XDronePackage.FUN: return createFun();
-      case XDronePackage.PARAMETER: return createParameter();
       case XDronePackage.MAIN: return createMain();
-      case XDronePackage.BLOCK_EXPRESSION: return createBlockExpression();
-      case XDronePackage.EXECUTABLE: return createExecutable();
-      case XDronePackage.EXPRESSION: return createExpression();
-      case XDronePackage.NUMBER: return createNumber();
-      case XDronePackage.ADDITION: return createAddition();
-      case XDronePackage.MULTIPLICATION: return createMultiplication();
+      case XDronePackage.COMMAND: return createCommand();
+      case XDronePackage.UP: return createUP();
+      case XDronePackage.DOWN: return createDOWN();
+      case XDronePackage.LEFT: return createLEFT();
+      case XDronePackage.RIGHT: return createRIGHT();
+      case XDronePackage.FORWARD: return createFORWARD();
+      case XDronePackage.BACKWARD: return createBACKWARD();
+      case XDronePackage.ROTATE: return createROTATE();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -106,28 +96,6 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Fun createFun()
-  {
-    FunImpl fun = new FunImpl();
-    return fun;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Parameter createParameter()
-  {
-    ParameterImpl parameter = new ParameterImpl();
-    return parameter;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Main createMain()
   {
     MainImpl main = new MainImpl();
@@ -139,10 +107,10 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BlockExpression createBlockExpression()
+  public Command createCommand()
   {
-    BlockExpressionImpl blockExpression = new BlockExpressionImpl();
-    return blockExpression;
+    CommandImpl command = new CommandImpl();
+    return command;
   }
 
   /**
@@ -150,10 +118,10 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Executable createExecutable()
+  public UP createUP()
   {
-    ExecutableImpl executable = new ExecutableImpl();
-    return executable;
+    UPImpl up = new UPImpl();
+    return up;
   }
 
   /**
@@ -161,10 +129,10 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression createExpression()
+  public DOWN createDOWN()
   {
-    ExpressionImpl expression = new ExpressionImpl();
-    return expression;
+    DOWNImpl down = new DOWNImpl();
+    return down;
   }
 
   /**
@@ -172,10 +140,10 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public uk.ac.ox.cs.xdrone.xDrone.Number createNumber()
+  public LEFT createLEFT()
   {
-    NumberImpl number = new NumberImpl();
-    return number;
+    LEFTImpl left = new LEFTImpl();
+    return left;
   }
 
   /**
@@ -183,10 +151,10 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Addition createAddition()
+  public RIGHT createRIGHT()
   {
-    AdditionImpl addition = new AdditionImpl();
-    return addition;
+    RIGHTImpl right = new RIGHTImpl();
+    return right;
   }
 
   /**
@@ -194,10 +162,32 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Multiplication createMultiplication()
+  public FORWARD createFORWARD()
   {
-    MultiplicationImpl multiplication = new MultiplicationImpl();
-    return multiplication;
+    FORWARDImpl forward = new FORWARDImpl();
+    return forward;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BACKWARD createBACKWARD()
+  {
+    BACKWARDImpl backward = new BACKWARDImpl();
+    return backward;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ROTATE createROTATE()
+  {
+    ROTATEImpl rotate = new ROTATEImpl();
+    return rotate;
   }
 
   /**

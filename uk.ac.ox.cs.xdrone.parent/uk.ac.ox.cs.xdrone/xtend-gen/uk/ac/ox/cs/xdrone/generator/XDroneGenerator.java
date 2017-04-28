@@ -4,18 +4,24 @@
 package uk.ac.ox.cs.xdrone.generator;
 
 import com.google.common.base.Objects;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Iterator;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import uk.ac.ox.cs.xdrone.xDrone.Command;
 import uk.ac.ox.cs.xdrone.xDrone.Main;
+import uk.ac.ox.cs.xdrone.xDrone.UP;
 
 /**
  * Generates code from your model files on save.
@@ -24,18 +30,87 @@ import uk.ac.ox.cs.xdrone.xDrone.Main;
  */
 @SuppressWarnings("all")
 public class XDroneGenerator extends AbstractGenerator {
+  public CharSequence compile(final Main main) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("var arDrone = require(\'ar-drone\'); ");
+    _builder.newLine();
+    _builder.append("var client  = arDrone.createClient();");
+    _builder.newLine();
+    {
+      EList<Command> _commands = main.getCommands();
+      for(final Command f : _commands) {
+        CharSequence _compile = this.compile(f);
+        _builder.append(_compile, "");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder;
+  }
+  
+  public CharSequence compile(final Command up) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      if ((up instanceof UP)) {
+        _builder.newLine();
+        _builder.append("client.takeoff();");
+        _builder.newLine();
+        _builder.newLine();
+        _builder.append("client");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append(".after(");
+        int _milliseconds = ((UP)up).getMilliseconds();
+        _builder.append(_milliseconds, "  ");
+        _builder.append(", function() {");
+        _builder.newLineIfNotEmpty();
+        _builder.append("    ");
+        _builder.append("this.clockwise(0.5);");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("})");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append(".after(");
+        int _milliseconds_1 = ((UP)up).getMilliseconds();
+        _builder.append(_milliseconds_1, "  ");
+        _builder.append(", function() {");
+        _builder.newLineIfNotEmpty();
+        _builder.append("    ");
+        _builder.append("this.stop();");
+        _builder.newLine();
+        _builder.append("    ");
+        _builder.append("this.land();");
+        _builder.newLine();
+        _builder.append("\t  \t  ");
+        _builder.append("});");
+        _builder.newLine();
+      }
+    }
+    return _builder;
+  }
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     String result = "";
     TreeIterator<EObject> _allContents = resource.getAllContents();
-    Iterator<Main> _filter = Iterators.<Main>filter(_allContents, Main.class);
-    boolean _notEquals = (!Objects.equal(_filter, null));
+    Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
+    Iterable<Main> _filter = Iterables.<Main>filter(_iterable, Main.class);
+    for (final Main main : _filter) {
+      {
+        CharSequence _compile = this.compile(main);
+        String _string = _compile.toString();
+        result = _string;
+        fsa.generateFile("result.js", result);
+      }
+    }
+    Object main_1 = null;
+    TreeIterator<EObject> _allContents_1 = resource.getAllContents();
+    Iterator<Main> _filter_1 = Iterators.<Main>filter(_allContents_1, Main.class);
+    boolean _notEquals = (!Objects.equal(_filter_1, null));
     if (_notEquals) {
-      String _result = result;
-      result = (_result + "public static void main(String[] args) {}");
     }
     try {
-      PrintWriter writer = new PrintWriter("/tmp/result567.java", "UTF-8");
+      PrintWriter writer = new PrintWriter("/tmp/result.js", "UTF-8");
       writer.println(result);
       writer.close();
     } catch (final Throwable _t) {
@@ -45,5 +120,6 @@ public class XDroneGenerator extends AbstractGenerator {
         throw Exceptions.sneakyThrow(_t);
       }
     }
+    fsa.generateFile("result.js", result);
   }
 }

@@ -10,7 +10,7 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -21,42 +21,38 @@ import uk.ac.ox.cs.xdrone.services.XDroneGrammarAccess;
 public abstract class AbstractXDroneSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected XDroneGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Body_SemicolonKeyword_2_1_q;
-	protected AbstractElementAlias match_Body___ReturnKeyword_3_0_CommandParserRuleCall_3_1__q;
-	protected AbstractElementAlias match_Fun_InputKeyword_2_0_q;
-	protected AbstractElementAlias match_Main_InputKeyword_2_0_q;
-	protected AbstractElementAlias match_Main_SemicolonKeyword_4_1_q;
-	protected AbstractElementAlias match_Main___ReturnKeyword_5_0_CommandParserRuleCall_5_1__q;
-	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_a;
-	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_p;
+	protected AbstractElementAlias match_Command_EMERGENCYParserRuleCall_1_1_or_HOMEParserRuleCall_0_1;
+	protected AbstractElementAlias match_Main_SemicolonKeyword_3_1_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (XDroneGrammarAccess) access;
-		match_Body_SemicolonKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getBodyAccess().getSemicolonKeyword_2_1());
-		match_Body___ReturnKeyword_3_0_CommandParserRuleCall_3_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getBodyAccess().getReturnKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getBodyAccess().getCommandParserRuleCall_3_1()));
-		match_Fun_InputKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getFunAccess().getInputKeyword_2_0());
-		match_Main_InputKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getMainAccess().getInputKeyword_2_0());
-		match_Main_SemicolonKeyword_4_1_q = new TokenAlias(false, true, grammarAccess.getMainAccess().getSemicolonKeyword_4_1());
-		match_Main___ReturnKeyword_5_0_CommandParserRuleCall_5_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getMainAccess().getReturnKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getMainAccess().getCommandParserRuleCall_5_1()));
-		match_Primary_LeftParenthesisKeyword_1_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
-		match_Primary_LeftParenthesisKeyword_1_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
+		match_Command_EMERGENCYParserRuleCall_1_1_or_HOMEParserRuleCall_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getCommandAccess().getEMERGENCYParserRuleCall_1_1()), new TokenAlias(false, false, grammarAccess.getCommandAccess().getHOMEParserRuleCall_0_1()));
+		match_Main_SemicolonKeyword_3_1_q = new TokenAlias(false, true, grammarAccess.getMainAccess().getSemicolonKeyword_3_1());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getCommandRule())
-			return getCommandToken(semanticObject, ruleCall, node);
+		if (ruleCall.getRule() == grammarAccess.getEMERGENCYRule())
+			return getEMERGENCYToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getHOMERule())
+			return getHOMEToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
 	/**
-	 * Command:
-	 * 	'home' | 'emergencyStop' | 'UP' | 'DOWN' | 'LEFT' | 'RIGHT' | 
-	 * 	'FORWARD' | 'BACKWARD'
-	 * ;
+	 * EMERGENCY: 'emergencyStop';
 	 */
-	protected String getCommandToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+	protected String getEMERGENCYToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "emergencyStop";
+	}
+	
+	/**
+	 * HOME : 'home';
+	 */
+	protected String getHOMEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
 		return "home";
@@ -68,70 +64,22 @@ public abstract class AbstractXDroneSyntacticSequencer extends AbstractSyntactic
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Body_SemicolonKeyword_2_1_q.equals(syntax))
-				emit_Body_SemicolonKeyword_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Body___ReturnKeyword_3_0_CommandParserRuleCall_3_1__q.equals(syntax))
-				emit_Body___ReturnKeyword_3_0_CommandParserRuleCall_3_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Fun_InputKeyword_2_0_q.equals(syntax))
-				emit_Fun_InputKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Main_InputKeyword_2_0_q.equals(syntax))
-				emit_Main_InputKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Main_SemicolonKeyword_4_1_q.equals(syntax))
-				emit_Main_SemicolonKeyword_4_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Main___ReturnKeyword_5_0_CommandParserRuleCall_5_1__q.equals(syntax))
-				emit_Main___ReturnKeyword_5_0_CommandParserRuleCall_5_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Primary_LeftParenthesisKeyword_1_0_a.equals(syntax))
-				emit_Primary_LeftParenthesisKeyword_1_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Primary_LeftParenthesisKeyword_1_0_p.equals(syntax))
-				emit_Primary_LeftParenthesisKeyword_1_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Command_EMERGENCYParserRuleCall_1_1_or_HOMEParserRuleCall_0_1.equals(syntax))
+				emit_Command_EMERGENCYParserRuleCall_1_1_or_HOMEParserRuleCall_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Main_SemicolonKeyword_3_1_q.equals(syntax))
+				emit_Main_SemicolonKeyword_3_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Ambiguous syntax:
-	 *     ';'?
+	 *     HOME | EMERGENCY
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     commands+=Command (ambiguity) ('return' Command)? 'end' (rule end)
-	 *     commands+=Command (ambiguity) commands+=Command
+	 *     (rule start) (ambiguity) (rule start)
 	 */
-	protected void emit_Body_SemicolonKeyword_2_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ('return' Command)?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'begin' (ambiguity) 'end' (rule start)
-	 *     commands+=Command ';'? (ambiguity) 'end' (rule end)
-	 */
-	protected void emit_Body___ReturnKeyword_3_0_CommandParserRuleCall_3_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'input'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     name=ID (ambiguity) body=Body
-	 */
-	protected void emit_Fun_InputKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'input'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     name=ID (ambiguity) 'begin' ('return' Command)? 'end' (rule end)
-	 *     name=ID (ambiguity) 'begin' commands+=Command
-	 */
-	protected void emit_Main_InputKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Command_EMERGENCYParserRuleCall_1_1_or_HOMEParserRuleCall_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -140,48 +88,10 @@ public abstract class AbstractXDroneSyntacticSequencer extends AbstractSyntactic
 	 *     ';'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     commands+=Command (ambiguity) ('return' Command)? 'end' (rule end)
+	 *     commands+=Command (ambiguity) 'end' (rule end)
 	 *     commands+=Command (ambiguity) commands+=Command
 	 */
-	protected void emit_Main_SemicolonKeyword_4_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ('return' Command)?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     commands+=Command ';'? (ambiguity) 'end' (rule end)
-	 *     name=ID 'input'? 'begin' (ambiguity) 'end' (rule end)
-	 *     parameters+=Parameter 'begin' (ambiguity) 'end' (rule end)
-	 */
-	protected void emit_Main___ReturnKeyword_5_0_CommandParserRuleCall_5_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     '('*
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) value=INT
-	 *     (rule start) (ambiguity) {Addition.left=}
-	 *     (rule start) (ambiguity) {Multiplication.left=}
-	 */
-	protected void emit_Primary_LeftParenthesisKeyword_1_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     '('+
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) {Addition.left=}
-	 *     (rule start) (ambiguity) {Multiplication.left=}
-	 */
-	protected void emit_Primary_LeftParenthesisKeyword_1_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Main_SemicolonKeyword_3_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

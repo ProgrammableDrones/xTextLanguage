@@ -5,17 +5,13 @@ package uk.ac.ox.cs.xdrone.formatting2;
 
 import com.google.inject.Inject;
 import java.util.Arrays;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.formatting2.AbstractFormatter2;
 import org.eclipse.xtext.formatting2.IFormattableDocument;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.xbase.lib.Extension;
 import uk.ac.ox.cs.xdrone.services.XDroneGrammarAccess;
-import uk.ac.ox.cs.xdrone.xDrone.BlockExpression;
-import uk.ac.ox.cs.xdrone.xDrone.Fun;
 import uk.ac.ox.cs.xdrone.xDrone.Main;
-import uk.ac.ox.cs.xdrone.xDrone.Parameter;
 import uk.ac.ox.cs.xdrone.xDrone.Program;
 
 @SuppressWarnings("all")
@@ -25,45 +21,29 @@ public class XDroneFormatter extends AbstractFormatter2 {
   private XDroneGrammarAccess _xDroneGrammarAccess;
   
   protected void _format(final Program program, @Extension final IFormattableDocument document) {
-    EList<Fun> _subPrograms = program.getSubPrograms();
-    for (final Fun subPrograms : _subPrograms) {
-      document.<Fun>format(subPrograms);
-    }
     Main _main = program.getMain();
     document.<Main>format(_main);
   }
   
-  protected void _format(final Fun fun, @Extension final IFormattableDocument document) {
-    EList<Parameter> _parameters = fun.getParameters();
-    for (final Parameter parameters : _parameters) {
-      document.<Parameter>format(parameters);
-    }
-    BlockExpression _body = fun.getBody();
-    document.<BlockExpression>format(_body);
-  }
-  
-  public void format(final Object fun, final IFormattableDocument document) {
-    if (fun instanceof XtextResource) {
-      _format((XtextResource)fun, document);
+  public void format(final Object program, final IFormattableDocument document) {
+    if (program instanceof XtextResource) {
+      _format((XtextResource)program, document);
       return;
-    } else if (fun instanceof Fun) {
-      _format((Fun)fun, document);
+    } else if (program instanceof Program) {
+      _format((Program)program, document);
       return;
-    } else if (fun instanceof Program) {
-      _format((Program)fun, document);
+    } else if (program instanceof EObject) {
+      _format((EObject)program, document);
       return;
-    } else if (fun instanceof EObject) {
-      _format((EObject)fun, document);
-      return;
-    } else if (fun == null) {
+    } else if (program == null) {
       _format((Void)null, document);
       return;
-    } else if (fun != null) {
-      _format(fun, document);
+    } else if (program != null) {
+      _format(program, document);
       return;
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(fun, document).toString());
+        Arrays.<Object>asList(program, document).toString());
     }
   }
 }

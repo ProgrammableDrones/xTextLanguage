@@ -3,7 +3,7 @@
  */
 package uk.ac.ox.cs.xdrone.xDrone;
 
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.Program#getSubPrograms <em>Sub Programs</em>}</li>
  *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.Program#getMain <em>Main</em>}</li>
  * </ul>
  *
@@ -22,24 +21,8 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Program extends Executable
+public interface Program extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Sub Programs</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.ox.cs.xdrone.xDrone.Fun}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Sub Programs</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Sub Programs</em>' containment reference list.
-   * @see uk.ac.ox.cs.xdrone.xDrone.XDronePackage#getProgram_SubPrograms()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Fun> getSubPrograms();
-
   /**
    * Returns the value of the '<em><b>Main</b></em>' containment reference.
    * <!-- begin-user-doc -->

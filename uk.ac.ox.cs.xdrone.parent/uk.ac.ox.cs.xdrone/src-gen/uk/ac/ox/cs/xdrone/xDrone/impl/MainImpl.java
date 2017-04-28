@@ -16,12 +16,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import uk.ac.ox.cs.xdrone.xDrone.Command;
 import uk.ac.ox.cs.xdrone.xDrone.Main;
-import uk.ac.ox.cs.xdrone.xDrone.Parameter;
 import uk.ac.ox.cs.xdrone.xDrone.XDronePackage;
 
 /**
@@ -33,7 +32,6 @@ import uk.ac.ox.cs.xdrone.xDrone.XDronePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.impl.MainImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.impl.MainImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.impl.MainImpl#getCommands <em>Commands</em>}</li>
  * </ul>
  *
@@ -62,24 +60,14 @@ public class MainImpl extends MinimalEObjectImpl.Container implements Main
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getParameters()
-   * @generated
-   * @ordered
-   */
-  protected EList<Parameter> parameters;
-
-  /**
-   * The cached value of the '{@link #getCommands() <em>Commands</em>}' attribute list.
+   * The cached value of the '{@link #getCommands() <em>Commands</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getCommands()
    * @generated
    * @ordered
    */
-  protected EList<String> commands;
+  protected EList<Command> commands;
 
   /**
    * <!-- begin-user-doc -->
@@ -130,25 +118,11 @@ public class MainImpl extends MinimalEObjectImpl.Container implements Main
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Parameter> getParameters()
-  {
-    if (parameters == null)
-    {
-      parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, XDronePackage.MAIN__PARAMETERS);
-    }
-    return parameters;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<String> getCommands()
+  public EList<Command> getCommands()
   {
     if (commands == null)
     {
-      commands = new EDataTypeEList<String>(String.class, this, XDronePackage.MAIN__COMMANDS);
+      commands = new EObjectContainmentEList<Command>(Command.class, this, XDronePackage.MAIN__COMMANDS);
     }
     return commands;
   }
@@ -163,8 +137,8 @@ public class MainImpl extends MinimalEObjectImpl.Container implements Main
   {
     switch (featureID)
     {
-      case XDronePackage.MAIN__PARAMETERS:
-        return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+      case XDronePackage.MAIN__COMMANDS:
+        return ((InternalEList<?>)getCommands()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -181,8 +155,6 @@ public class MainImpl extends MinimalEObjectImpl.Container implements Main
     {
       case XDronePackage.MAIN__NAME:
         return getName();
-      case XDronePackage.MAIN__PARAMETERS:
-        return getParameters();
       case XDronePackage.MAIN__COMMANDS:
         return getCommands();
     }
@@ -203,13 +175,9 @@ public class MainImpl extends MinimalEObjectImpl.Container implements Main
       case XDronePackage.MAIN__NAME:
         setName((String)newValue);
         return;
-      case XDronePackage.MAIN__PARAMETERS:
-        getParameters().clear();
-        getParameters().addAll((Collection<? extends Parameter>)newValue);
-        return;
       case XDronePackage.MAIN__COMMANDS:
         getCommands().clear();
-        getCommands().addAll((Collection<? extends String>)newValue);
+        getCommands().addAll((Collection<? extends Command>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -227,9 +195,6 @@ public class MainImpl extends MinimalEObjectImpl.Container implements Main
     {
       case XDronePackage.MAIN__NAME:
         setName(NAME_EDEFAULT);
-        return;
-      case XDronePackage.MAIN__PARAMETERS:
-        getParameters().clear();
         return;
       case XDronePackage.MAIN__COMMANDS:
         getCommands().clear();
@@ -250,8 +215,6 @@ public class MainImpl extends MinimalEObjectImpl.Container implements Main
     {
       case XDronePackage.MAIN__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case XDronePackage.MAIN__PARAMETERS:
-        return parameters != null && !parameters.isEmpty();
       case XDronePackage.MAIN__COMMANDS:
         return commands != null && !commands.isEmpty();
     }
@@ -271,8 +234,6 @@ public class MainImpl extends MinimalEObjectImpl.Container implements Main
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", commands: ");
-    result.append(commands);
     result.append(')');
     return result.toString();
   }
