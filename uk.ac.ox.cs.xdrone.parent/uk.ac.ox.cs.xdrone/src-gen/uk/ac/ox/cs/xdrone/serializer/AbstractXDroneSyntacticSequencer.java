@@ -21,41 +21,41 @@ import uk.ac.ox.cs.xdrone.services.XDroneGrammarAccess;
 public abstract class AbstractXDroneSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected XDroneGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Command_EMERGENCYParserRuleCall_1_1_or_HOMEParserRuleCall_0_1;
+	protected AbstractElementAlias match_Command_LandParserRuleCall_1_1_or_TakeoffParserRuleCall_0_1;
 	protected AbstractElementAlias match_Main_SemicolonKeyword_3_1_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (XDroneGrammarAccess) access;
-		match_Command_EMERGENCYParserRuleCall_1_1_or_HOMEParserRuleCall_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getCommandAccess().getEMERGENCYParserRuleCall_1_1()), new TokenAlias(false, false, grammarAccess.getCommandAccess().getHOMEParserRuleCall_0_1()));
+		match_Command_LandParserRuleCall_1_1_or_TakeoffParserRuleCall_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getCommandAccess().getLandParserRuleCall_1_1()), new TokenAlias(false, false, grammarAccess.getCommandAccess().getTakeoffParserRuleCall_0_1()));
 		match_Main_SemicolonKeyword_3_1_q = new TokenAlias(false, true, grammarAccess.getMainAccess().getSemicolonKeyword_3_1());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getEMERGENCYRule())
-			return getEMERGENCYToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getHOMERule())
-			return getHOMEToken(semanticObject, ruleCall, node);
+		if (ruleCall.getRule() == grammarAccess.getLandRule())
+			return getLandToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getTakeoffRule())
+			return getTakeoffToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
 	/**
-	 * EMERGENCY: 'emergencyStop';
+	 * Land : 'LAND';
 	 */
-	protected String getEMERGENCYToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+	protected String getLandToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
-		return "emergencyStop";
+		return "LAND";
 	}
 	
 	/**
-	 * HOME : 'home';
+	 * Takeoff: 'TAKEOFF';
 	 */
-	protected String getHOMEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+	protected String getTakeoffToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
-		return "home";
+		return "TAKEOFF";
 	}
 	
 	@Override
@@ -64,8 +64,8 @@ public abstract class AbstractXDroneSyntacticSequencer extends AbstractSyntactic
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Command_EMERGENCYParserRuleCall_1_1_or_HOMEParserRuleCall_0_1.equals(syntax))
-				emit_Command_EMERGENCYParserRuleCall_1_1_or_HOMEParserRuleCall_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Command_LandParserRuleCall_1_1_or_TakeoffParserRuleCall_0_1.equals(syntax))
+				emit_Command_LandParserRuleCall_1_1_or_TakeoffParserRuleCall_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Main_SemicolonKeyword_3_1_q.equals(syntax))
 				emit_Main_SemicolonKeyword_3_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -74,12 +74,12 @@ public abstract class AbstractXDroneSyntacticSequencer extends AbstractSyntactic
 
 	/**
 	 * Ambiguous syntax:
-	 *     HOME | EMERGENCY
+	 *     Takeoff | Land
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
 	 */
-	protected void emit_Command_EMERGENCYParserRuleCall_1_1_or_HOMEParserRuleCall_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Command_LandParserRuleCall_1_1_or_TakeoffParserRuleCall_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

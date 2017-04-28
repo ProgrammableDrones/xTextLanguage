@@ -68,13 +68,14 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
       case XDronePackage.PROGRAM: return createProgram();
       case XDronePackage.MAIN: return createMain();
       case XDronePackage.COMMAND: return createCommand();
-      case XDronePackage.UP: return createUP();
-      case XDronePackage.DOWN: return createDOWN();
-      case XDronePackage.LEFT: return createLEFT();
-      case XDronePackage.RIGHT: return createRIGHT();
-      case XDronePackage.FORWARD: return createFORWARD();
-      case XDronePackage.BACKWARD: return createBACKWARD();
-      case XDronePackage.ROTATE: return createROTATE();
+      case XDronePackage.UP: return createUp();
+      case XDronePackage.DOWN: return createDown();
+      case XDronePackage.LEFT: return createLeft();
+      case XDronePackage.RIGHT: return createRight();
+      case XDronePackage.FORWARD: return createForward();
+      case XDronePackage.BACKWARD: return createBackward();
+      case XDronePackage.ROTATE_L: return createRotateL();
+      case XDronePackage.ROTATE_R: return createRotateR();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -118,9 +119,9 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public UP createUP()
+  public Up createUp()
   {
-    UPImpl up = new UPImpl();
+    UpImpl up = new UpImpl();
     return up;
   }
 
@@ -129,9 +130,9 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DOWN createDOWN()
+  public Down createDown()
   {
-    DOWNImpl down = new DOWNImpl();
+    DownImpl down = new DownImpl();
     return down;
   }
 
@@ -140,9 +141,9 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public LEFT createLEFT()
+  public Left createLeft()
   {
-    LEFTImpl left = new LEFTImpl();
+    LeftImpl left = new LeftImpl();
     return left;
   }
 
@@ -151,9 +152,9 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public RIGHT createRIGHT()
+  public Right createRight()
   {
-    RIGHTImpl right = new RIGHTImpl();
+    RightImpl right = new RightImpl();
     return right;
   }
 
@@ -162,9 +163,9 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public FORWARD createFORWARD()
+  public Forward createForward()
   {
-    FORWARDImpl forward = new FORWARDImpl();
+    ForwardImpl forward = new ForwardImpl();
     return forward;
   }
 
@@ -173,9 +174,9 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BACKWARD createBACKWARD()
+  public Backward createBackward()
   {
-    BACKWARDImpl backward = new BACKWARDImpl();
+    BackwardImpl backward = new BackwardImpl();
     return backward;
   }
 
@@ -184,10 +185,21 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ROTATE createROTATE()
+  public RotateL createRotateL()
   {
-    ROTATEImpl rotate = new ROTATEImpl();
-    return rotate;
+    RotateLImpl rotateL = new RotateLImpl();
+    return rotateL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RotateR createRotateR()
+  {
+    RotateRImpl rotateR = new RotateRImpl();
+    return rotateR;
   }
 
   /**

@@ -10,9 +10,17 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import uk.ac.ox.cs.xdrone.xDrone.Backward;
 import uk.ac.ox.cs.xdrone.xDrone.Command;
+import uk.ac.ox.cs.xdrone.xDrone.Down;
+import uk.ac.ox.cs.xdrone.xDrone.Forward;
+import uk.ac.ox.cs.xdrone.xDrone.Left;
 import uk.ac.ox.cs.xdrone.xDrone.Main;
 import uk.ac.ox.cs.xdrone.xDrone.Program;
+import uk.ac.ox.cs.xdrone.xDrone.Right;
+import uk.ac.ox.cs.xdrone.xDrone.RotateL;
+import uk.ac.ox.cs.xdrone.xDrone.RotateR;
+import uk.ac.ox.cs.xdrone.xDrone.Up;
 import uk.ac.ox.cs.xdrone.xDrone.XDroneFactory;
 import uk.ac.ox.cs.xdrone.xDrone.XDronePackage;
 
@@ -92,7 +100,14 @@ public class XDronePackageImpl extends EPackageImpl implements XDronePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass rotateEClass = null;
+  private EClass rotateLEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass rotateREClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -222,7 +237,17 @@ public class XDronePackageImpl extends EPackageImpl implements XDronePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getUP()
+  public EAttribute getCommand_Milliseconds()
+  {
+    return (EAttribute)commandEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getUp()
   {
     return upEClass;
   }
@@ -232,17 +257,7 @@ public class XDronePackageImpl extends EPackageImpl implements XDronePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUP_Milliseconds()
-  {
-    return (EAttribute)upEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getDOWN()
+  public EClass getDown()
   {
     return downEClass;
   }
@@ -252,17 +267,7 @@ public class XDronePackageImpl extends EPackageImpl implements XDronePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDOWN_Milliseconds()
-  {
-    return (EAttribute)downEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getLEFT()
+  public EClass getLeft()
   {
     return leftEClass;
   }
@@ -272,17 +277,7 @@ public class XDronePackageImpl extends EPackageImpl implements XDronePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLEFT_Milliseconds()
-  {
-    return (EAttribute)leftEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getRIGHT()
+  public EClass getRight()
   {
     return rightEClass;
   }
@@ -292,17 +287,7 @@ public class XDronePackageImpl extends EPackageImpl implements XDronePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRIGHT_Milliseconds()
-  {
-    return (EAttribute)rightEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getFORWARD()
+  public EClass getForward()
   {
     return forwardEClass;
   }
@@ -312,17 +297,7 @@ public class XDronePackageImpl extends EPackageImpl implements XDronePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFORWARD_Milliseconds()
-  {
-    return (EAttribute)forwardEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getBACKWARD()
+  public EClass getBackward()
   {
     return backwardEClass;
   }
@@ -332,9 +307,9 @@ public class XDronePackageImpl extends EPackageImpl implements XDronePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBACKWARD_Milliseconds()
+  public EClass getRotateL()
   {
-    return (EAttribute)backwardEClass.getEStructuralFeatures().get(0);
+    return rotateLEClass;
   }
 
   /**
@@ -342,19 +317,9 @@ public class XDronePackageImpl extends EPackageImpl implements XDronePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getROTATE()
+  public EClass getRotateR()
   {
-    return rotateEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getROTATE_Degrees()
-  {
-    return (EAttribute)rotateEClass.getEStructuralFeatures().get(0);
+    return rotateREClass;
   }
 
   /**
@@ -395,27 +360,23 @@ public class XDronePackageImpl extends EPackageImpl implements XDronePackage
     createEReference(mainEClass, MAIN__COMMANDS);
 
     commandEClass = createEClass(COMMAND);
+    createEAttribute(commandEClass, COMMAND__MILLISECONDS);
 
     upEClass = createEClass(UP);
-    createEAttribute(upEClass, UP__MILLISECONDS);
 
     downEClass = createEClass(DOWN);
-    createEAttribute(downEClass, DOWN__MILLISECONDS);
 
     leftEClass = createEClass(LEFT);
-    createEAttribute(leftEClass, LEFT__MILLISECONDS);
 
     rightEClass = createEClass(RIGHT);
-    createEAttribute(rightEClass, RIGHT__MILLISECONDS);
 
     forwardEClass = createEClass(FORWARD);
-    createEAttribute(forwardEClass, FORWARD__MILLISECONDS);
 
     backwardEClass = createEClass(BACKWARD);
-    createEAttribute(backwardEClass, BACKWARD__MILLISECONDS);
 
-    rotateEClass = createEClass(ROTATE);
-    createEAttribute(rotateEClass, ROTATE__DEGREES);
+    rotateLEClass = createEClass(ROTATE_L);
+
+    rotateREClass = createEClass(ROTATE_R);
   }
 
   /**
@@ -453,7 +414,8 @@ public class XDronePackageImpl extends EPackageImpl implements XDronePackage
     rightEClass.getESuperTypes().add(this.getCommand());
     forwardEClass.getESuperTypes().add(this.getCommand());
     backwardEClass.getESuperTypes().add(this.getCommand());
-    rotateEClass.getESuperTypes().add(this.getCommand());
+    rotateLEClass.getESuperTypes().add(this.getCommand());
+    rotateREClass.getESuperTypes().add(this.getCommand());
 
     // Initialize classes and features; add operations and parameters
     initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -464,27 +426,23 @@ public class XDronePackageImpl extends EPackageImpl implements XDronePackage
     initEReference(getMain_Commands(), this.getCommand(), null, "commands", null, 0, -1, Main.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(commandEClass, Command.class, "Command", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCommand_Milliseconds(), ecorePackage.getEInt(), "milliseconds", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(upEClass, uk.ac.ox.cs.xdrone.xDrone.UP.class, "UP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getUP_Milliseconds(), ecorePackage.getEInt(), "milliseconds", null, 0, 1, uk.ac.ox.cs.xdrone.xDrone.UP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(upEClass, Up.class, "Up", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(downEClass, uk.ac.ox.cs.xdrone.xDrone.DOWN.class, "DOWN", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDOWN_Milliseconds(), ecorePackage.getEInt(), "milliseconds", null, 0, 1, uk.ac.ox.cs.xdrone.xDrone.DOWN.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(downEClass, Down.class, "Down", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(leftEClass, uk.ac.ox.cs.xdrone.xDrone.LEFT.class, "LEFT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLEFT_Milliseconds(), ecorePackage.getEInt(), "milliseconds", null, 0, 1, uk.ac.ox.cs.xdrone.xDrone.LEFT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(leftEClass, Left.class, "Left", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(rightEClass, uk.ac.ox.cs.xdrone.xDrone.RIGHT.class, "RIGHT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRIGHT_Milliseconds(), ecorePackage.getEInt(), "milliseconds", null, 0, 1, uk.ac.ox.cs.xdrone.xDrone.RIGHT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(rightEClass, Right.class, "Right", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(forwardEClass, uk.ac.ox.cs.xdrone.xDrone.FORWARD.class, "FORWARD", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFORWARD_Milliseconds(), ecorePackage.getEInt(), "milliseconds", null, 0, 1, uk.ac.ox.cs.xdrone.xDrone.FORWARD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(forwardEClass, Forward.class, "Forward", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(backwardEClass, uk.ac.ox.cs.xdrone.xDrone.BACKWARD.class, "BACKWARD", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBACKWARD_Milliseconds(), ecorePackage.getEInt(), "milliseconds", null, 0, 1, uk.ac.ox.cs.xdrone.xDrone.BACKWARD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(backwardEClass, Backward.class, "Backward", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(rotateEClass, uk.ac.ox.cs.xdrone.xDrone.ROTATE.class, "ROTATE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getROTATE_Degrees(), ecorePackage.getEInt(), "degrees", null, 0, 1, uk.ac.ox.cs.xdrone.xDrone.ROTATE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(rotateLEClass, RotateL.class, "RotateL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(rotateREClass, RotateR.class, "RotateR", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

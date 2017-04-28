@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalXDroneParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'home'", "'emergencyStop'", "'xdrone'", "'begin'", "'end'", "';'", "'UP'", "'('", "')'", "'DOWN'", "'LEFT'", "'RIGHT'", "'FORWARD'", "'BACKWARD'", "'ROTATE'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'TAKEOFF'", "'LAND'", "'xdrone'", "'begin'", "'end'", "';'", "'UP'", "'('", "')'", "'DOWN'", "'LEFT'", "'RIGHT'", "'FORWARD'", "'BACKWARD'", "'ROTATELEFT'", "'ROTATERIGHT'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -39,6 +39,7 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
+    public static final int T__26=26;
     public static final int RULE_INT=5;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
@@ -314,20 +315,20 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleCommand"
 
 
-    // $ANTLR start "entryRuleHOME"
-    // InternalXDrone.g:128:1: entryRuleHOME : ruleHOME EOF ;
-    public final void entryRuleHOME() throws RecognitionException {
+    // $ANTLR start "entryRuleTakeoff"
+    // InternalXDrone.g:128:1: entryRuleTakeoff : ruleTakeoff EOF ;
+    public final void entryRuleTakeoff() throws RecognitionException {
         try {
-            // InternalXDrone.g:129:1: ( ruleHOME EOF )
-            // InternalXDrone.g:130:1: ruleHOME EOF
+            // InternalXDrone.g:129:1: ( ruleTakeoff EOF )
+            // InternalXDrone.g:130:1: ruleTakeoff EOF
             {
-             before(grammarAccess.getHOMERule()); 
+             before(grammarAccess.getTakeoffRule()); 
             pushFollow(FOLLOW_1);
-            ruleHOME();
+            ruleTakeoff();
 
             state._fsp--;
 
-             after(grammarAccess.getHOMERule()); 
+             after(grammarAccess.getTakeoffRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -341,25 +342,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleHOME"
+    // $ANTLR end "entryRuleTakeoff"
 
 
-    // $ANTLR start "ruleHOME"
-    // InternalXDrone.g:137:1: ruleHOME : ( 'home' ) ;
-    public final void ruleHOME() throws RecognitionException {
+    // $ANTLR start "ruleTakeoff"
+    // InternalXDrone.g:137:1: ruleTakeoff : ( 'TAKEOFF' ) ;
+    public final void ruleTakeoff() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:141:2: ( ( 'home' ) )
-            // InternalXDrone.g:142:2: ( 'home' )
+            // InternalXDrone.g:141:2: ( ( 'TAKEOFF' ) )
+            // InternalXDrone.g:142:2: ( 'TAKEOFF' )
             {
-            // InternalXDrone.g:142:2: ( 'home' )
-            // InternalXDrone.g:143:3: 'home'
+            // InternalXDrone.g:142:2: ( 'TAKEOFF' )
+            // InternalXDrone.g:143:3: 'TAKEOFF'
             {
-             before(grammarAccess.getHOMEAccess().getHomeKeyword()); 
+             before(grammarAccess.getTakeoffAccess().getTAKEOFFKeyword()); 
             match(input,11,FOLLOW_2); 
-             after(grammarAccess.getHOMEAccess().getHomeKeyword()); 
+             after(grammarAccess.getTakeoffAccess().getTAKEOFFKeyword()); 
 
             }
 
@@ -378,23 +379,23 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleHOME"
+    // $ANTLR end "ruleTakeoff"
 
 
-    // $ANTLR start "entryRuleEMERGENCY"
-    // InternalXDrone.g:153:1: entryRuleEMERGENCY : ruleEMERGENCY EOF ;
-    public final void entryRuleEMERGENCY() throws RecognitionException {
+    // $ANTLR start "entryRuleLand"
+    // InternalXDrone.g:153:1: entryRuleLand : ruleLand EOF ;
+    public final void entryRuleLand() throws RecognitionException {
         try {
-            // InternalXDrone.g:154:1: ( ruleEMERGENCY EOF )
-            // InternalXDrone.g:155:1: ruleEMERGENCY EOF
+            // InternalXDrone.g:154:1: ( ruleLand EOF )
+            // InternalXDrone.g:155:1: ruleLand EOF
             {
-             before(grammarAccess.getEMERGENCYRule()); 
+             before(grammarAccess.getLandRule()); 
             pushFollow(FOLLOW_1);
-            ruleEMERGENCY();
+            ruleLand();
 
             state._fsp--;
 
-             after(grammarAccess.getEMERGENCYRule()); 
+             after(grammarAccess.getLandRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -408,25 +409,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleEMERGENCY"
+    // $ANTLR end "entryRuleLand"
 
 
-    // $ANTLR start "ruleEMERGENCY"
-    // InternalXDrone.g:162:1: ruleEMERGENCY : ( 'emergencyStop' ) ;
-    public final void ruleEMERGENCY() throws RecognitionException {
+    // $ANTLR start "ruleLand"
+    // InternalXDrone.g:162:1: ruleLand : ( 'LAND' ) ;
+    public final void ruleLand() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:166:2: ( ( 'emergencyStop' ) )
-            // InternalXDrone.g:167:2: ( 'emergencyStop' )
+            // InternalXDrone.g:166:2: ( ( 'LAND' ) )
+            // InternalXDrone.g:167:2: ( 'LAND' )
             {
-            // InternalXDrone.g:167:2: ( 'emergencyStop' )
-            // InternalXDrone.g:168:3: 'emergencyStop'
+            // InternalXDrone.g:167:2: ( 'LAND' )
+            // InternalXDrone.g:168:3: 'LAND'
             {
-             before(grammarAccess.getEMERGENCYAccess().getEmergencyStopKeyword()); 
+             before(grammarAccess.getLandAccess().getLANDKeyword()); 
             match(input,12,FOLLOW_2); 
-             after(grammarAccess.getEMERGENCYAccess().getEmergencyStopKeyword()); 
+             after(grammarAccess.getLandAccess().getLANDKeyword()); 
 
             }
 
@@ -445,23 +446,23 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleEMERGENCY"
+    // $ANTLR end "ruleLand"
 
 
-    // $ANTLR start "entryRuleUP"
-    // InternalXDrone.g:178:1: entryRuleUP : ruleUP EOF ;
-    public final void entryRuleUP() throws RecognitionException {
+    // $ANTLR start "entryRuleUp"
+    // InternalXDrone.g:178:1: entryRuleUp : ruleUp EOF ;
+    public final void entryRuleUp() throws RecognitionException {
         try {
-            // InternalXDrone.g:179:1: ( ruleUP EOF )
-            // InternalXDrone.g:180:1: ruleUP EOF
+            // InternalXDrone.g:179:1: ( ruleUp EOF )
+            // InternalXDrone.g:180:1: ruleUp EOF
             {
-             before(grammarAccess.getUPRule()); 
+             before(grammarAccess.getUpRule()); 
             pushFollow(FOLLOW_1);
-            ruleUP();
+            ruleUp();
 
             state._fsp--;
 
-             after(grammarAccess.getUPRule()); 
+             after(grammarAccess.getUpRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -475,35 +476,35 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleUP"
+    // $ANTLR end "entryRuleUp"
 
 
-    // $ANTLR start "ruleUP"
-    // InternalXDrone.g:187:1: ruleUP : ( ( rule__UP__Group__0 ) ) ;
-    public final void ruleUP() throws RecognitionException {
+    // $ANTLR start "ruleUp"
+    // InternalXDrone.g:187:1: ruleUp : ( ( rule__Up__Group__0 ) ) ;
+    public final void ruleUp() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:191:2: ( ( ( rule__UP__Group__0 ) ) )
-            // InternalXDrone.g:192:2: ( ( rule__UP__Group__0 ) )
+            // InternalXDrone.g:191:2: ( ( ( rule__Up__Group__0 ) ) )
+            // InternalXDrone.g:192:2: ( ( rule__Up__Group__0 ) )
             {
-            // InternalXDrone.g:192:2: ( ( rule__UP__Group__0 ) )
-            // InternalXDrone.g:193:3: ( rule__UP__Group__0 )
+            // InternalXDrone.g:192:2: ( ( rule__Up__Group__0 ) )
+            // InternalXDrone.g:193:3: ( rule__Up__Group__0 )
             {
-             before(grammarAccess.getUPAccess().getGroup()); 
-            // InternalXDrone.g:194:3: ( rule__UP__Group__0 )
-            // InternalXDrone.g:194:4: rule__UP__Group__0
+             before(grammarAccess.getUpAccess().getGroup()); 
+            // InternalXDrone.g:194:3: ( rule__Up__Group__0 )
+            // InternalXDrone.g:194:4: rule__Up__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__UP__Group__0();
+            rule__Up__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getUPAccess().getGroup()); 
+             after(grammarAccess.getUpAccess().getGroup()); 
 
             }
 
@@ -522,23 +523,23 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleUP"
+    // $ANTLR end "ruleUp"
 
 
-    // $ANTLR start "entryRuleDOWN"
-    // InternalXDrone.g:203:1: entryRuleDOWN : ruleDOWN EOF ;
-    public final void entryRuleDOWN() throws RecognitionException {
+    // $ANTLR start "entryRuleDown"
+    // InternalXDrone.g:203:1: entryRuleDown : ruleDown EOF ;
+    public final void entryRuleDown() throws RecognitionException {
         try {
-            // InternalXDrone.g:204:1: ( ruleDOWN EOF )
-            // InternalXDrone.g:205:1: ruleDOWN EOF
+            // InternalXDrone.g:204:1: ( ruleDown EOF )
+            // InternalXDrone.g:205:1: ruleDown EOF
             {
-             before(grammarAccess.getDOWNRule()); 
+             before(grammarAccess.getDownRule()); 
             pushFollow(FOLLOW_1);
-            ruleDOWN();
+            ruleDown();
 
             state._fsp--;
 
-             after(grammarAccess.getDOWNRule()); 
+             after(grammarAccess.getDownRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -552,35 +553,35 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleDOWN"
+    // $ANTLR end "entryRuleDown"
 
 
-    // $ANTLR start "ruleDOWN"
-    // InternalXDrone.g:212:1: ruleDOWN : ( ( rule__DOWN__Group__0 ) ) ;
-    public final void ruleDOWN() throws RecognitionException {
+    // $ANTLR start "ruleDown"
+    // InternalXDrone.g:212:1: ruleDown : ( ( rule__Down__Group__0 ) ) ;
+    public final void ruleDown() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:216:2: ( ( ( rule__DOWN__Group__0 ) ) )
-            // InternalXDrone.g:217:2: ( ( rule__DOWN__Group__0 ) )
+            // InternalXDrone.g:216:2: ( ( ( rule__Down__Group__0 ) ) )
+            // InternalXDrone.g:217:2: ( ( rule__Down__Group__0 ) )
             {
-            // InternalXDrone.g:217:2: ( ( rule__DOWN__Group__0 ) )
-            // InternalXDrone.g:218:3: ( rule__DOWN__Group__0 )
+            // InternalXDrone.g:217:2: ( ( rule__Down__Group__0 ) )
+            // InternalXDrone.g:218:3: ( rule__Down__Group__0 )
             {
-             before(grammarAccess.getDOWNAccess().getGroup()); 
-            // InternalXDrone.g:219:3: ( rule__DOWN__Group__0 )
-            // InternalXDrone.g:219:4: rule__DOWN__Group__0
+             before(grammarAccess.getDownAccess().getGroup()); 
+            // InternalXDrone.g:219:3: ( rule__Down__Group__0 )
+            // InternalXDrone.g:219:4: rule__Down__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__DOWN__Group__0();
+            rule__Down__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDOWNAccess().getGroup()); 
+             after(grammarAccess.getDownAccess().getGroup()); 
 
             }
 
@@ -599,23 +600,23 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleDOWN"
+    // $ANTLR end "ruleDown"
 
 
-    // $ANTLR start "entryRuleLEFT"
-    // InternalXDrone.g:228:1: entryRuleLEFT : ruleLEFT EOF ;
-    public final void entryRuleLEFT() throws RecognitionException {
+    // $ANTLR start "entryRuleLeft"
+    // InternalXDrone.g:228:1: entryRuleLeft : ruleLeft EOF ;
+    public final void entryRuleLeft() throws RecognitionException {
         try {
-            // InternalXDrone.g:229:1: ( ruleLEFT EOF )
-            // InternalXDrone.g:230:1: ruleLEFT EOF
+            // InternalXDrone.g:229:1: ( ruleLeft EOF )
+            // InternalXDrone.g:230:1: ruleLeft EOF
             {
-             before(grammarAccess.getLEFTRule()); 
+             before(grammarAccess.getLeftRule()); 
             pushFollow(FOLLOW_1);
-            ruleLEFT();
+            ruleLeft();
 
             state._fsp--;
 
-             after(grammarAccess.getLEFTRule()); 
+             after(grammarAccess.getLeftRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -629,35 +630,35 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleLEFT"
+    // $ANTLR end "entryRuleLeft"
 
 
-    // $ANTLR start "ruleLEFT"
-    // InternalXDrone.g:237:1: ruleLEFT : ( ( rule__LEFT__Group__0 ) ) ;
-    public final void ruleLEFT() throws RecognitionException {
+    // $ANTLR start "ruleLeft"
+    // InternalXDrone.g:237:1: ruleLeft : ( ( rule__Left__Group__0 ) ) ;
+    public final void ruleLeft() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:241:2: ( ( ( rule__LEFT__Group__0 ) ) )
-            // InternalXDrone.g:242:2: ( ( rule__LEFT__Group__0 ) )
+            // InternalXDrone.g:241:2: ( ( ( rule__Left__Group__0 ) ) )
+            // InternalXDrone.g:242:2: ( ( rule__Left__Group__0 ) )
             {
-            // InternalXDrone.g:242:2: ( ( rule__LEFT__Group__0 ) )
-            // InternalXDrone.g:243:3: ( rule__LEFT__Group__0 )
+            // InternalXDrone.g:242:2: ( ( rule__Left__Group__0 ) )
+            // InternalXDrone.g:243:3: ( rule__Left__Group__0 )
             {
-             before(grammarAccess.getLEFTAccess().getGroup()); 
-            // InternalXDrone.g:244:3: ( rule__LEFT__Group__0 )
-            // InternalXDrone.g:244:4: rule__LEFT__Group__0
+             before(grammarAccess.getLeftAccess().getGroup()); 
+            // InternalXDrone.g:244:3: ( rule__Left__Group__0 )
+            // InternalXDrone.g:244:4: rule__Left__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__LEFT__Group__0();
+            rule__Left__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getLEFTAccess().getGroup()); 
+             after(grammarAccess.getLeftAccess().getGroup()); 
 
             }
 
@@ -676,23 +677,23 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleLEFT"
+    // $ANTLR end "ruleLeft"
 
 
-    // $ANTLR start "entryRuleRIGHT"
-    // InternalXDrone.g:253:1: entryRuleRIGHT : ruleRIGHT EOF ;
-    public final void entryRuleRIGHT() throws RecognitionException {
+    // $ANTLR start "entryRuleRight"
+    // InternalXDrone.g:253:1: entryRuleRight : ruleRight EOF ;
+    public final void entryRuleRight() throws RecognitionException {
         try {
-            // InternalXDrone.g:254:1: ( ruleRIGHT EOF )
-            // InternalXDrone.g:255:1: ruleRIGHT EOF
+            // InternalXDrone.g:254:1: ( ruleRight EOF )
+            // InternalXDrone.g:255:1: ruleRight EOF
             {
-             before(grammarAccess.getRIGHTRule()); 
+             before(grammarAccess.getRightRule()); 
             pushFollow(FOLLOW_1);
-            ruleRIGHT();
+            ruleRight();
 
             state._fsp--;
 
-             after(grammarAccess.getRIGHTRule()); 
+             after(grammarAccess.getRightRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -706,35 +707,35 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleRIGHT"
+    // $ANTLR end "entryRuleRight"
 
 
-    // $ANTLR start "ruleRIGHT"
-    // InternalXDrone.g:262:1: ruleRIGHT : ( ( rule__RIGHT__Group__0 ) ) ;
-    public final void ruleRIGHT() throws RecognitionException {
+    // $ANTLR start "ruleRight"
+    // InternalXDrone.g:262:1: ruleRight : ( ( rule__Right__Group__0 ) ) ;
+    public final void ruleRight() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:266:2: ( ( ( rule__RIGHT__Group__0 ) ) )
-            // InternalXDrone.g:267:2: ( ( rule__RIGHT__Group__0 ) )
+            // InternalXDrone.g:266:2: ( ( ( rule__Right__Group__0 ) ) )
+            // InternalXDrone.g:267:2: ( ( rule__Right__Group__0 ) )
             {
-            // InternalXDrone.g:267:2: ( ( rule__RIGHT__Group__0 ) )
-            // InternalXDrone.g:268:3: ( rule__RIGHT__Group__0 )
+            // InternalXDrone.g:267:2: ( ( rule__Right__Group__0 ) )
+            // InternalXDrone.g:268:3: ( rule__Right__Group__0 )
             {
-             before(grammarAccess.getRIGHTAccess().getGroup()); 
-            // InternalXDrone.g:269:3: ( rule__RIGHT__Group__0 )
-            // InternalXDrone.g:269:4: rule__RIGHT__Group__0
+             before(grammarAccess.getRightAccess().getGroup()); 
+            // InternalXDrone.g:269:3: ( rule__Right__Group__0 )
+            // InternalXDrone.g:269:4: rule__Right__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__RIGHT__Group__0();
+            rule__Right__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getRIGHTAccess().getGroup()); 
+             after(grammarAccess.getRightAccess().getGroup()); 
 
             }
 
@@ -753,23 +754,23 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleRIGHT"
+    // $ANTLR end "ruleRight"
 
 
-    // $ANTLR start "entryRuleFORWARD"
-    // InternalXDrone.g:278:1: entryRuleFORWARD : ruleFORWARD EOF ;
-    public final void entryRuleFORWARD() throws RecognitionException {
+    // $ANTLR start "entryRuleForward"
+    // InternalXDrone.g:278:1: entryRuleForward : ruleForward EOF ;
+    public final void entryRuleForward() throws RecognitionException {
         try {
-            // InternalXDrone.g:279:1: ( ruleFORWARD EOF )
-            // InternalXDrone.g:280:1: ruleFORWARD EOF
+            // InternalXDrone.g:279:1: ( ruleForward EOF )
+            // InternalXDrone.g:280:1: ruleForward EOF
             {
-             before(grammarAccess.getFORWARDRule()); 
+             before(grammarAccess.getForwardRule()); 
             pushFollow(FOLLOW_1);
-            ruleFORWARD();
+            ruleForward();
 
             state._fsp--;
 
-             after(grammarAccess.getFORWARDRule()); 
+             after(grammarAccess.getForwardRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -783,35 +784,35 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleFORWARD"
+    // $ANTLR end "entryRuleForward"
 
 
-    // $ANTLR start "ruleFORWARD"
-    // InternalXDrone.g:287:1: ruleFORWARD : ( ( rule__FORWARD__Group__0 ) ) ;
-    public final void ruleFORWARD() throws RecognitionException {
+    // $ANTLR start "ruleForward"
+    // InternalXDrone.g:287:1: ruleForward : ( ( rule__Forward__Group__0 ) ) ;
+    public final void ruleForward() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:291:2: ( ( ( rule__FORWARD__Group__0 ) ) )
-            // InternalXDrone.g:292:2: ( ( rule__FORWARD__Group__0 ) )
+            // InternalXDrone.g:291:2: ( ( ( rule__Forward__Group__0 ) ) )
+            // InternalXDrone.g:292:2: ( ( rule__Forward__Group__0 ) )
             {
-            // InternalXDrone.g:292:2: ( ( rule__FORWARD__Group__0 ) )
-            // InternalXDrone.g:293:3: ( rule__FORWARD__Group__0 )
+            // InternalXDrone.g:292:2: ( ( rule__Forward__Group__0 ) )
+            // InternalXDrone.g:293:3: ( rule__Forward__Group__0 )
             {
-             before(grammarAccess.getFORWARDAccess().getGroup()); 
-            // InternalXDrone.g:294:3: ( rule__FORWARD__Group__0 )
-            // InternalXDrone.g:294:4: rule__FORWARD__Group__0
+             before(grammarAccess.getForwardAccess().getGroup()); 
+            // InternalXDrone.g:294:3: ( rule__Forward__Group__0 )
+            // InternalXDrone.g:294:4: rule__Forward__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__FORWARD__Group__0();
+            rule__Forward__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFORWARDAccess().getGroup()); 
+             after(grammarAccess.getForwardAccess().getGroup()); 
 
             }
 
@@ -830,23 +831,23 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleFORWARD"
+    // $ANTLR end "ruleForward"
 
 
-    // $ANTLR start "entryRuleBACKWARD"
-    // InternalXDrone.g:303:1: entryRuleBACKWARD : ruleBACKWARD EOF ;
-    public final void entryRuleBACKWARD() throws RecognitionException {
+    // $ANTLR start "entryRuleBackward"
+    // InternalXDrone.g:303:1: entryRuleBackward : ruleBackward EOF ;
+    public final void entryRuleBackward() throws RecognitionException {
         try {
-            // InternalXDrone.g:304:1: ( ruleBACKWARD EOF )
-            // InternalXDrone.g:305:1: ruleBACKWARD EOF
+            // InternalXDrone.g:304:1: ( ruleBackward EOF )
+            // InternalXDrone.g:305:1: ruleBackward EOF
             {
-             before(grammarAccess.getBACKWARDRule()); 
+             before(grammarAccess.getBackwardRule()); 
             pushFollow(FOLLOW_1);
-            ruleBACKWARD();
+            ruleBackward();
 
             state._fsp--;
 
-             after(grammarAccess.getBACKWARDRule()); 
+             after(grammarAccess.getBackwardRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -860,35 +861,35 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleBACKWARD"
+    // $ANTLR end "entryRuleBackward"
 
 
-    // $ANTLR start "ruleBACKWARD"
-    // InternalXDrone.g:312:1: ruleBACKWARD : ( ( rule__BACKWARD__Group__0 ) ) ;
-    public final void ruleBACKWARD() throws RecognitionException {
+    // $ANTLR start "ruleBackward"
+    // InternalXDrone.g:312:1: ruleBackward : ( ( rule__Backward__Group__0 ) ) ;
+    public final void ruleBackward() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:316:2: ( ( ( rule__BACKWARD__Group__0 ) ) )
-            // InternalXDrone.g:317:2: ( ( rule__BACKWARD__Group__0 ) )
+            // InternalXDrone.g:316:2: ( ( ( rule__Backward__Group__0 ) ) )
+            // InternalXDrone.g:317:2: ( ( rule__Backward__Group__0 ) )
             {
-            // InternalXDrone.g:317:2: ( ( rule__BACKWARD__Group__0 ) )
-            // InternalXDrone.g:318:3: ( rule__BACKWARD__Group__0 )
+            // InternalXDrone.g:317:2: ( ( rule__Backward__Group__0 ) )
+            // InternalXDrone.g:318:3: ( rule__Backward__Group__0 )
             {
-             before(grammarAccess.getBACKWARDAccess().getGroup()); 
-            // InternalXDrone.g:319:3: ( rule__BACKWARD__Group__0 )
-            // InternalXDrone.g:319:4: rule__BACKWARD__Group__0
+             before(grammarAccess.getBackwardAccess().getGroup()); 
+            // InternalXDrone.g:319:3: ( rule__Backward__Group__0 )
+            // InternalXDrone.g:319:4: rule__Backward__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__BACKWARD__Group__0();
+            rule__Backward__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getBACKWARDAccess().getGroup()); 
+             after(grammarAccess.getBackwardAccess().getGroup()); 
 
             }
 
@@ -907,23 +908,23 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleBACKWARD"
+    // $ANTLR end "ruleBackward"
 
 
-    // $ANTLR start "entryRuleROTATE"
-    // InternalXDrone.g:328:1: entryRuleROTATE : ruleROTATE EOF ;
-    public final void entryRuleROTATE() throws RecognitionException {
+    // $ANTLR start "entryRuleRotateL"
+    // InternalXDrone.g:328:1: entryRuleRotateL : ruleRotateL EOF ;
+    public final void entryRuleRotateL() throws RecognitionException {
         try {
-            // InternalXDrone.g:329:1: ( ruleROTATE EOF )
-            // InternalXDrone.g:330:1: ruleROTATE EOF
+            // InternalXDrone.g:329:1: ( ruleRotateL EOF )
+            // InternalXDrone.g:330:1: ruleRotateL EOF
             {
-             before(grammarAccess.getROTATERule()); 
+             before(grammarAccess.getRotateLRule()); 
             pushFollow(FOLLOW_1);
-            ruleROTATE();
+            ruleRotateL();
 
             state._fsp--;
 
-             after(grammarAccess.getROTATERule()); 
+             after(grammarAccess.getRotateLRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -937,35 +938,35 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleROTATE"
+    // $ANTLR end "entryRuleRotateL"
 
 
-    // $ANTLR start "ruleROTATE"
-    // InternalXDrone.g:337:1: ruleROTATE : ( ( rule__ROTATE__Group__0 ) ) ;
-    public final void ruleROTATE() throws RecognitionException {
+    // $ANTLR start "ruleRotateL"
+    // InternalXDrone.g:337:1: ruleRotateL : ( ( rule__RotateL__Group__0 ) ) ;
+    public final void ruleRotateL() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:341:2: ( ( ( rule__ROTATE__Group__0 ) ) )
-            // InternalXDrone.g:342:2: ( ( rule__ROTATE__Group__0 ) )
+            // InternalXDrone.g:341:2: ( ( ( rule__RotateL__Group__0 ) ) )
+            // InternalXDrone.g:342:2: ( ( rule__RotateL__Group__0 ) )
             {
-            // InternalXDrone.g:342:2: ( ( rule__ROTATE__Group__0 ) )
-            // InternalXDrone.g:343:3: ( rule__ROTATE__Group__0 )
+            // InternalXDrone.g:342:2: ( ( rule__RotateL__Group__0 ) )
+            // InternalXDrone.g:343:3: ( rule__RotateL__Group__0 )
             {
-             before(grammarAccess.getROTATEAccess().getGroup()); 
-            // InternalXDrone.g:344:3: ( rule__ROTATE__Group__0 )
-            // InternalXDrone.g:344:4: rule__ROTATE__Group__0
+             before(grammarAccess.getRotateLAccess().getGroup()); 
+            // InternalXDrone.g:344:3: ( rule__RotateL__Group__0 )
+            // InternalXDrone.g:344:4: rule__RotateL__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__ROTATE__Group__0();
+            rule__RotateL__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getROTATEAccess().getGroup()); 
+             after(grammarAccess.getRotateLAccess().getGroup()); 
 
             }
 
@@ -984,18 +985,95 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleROTATE"
+    // $ANTLR end "ruleRotateL"
+
+
+    // $ANTLR start "entryRuleRotateR"
+    // InternalXDrone.g:353:1: entryRuleRotateR : ruleRotateR EOF ;
+    public final void entryRuleRotateR() throws RecognitionException {
+        try {
+            // InternalXDrone.g:354:1: ( ruleRotateR EOF )
+            // InternalXDrone.g:355:1: ruleRotateR EOF
+            {
+             before(grammarAccess.getRotateRRule()); 
+            pushFollow(FOLLOW_1);
+            ruleRotateR();
+
+            state._fsp--;
+
+             after(grammarAccess.getRotateRRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleRotateR"
+
+
+    // $ANTLR start "ruleRotateR"
+    // InternalXDrone.g:362:1: ruleRotateR : ( ( rule__RotateR__Group__0 ) ) ;
+    public final void ruleRotateR() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXDrone.g:366:2: ( ( ( rule__RotateR__Group__0 ) ) )
+            // InternalXDrone.g:367:2: ( ( rule__RotateR__Group__0 ) )
+            {
+            // InternalXDrone.g:367:2: ( ( rule__RotateR__Group__0 ) )
+            // InternalXDrone.g:368:3: ( rule__RotateR__Group__0 )
+            {
+             before(grammarAccess.getRotateRAccess().getGroup()); 
+            // InternalXDrone.g:369:3: ( rule__RotateR__Group__0 )
+            // InternalXDrone.g:369:4: rule__RotateR__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__RotateR__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRotateRAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleRotateR"
 
 
     // $ANTLR start "rule__Command__Alternatives"
-    // InternalXDrone.g:352:1: rule__Command__Alternatives : ( ( ( rule__Command__Group_0__0 ) ) | ( ( rule__Command__Group_1__0 ) ) | ( ruleUP ) | ( ruleDOWN ) | ( ruleLEFT ) | ( ruleRIGHT ) | ( ruleFORWARD ) | ( ruleBACKWARD ) | ( ruleROTATE ) );
+    // InternalXDrone.g:377:1: rule__Command__Alternatives : ( ( ( rule__Command__Group_0__0 ) ) | ( ( rule__Command__Group_1__0 ) ) | ( ruleUp ) | ( ruleDown ) | ( ruleLeft ) | ( ruleRight ) | ( ruleForward ) | ( ruleBackward ) | ( ruleRotateL ) | ( ruleRotateR ) );
     public final void rule__Command__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:356:1: ( ( ( rule__Command__Group_0__0 ) ) | ( ( rule__Command__Group_1__0 ) ) | ( ruleUP ) | ( ruleDOWN ) | ( ruleLEFT ) | ( ruleRIGHT ) | ( ruleFORWARD ) | ( ruleBACKWARD ) | ( ruleROTATE ) )
-            int alt1=9;
+            // InternalXDrone.g:381:1: ( ( ( rule__Command__Group_0__0 ) ) | ( ( rule__Command__Group_1__0 ) ) | ( ruleUp ) | ( ruleDown ) | ( ruleLeft ) | ( ruleRight ) | ( ruleForward ) | ( ruleBackward ) | ( ruleRotateL ) | ( ruleRotateR ) )
+            int alt1=10;
             switch ( input.LA(1) ) {
             case 11:
                 {
@@ -1042,6 +1120,11 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
                 alt1=9;
                 }
                 break;
+            case 26:
+                {
+                alt1=10;
+                }
+                break;
             default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 1, 0, input);
@@ -1051,14 +1134,14 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
             switch (alt1) {
                 case 1 :
-                    // InternalXDrone.g:357:2: ( ( rule__Command__Group_0__0 ) )
+                    // InternalXDrone.g:382:2: ( ( rule__Command__Group_0__0 ) )
                     {
-                    // InternalXDrone.g:357:2: ( ( rule__Command__Group_0__0 ) )
-                    // InternalXDrone.g:358:3: ( rule__Command__Group_0__0 )
+                    // InternalXDrone.g:382:2: ( ( rule__Command__Group_0__0 ) )
+                    // InternalXDrone.g:383:3: ( rule__Command__Group_0__0 )
                     {
                      before(grammarAccess.getCommandAccess().getGroup_0()); 
-                    // InternalXDrone.g:359:3: ( rule__Command__Group_0__0 )
-                    // InternalXDrone.g:359:4: rule__Command__Group_0__0
+                    // InternalXDrone.g:384:3: ( rule__Command__Group_0__0 )
+                    // InternalXDrone.g:384:4: rule__Command__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Command__Group_0__0();
@@ -1076,14 +1159,14 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalXDrone.g:363:2: ( ( rule__Command__Group_1__0 ) )
+                    // InternalXDrone.g:388:2: ( ( rule__Command__Group_1__0 ) )
                     {
-                    // InternalXDrone.g:363:2: ( ( rule__Command__Group_1__0 ) )
-                    // InternalXDrone.g:364:3: ( rule__Command__Group_1__0 )
+                    // InternalXDrone.g:388:2: ( ( rule__Command__Group_1__0 ) )
+                    // InternalXDrone.g:389:3: ( rule__Command__Group_1__0 )
                     {
                      before(grammarAccess.getCommandAccess().getGroup_1()); 
-                    // InternalXDrone.g:365:3: ( rule__Command__Group_1__0 )
-                    // InternalXDrone.g:365:4: rule__Command__Group_1__0
+                    // InternalXDrone.g:390:3: ( rule__Command__Group_1__0 )
+                    // InternalXDrone.g:390:4: rule__Command__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Command__Group_1__0();
@@ -1101,18 +1184,18 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalXDrone.g:369:2: ( ruleUP )
+                    // InternalXDrone.g:394:2: ( ruleUp )
                     {
-                    // InternalXDrone.g:369:2: ( ruleUP )
-                    // InternalXDrone.g:370:3: ruleUP
+                    // InternalXDrone.g:394:2: ( ruleUp )
+                    // InternalXDrone.g:395:3: ruleUp
                     {
-                     before(grammarAccess.getCommandAccess().getUPParserRuleCall_2()); 
+                     before(grammarAccess.getCommandAccess().getUpParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
-                    ruleUP();
+                    ruleUp();
 
                     state._fsp--;
 
-                     after(grammarAccess.getCommandAccess().getUPParserRuleCall_2()); 
+                     after(grammarAccess.getCommandAccess().getUpParserRuleCall_2()); 
 
                     }
 
@@ -1120,18 +1203,18 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalXDrone.g:375:2: ( ruleDOWN )
+                    // InternalXDrone.g:400:2: ( ruleDown )
                     {
-                    // InternalXDrone.g:375:2: ( ruleDOWN )
-                    // InternalXDrone.g:376:3: ruleDOWN
+                    // InternalXDrone.g:400:2: ( ruleDown )
+                    // InternalXDrone.g:401:3: ruleDown
                     {
-                     before(grammarAccess.getCommandAccess().getDOWNParserRuleCall_3()); 
+                     before(grammarAccess.getCommandAccess().getDownParserRuleCall_3()); 
                     pushFollow(FOLLOW_2);
-                    ruleDOWN();
+                    ruleDown();
 
                     state._fsp--;
 
-                     after(grammarAccess.getCommandAccess().getDOWNParserRuleCall_3()); 
+                     after(grammarAccess.getCommandAccess().getDownParserRuleCall_3()); 
 
                     }
 
@@ -1139,18 +1222,18 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalXDrone.g:381:2: ( ruleLEFT )
+                    // InternalXDrone.g:406:2: ( ruleLeft )
                     {
-                    // InternalXDrone.g:381:2: ( ruleLEFT )
-                    // InternalXDrone.g:382:3: ruleLEFT
+                    // InternalXDrone.g:406:2: ( ruleLeft )
+                    // InternalXDrone.g:407:3: ruleLeft
                     {
-                     before(grammarAccess.getCommandAccess().getLEFTParserRuleCall_4()); 
+                     before(grammarAccess.getCommandAccess().getLeftParserRuleCall_4()); 
                     pushFollow(FOLLOW_2);
-                    ruleLEFT();
+                    ruleLeft();
 
                     state._fsp--;
 
-                     after(grammarAccess.getCommandAccess().getLEFTParserRuleCall_4()); 
+                     after(grammarAccess.getCommandAccess().getLeftParserRuleCall_4()); 
 
                     }
 
@@ -1158,18 +1241,18 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // InternalXDrone.g:387:2: ( ruleRIGHT )
+                    // InternalXDrone.g:412:2: ( ruleRight )
                     {
-                    // InternalXDrone.g:387:2: ( ruleRIGHT )
-                    // InternalXDrone.g:388:3: ruleRIGHT
+                    // InternalXDrone.g:412:2: ( ruleRight )
+                    // InternalXDrone.g:413:3: ruleRight
                     {
-                     before(grammarAccess.getCommandAccess().getRIGHTParserRuleCall_5()); 
+                     before(grammarAccess.getCommandAccess().getRightParserRuleCall_5()); 
                     pushFollow(FOLLOW_2);
-                    ruleRIGHT();
+                    ruleRight();
 
                     state._fsp--;
 
-                     after(grammarAccess.getCommandAccess().getRIGHTParserRuleCall_5()); 
+                     after(grammarAccess.getCommandAccess().getRightParserRuleCall_5()); 
 
                     }
 
@@ -1177,18 +1260,18 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // InternalXDrone.g:393:2: ( ruleFORWARD )
+                    // InternalXDrone.g:418:2: ( ruleForward )
                     {
-                    // InternalXDrone.g:393:2: ( ruleFORWARD )
-                    // InternalXDrone.g:394:3: ruleFORWARD
+                    // InternalXDrone.g:418:2: ( ruleForward )
+                    // InternalXDrone.g:419:3: ruleForward
                     {
-                     before(grammarAccess.getCommandAccess().getFORWARDParserRuleCall_6()); 
+                     before(grammarAccess.getCommandAccess().getForwardParserRuleCall_6()); 
                     pushFollow(FOLLOW_2);
-                    ruleFORWARD();
+                    ruleForward();
 
                     state._fsp--;
 
-                     after(grammarAccess.getCommandAccess().getFORWARDParserRuleCall_6()); 
+                     after(grammarAccess.getCommandAccess().getForwardParserRuleCall_6()); 
 
                     }
 
@@ -1196,18 +1279,18 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 8 :
-                    // InternalXDrone.g:399:2: ( ruleBACKWARD )
+                    // InternalXDrone.g:424:2: ( ruleBackward )
                     {
-                    // InternalXDrone.g:399:2: ( ruleBACKWARD )
-                    // InternalXDrone.g:400:3: ruleBACKWARD
+                    // InternalXDrone.g:424:2: ( ruleBackward )
+                    // InternalXDrone.g:425:3: ruleBackward
                     {
-                     before(grammarAccess.getCommandAccess().getBACKWARDParserRuleCall_7()); 
+                     before(grammarAccess.getCommandAccess().getBackwardParserRuleCall_7()); 
                     pushFollow(FOLLOW_2);
-                    ruleBACKWARD();
+                    ruleBackward();
 
                     state._fsp--;
 
-                     after(grammarAccess.getCommandAccess().getBACKWARDParserRuleCall_7()); 
+                     after(grammarAccess.getCommandAccess().getBackwardParserRuleCall_7()); 
 
                     }
 
@@ -1215,18 +1298,37 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 9 :
-                    // InternalXDrone.g:405:2: ( ruleROTATE )
+                    // InternalXDrone.g:430:2: ( ruleRotateL )
                     {
-                    // InternalXDrone.g:405:2: ( ruleROTATE )
-                    // InternalXDrone.g:406:3: ruleROTATE
+                    // InternalXDrone.g:430:2: ( ruleRotateL )
+                    // InternalXDrone.g:431:3: ruleRotateL
                     {
-                     before(grammarAccess.getCommandAccess().getROTATEParserRuleCall_8()); 
+                     before(grammarAccess.getCommandAccess().getRotateLParserRuleCall_8()); 
                     pushFollow(FOLLOW_2);
-                    ruleROTATE();
+                    ruleRotateL();
 
                     state._fsp--;
 
-                     after(grammarAccess.getCommandAccess().getROTATEParserRuleCall_8()); 
+                     after(grammarAccess.getCommandAccess().getRotateLParserRuleCall_8()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 10 :
+                    // InternalXDrone.g:436:2: ( ruleRotateR )
+                    {
+                    // InternalXDrone.g:436:2: ( ruleRotateR )
+                    // InternalXDrone.g:437:3: ruleRotateR
+                    {
+                     before(grammarAccess.getCommandAccess().getRotateRParserRuleCall_9()); 
+                    pushFollow(FOLLOW_2);
+                    ruleRotateR();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getCommandAccess().getRotateRParserRuleCall_9()); 
 
                     }
 
@@ -1251,14 +1353,14 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Main__Group__0"
-    // InternalXDrone.g:415:1: rule__Main__Group__0 : rule__Main__Group__0__Impl rule__Main__Group__1 ;
+    // InternalXDrone.g:446:1: rule__Main__Group__0 : rule__Main__Group__0__Impl rule__Main__Group__1 ;
     public final void rule__Main__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:419:1: ( rule__Main__Group__0__Impl rule__Main__Group__1 )
-            // InternalXDrone.g:420:2: rule__Main__Group__0__Impl rule__Main__Group__1
+            // InternalXDrone.g:450:1: ( rule__Main__Group__0__Impl rule__Main__Group__1 )
+            // InternalXDrone.g:451:2: rule__Main__Group__0__Impl rule__Main__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Main__Group__0__Impl();
@@ -1289,17 +1391,17 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Main__Group__0__Impl"
-    // InternalXDrone.g:427:1: rule__Main__Group__0__Impl : ( 'xdrone' ) ;
+    // InternalXDrone.g:458:1: rule__Main__Group__0__Impl : ( 'xdrone' ) ;
     public final void rule__Main__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:431:1: ( ( 'xdrone' ) )
-            // InternalXDrone.g:432:1: ( 'xdrone' )
+            // InternalXDrone.g:462:1: ( ( 'xdrone' ) )
+            // InternalXDrone.g:463:1: ( 'xdrone' )
             {
-            // InternalXDrone.g:432:1: ( 'xdrone' )
-            // InternalXDrone.g:433:2: 'xdrone'
+            // InternalXDrone.g:463:1: ( 'xdrone' )
+            // InternalXDrone.g:464:2: 'xdrone'
             {
              before(grammarAccess.getMainAccess().getXdroneKeyword_0()); 
             match(input,13,FOLLOW_2); 
@@ -1326,14 +1428,14 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Main__Group__1"
-    // InternalXDrone.g:442:1: rule__Main__Group__1 : rule__Main__Group__1__Impl rule__Main__Group__2 ;
+    // InternalXDrone.g:473:1: rule__Main__Group__1 : rule__Main__Group__1__Impl rule__Main__Group__2 ;
     public final void rule__Main__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:446:1: ( rule__Main__Group__1__Impl rule__Main__Group__2 )
-            // InternalXDrone.g:447:2: rule__Main__Group__1__Impl rule__Main__Group__2
+            // InternalXDrone.g:477:1: ( rule__Main__Group__1__Impl rule__Main__Group__2 )
+            // InternalXDrone.g:478:2: rule__Main__Group__1__Impl rule__Main__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Main__Group__1__Impl();
@@ -1364,21 +1466,21 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Main__Group__1__Impl"
-    // InternalXDrone.g:454:1: rule__Main__Group__1__Impl : ( ( rule__Main__NameAssignment_1 ) ) ;
+    // InternalXDrone.g:485:1: rule__Main__Group__1__Impl : ( ( rule__Main__NameAssignment_1 ) ) ;
     public final void rule__Main__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:458:1: ( ( ( rule__Main__NameAssignment_1 ) ) )
-            // InternalXDrone.g:459:1: ( ( rule__Main__NameAssignment_1 ) )
+            // InternalXDrone.g:489:1: ( ( ( rule__Main__NameAssignment_1 ) ) )
+            // InternalXDrone.g:490:1: ( ( rule__Main__NameAssignment_1 ) )
             {
-            // InternalXDrone.g:459:1: ( ( rule__Main__NameAssignment_1 ) )
-            // InternalXDrone.g:460:2: ( rule__Main__NameAssignment_1 )
+            // InternalXDrone.g:490:1: ( ( rule__Main__NameAssignment_1 ) )
+            // InternalXDrone.g:491:2: ( rule__Main__NameAssignment_1 )
             {
              before(grammarAccess.getMainAccess().getNameAssignment_1()); 
-            // InternalXDrone.g:461:2: ( rule__Main__NameAssignment_1 )
-            // InternalXDrone.g:461:3: rule__Main__NameAssignment_1
+            // InternalXDrone.g:492:2: ( rule__Main__NameAssignment_1 )
+            // InternalXDrone.g:492:3: rule__Main__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Main__NameAssignment_1();
@@ -1411,14 +1513,14 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Main__Group__2"
-    // InternalXDrone.g:469:1: rule__Main__Group__2 : rule__Main__Group__2__Impl rule__Main__Group__3 ;
+    // InternalXDrone.g:500:1: rule__Main__Group__2 : rule__Main__Group__2__Impl rule__Main__Group__3 ;
     public final void rule__Main__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:473:1: ( rule__Main__Group__2__Impl rule__Main__Group__3 )
-            // InternalXDrone.g:474:2: rule__Main__Group__2__Impl rule__Main__Group__3
+            // InternalXDrone.g:504:1: ( rule__Main__Group__2__Impl rule__Main__Group__3 )
+            // InternalXDrone.g:505:2: rule__Main__Group__2__Impl rule__Main__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__Main__Group__2__Impl();
@@ -1449,17 +1551,17 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Main__Group__2__Impl"
-    // InternalXDrone.g:481:1: rule__Main__Group__2__Impl : ( 'begin' ) ;
+    // InternalXDrone.g:512:1: rule__Main__Group__2__Impl : ( 'begin' ) ;
     public final void rule__Main__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:485:1: ( ( 'begin' ) )
-            // InternalXDrone.g:486:1: ( 'begin' )
+            // InternalXDrone.g:516:1: ( ( 'begin' ) )
+            // InternalXDrone.g:517:1: ( 'begin' )
             {
-            // InternalXDrone.g:486:1: ( 'begin' )
-            // InternalXDrone.g:487:2: 'begin'
+            // InternalXDrone.g:517:1: ( 'begin' )
+            // InternalXDrone.g:518:2: 'begin'
             {
              before(grammarAccess.getMainAccess().getBeginKeyword_2()); 
             match(input,14,FOLLOW_2); 
@@ -1486,14 +1588,14 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Main__Group__3"
-    // InternalXDrone.g:496:1: rule__Main__Group__3 : rule__Main__Group__3__Impl rule__Main__Group__4 ;
+    // InternalXDrone.g:527:1: rule__Main__Group__3 : rule__Main__Group__3__Impl rule__Main__Group__4 ;
     public final void rule__Main__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:500:1: ( rule__Main__Group__3__Impl rule__Main__Group__4 )
-            // InternalXDrone.g:501:2: rule__Main__Group__3__Impl rule__Main__Group__4
+            // InternalXDrone.g:531:1: ( rule__Main__Group__3__Impl rule__Main__Group__4 )
+            // InternalXDrone.g:532:2: rule__Main__Group__3__Impl rule__Main__Group__4
             {
             pushFollow(FOLLOW_5);
             rule__Main__Group__3__Impl();
@@ -1524,33 +1626,33 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Main__Group__3__Impl"
-    // InternalXDrone.g:508:1: rule__Main__Group__3__Impl : ( ( rule__Main__Group_3__0 )* ) ;
+    // InternalXDrone.g:539:1: rule__Main__Group__3__Impl : ( ( rule__Main__Group_3__0 )* ) ;
     public final void rule__Main__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:512:1: ( ( ( rule__Main__Group_3__0 )* ) )
-            // InternalXDrone.g:513:1: ( ( rule__Main__Group_3__0 )* )
+            // InternalXDrone.g:543:1: ( ( ( rule__Main__Group_3__0 )* ) )
+            // InternalXDrone.g:544:1: ( ( rule__Main__Group_3__0 )* )
             {
-            // InternalXDrone.g:513:1: ( ( rule__Main__Group_3__0 )* )
-            // InternalXDrone.g:514:2: ( rule__Main__Group_3__0 )*
+            // InternalXDrone.g:544:1: ( ( rule__Main__Group_3__0 )* )
+            // InternalXDrone.g:545:2: ( rule__Main__Group_3__0 )*
             {
              before(grammarAccess.getMainAccess().getGroup_3()); 
-            // InternalXDrone.g:515:2: ( rule__Main__Group_3__0 )*
+            // InternalXDrone.g:546:2: ( rule__Main__Group_3__0 )*
             loop2:
             do {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( ((LA2_0>=11 && LA2_0<=12)||LA2_0==17||(LA2_0>=20 && LA2_0<=25)) ) {
+                if ( ((LA2_0>=11 && LA2_0<=12)||LA2_0==17||(LA2_0>=20 && LA2_0<=26)) ) {
                     alt2=1;
                 }
 
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalXDrone.g:515:3: rule__Main__Group_3__0
+            	    // InternalXDrone.g:546:3: rule__Main__Group_3__0
             	    {
             	    pushFollow(FOLLOW_6);
             	    rule__Main__Group_3__0();
@@ -1589,14 +1691,14 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Main__Group__4"
-    // InternalXDrone.g:523:1: rule__Main__Group__4 : rule__Main__Group__4__Impl ;
+    // InternalXDrone.g:554:1: rule__Main__Group__4 : rule__Main__Group__4__Impl ;
     public final void rule__Main__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:527:1: ( rule__Main__Group__4__Impl )
-            // InternalXDrone.g:528:2: rule__Main__Group__4__Impl
+            // InternalXDrone.g:558:1: ( rule__Main__Group__4__Impl )
+            // InternalXDrone.g:559:2: rule__Main__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Main__Group__4__Impl();
@@ -1622,17 +1724,17 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Main__Group__4__Impl"
-    // InternalXDrone.g:534:1: rule__Main__Group__4__Impl : ( 'end' ) ;
+    // InternalXDrone.g:565:1: rule__Main__Group__4__Impl : ( 'end' ) ;
     public final void rule__Main__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:538:1: ( ( 'end' ) )
-            // InternalXDrone.g:539:1: ( 'end' )
+            // InternalXDrone.g:569:1: ( ( 'end' ) )
+            // InternalXDrone.g:570:1: ( 'end' )
             {
-            // InternalXDrone.g:539:1: ( 'end' )
-            // InternalXDrone.g:540:2: 'end'
+            // InternalXDrone.g:570:1: ( 'end' )
+            // InternalXDrone.g:571:2: 'end'
             {
              before(grammarAccess.getMainAccess().getEndKeyword_4()); 
             match(input,15,FOLLOW_2); 
@@ -1659,14 +1761,14 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Main__Group_3__0"
-    // InternalXDrone.g:550:1: rule__Main__Group_3__0 : rule__Main__Group_3__0__Impl rule__Main__Group_3__1 ;
+    // InternalXDrone.g:581:1: rule__Main__Group_3__0 : rule__Main__Group_3__0__Impl rule__Main__Group_3__1 ;
     public final void rule__Main__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:554:1: ( rule__Main__Group_3__0__Impl rule__Main__Group_3__1 )
-            // InternalXDrone.g:555:2: rule__Main__Group_3__0__Impl rule__Main__Group_3__1
+            // InternalXDrone.g:585:1: ( rule__Main__Group_3__0__Impl rule__Main__Group_3__1 )
+            // InternalXDrone.g:586:2: rule__Main__Group_3__0__Impl rule__Main__Group_3__1
             {
             pushFollow(FOLLOW_7);
             rule__Main__Group_3__0__Impl();
@@ -1697,21 +1799,21 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Main__Group_3__0__Impl"
-    // InternalXDrone.g:562:1: rule__Main__Group_3__0__Impl : ( ( rule__Main__CommandsAssignment_3_0 ) ) ;
+    // InternalXDrone.g:593:1: rule__Main__Group_3__0__Impl : ( ( rule__Main__CommandsAssignment_3_0 ) ) ;
     public final void rule__Main__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:566:1: ( ( ( rule__Main__CommandsAssignment_3_0 ) ) )
-            // InternalXDrone.g:567:1: ( ( rule__Main__CommandsAssignment_3_0 ) )
+            // InternalXDrone.g:597:1: ( ( ( rule__Main__CommandsAssignment_3_0 ) ) )
+            // InternalXDrone.g:598:1: ( ( rule__Main__CommandsAssignment_3_0 ) )
             {
-            // InternalXDrone.g:567:1: ( ( rule__Main__CommandsAssignment_3_0 ) )
-            // InternalXDrone.g:568:2: ( rule__Main__CommandsAssignment_3_0 )
+            // InternalXDrone.g:598:1: ( ( rule__Main__CommandsAssignment_3_0 ) )
+            // InternalXDrone.g:599:2: ( rule__Main__CommandsAssignment_3_0 )
             {
              before(grammarAccess.getMainAccess().getCommandsAssignment_3_0()); 
-            // InternalXDrone.g:569:2: ( rule__Main__CommandsAssignment_3_0 )
-            // InternalXDrone.g:569:3: rule__Main__CommandsAssignment_3_0
+            // InternalXDrone.g:600:2: ( rule__Main__CommandsAssignment_3_0 )
+            // InternalXDrone.g:600:3: rule__Main__CommandsAssignment_3_0
             {
             pushFollow(FOLLOW_2);
             rule__Main__CommandsAssignment_3_0();
@@ -1744,14 +1846,14 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Main__Group_3__1"
-    // InternalXDrone.g:577:1: rule__Main__Group_3__1 : rule__Main__Group_3__1__Impl ;
+    // InternalXDrone.g:608:1: rule__Main__Group_3__1 : rule__Main__Group_3__1__Impl ;
     public final void rule__Main__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:581:1: ( rule__Main__Group_3__1__Impl )
-            // InternalXDrone.g:582:2: rule__Main__Group_3__1__Impl
+            // InternalXDrone.g:612:1: ( rule__Main__Group_3__1__Impl )
+            // InternalXDrone.g:613:2: rule__Main__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Main__Group_3__1__Impl();
@@ -1777,20 +1879,20 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Main__Group_3__1__Impl"
-    // InternalXDrone.g:588:1: rule__Main__Group_3__1__Impl : ( ( ';' )? ) ;
+    // InternalXDrone.g:619:1: rule__Main__Group_3__1__Impl : ( ( ';' )? ) ;
     public final void rule__Main__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:592:1: ( ( ( ';' )? ) )
-            // InternalXDrone.g:593:1: ( ( ';' )? )
+            // InternalXDrone.g:623:1: ( ( ( ';' )? ) )
+            // InternalXDrone.g:624:1: ( ( ';' )? )
             {
-            // InternalXDrone.g:593:1: ( ( ';' )? )
-            // InternalXDrone.g:594:2: ( ';' )?
+            // InternalXDrone.g:624:1: ( ( ';' )? )
+            // InternalXDrone.g:625:2: ( ';' )?
             {
              before(grammarAccess.getMainAccess().getSemicolonKeyword_3_1()); 
-            // InternalXDrone.g:595:2: ( ';' )?
+            // InternalXDrone.g:626:2: ( ';' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1799,7 +1901,7 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalXDrone.g:595:3: ';'
+                    // InternalXDrone.g:626:3: ';'
                     {
                     match(input,16,FOLLOW_2); 
 
@@ -1831,14 +1933,14 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Command__Group_0__0"
-    // InternalXDrone.g:604:1: rule__Command__Group_0__0 : rule__Command__Group_0__0__Impl rule__Command__Group_0__1 ;
+    // InternalXDrone.g:635:1: rule__Command__Group_0__0 : rule__Command__Group_0__0__Impl rule__Command__Group_0__1 ;
     public final void rule__Command__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:608:1: ( rule__Command__Group_0__0__Impl rule__Command__Group_0__1 )
-            // InternalXDrone.g:609:2: rule__Command__Group_0__0__Impl rule__Command__Group_0__1
+            // InternalXDrone.g:639:1: ( rule__Command__Group_0__0__Impl rule__Command__Group_0__1 )
+            // InternalXDrone.g:640:2: rule__Command__Group_0__0__Impl rule__Command__Group_0__1
             {
             pushFollow(FOLLOW_8);
             rule__Command__Group_0__0__Impl();
@@ -1869,21 +1971,21 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Command__Group_0__0__Impl"
-    // InternalXDrone.g:616:1: rule__Command__Group_0__0__Impl : ( () ) ;
+    // InternalXDrone.g:647:1: rule__Command__Group_0__0__Impl : ( () ) ;
     public final void rule__Command__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:620:1: ( ( () ) )
-            // InternalXDrone.g:621:1: ( () )
+            // InternalXDrone.g:651:1: ( ( () ) )
+            // InternalXDrone.g:652:1: ( () )
             {
-            // InternalXDrone.g:621:1: ( () )
-            // InternalXDrone.g:622:2: ()
+            // InternalXDrone.g:652:1: ( () )
+            // InternalXDrone.g:653:2: ()
             {
              before(grammarAccess.getCommandAccess().getCommandAction_0_0()); 
-            // InternalXDrone.g:623:2: ()
-            // InternalXDrone.g:623:3: 
+            // InternalXDrone.g:654:2: ()
+            // InternalXDrone.g:654:3: 
             {
             }
 
@@ -1906,14 +2008,14 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Command__Group_0__1"
-    // InternalXDrone.g:631:1: rule__Command__Group_0__1 : rule__Command__Group_0__1__Impl ;
+    // InternalXDrone.g:662:1: rule__Command__Group_0__1 : rule__Command__Group_0__1__Impl ;
     public final void rule__Command__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:635:1: ( rule__Command__Group_0__1__Impl )
-            // InternalXDrone.g:636:2: rule__Command__Group_0__1__Impl
+            // InternalXDrone.g:666:1: ( rule__Command__Group_0__1__Impl )
+            // InternalXDrone.g:667:2: rule__Command__Group_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Command__Group_0__1__Impl();
@@ -1939,25 +2041,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Command__Group_0__1__Impl"
-    // InternalXDrone.g:642:1: rule__Command__Group_0__1__Impl : ( ruleHOME ) ;
+    // InternalXDrone.g:673:1: rule__Command__Group_0__1__Impl : ( ruleTakeoff ) ;
     public final void rule__Command__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:646:1: ( ( ruleHOME ) )
-            // InternalXDrone.g:647:1: ( ruleHOME )
+            // InternalXDrone.g:677:1: ( ( ruleTakeoff ) )
+            // InternalXDrone.g:678:1: ( ruleTakeoff )
             {
-            // InternalXDrone.g:647:1: ( ruleHOME )
-            // InternalXDrone.g:648:2: ruleHOME
+            // InternalXDrone.g:678:1: ( ruleTakeoff )
+            // InternalXDrone.g:679:2: ruleTakeoff
             {
-             before(grammarAccess.getCommandAccess().getHOMEParserRuleCall_0_1()); 
+             before(grammarAccess.getCommandAccess().getTakeoffParserRuleCall_0_1()); 
             pushFollow(FOLLOW_2);
-            ruleHOME();
+            ruleTakeoff();
 
             state._fsp--;
 
-             after(grammarAccess.getCommandAccess().getHOMEParserRuleCall_0_1()); 
+             after(grammarAccess.getCommandAccess().getTakeoffParserRuleCall_0_1()); 
 
             }
 
@@ -1980,14 +2082,14 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Command__Group_1__0"
-    // InternalXDrone.g:658:1: rule__Command__Group_1__0 : rule__Command__Group_1__0__Impl rule__Command__Group_1__1 ;
+    // InternalXDrone.g:689:1: rule__Command__Group_1__0 : rule__Command__Group_1__0__Impl rule__Command__Group_1__1 ;
     public final void rule__Command__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:662:1: ( rule__Command__Group_1__0__Impl rule__Command__Group_1__1 )
-            // InternalXDrone.g:663:2: rule__Command__Group_1__0__Impl rule__Command__Group_1__1
+            // InternalXDrone.g:693:1: ( rule__Command__Group_1__0__Impl rule__Command__Group_1__1 )
+            // InternalXDrone.g:694:2: rule__Command__Group_1__0__Impl rule__Command__Group_1__1
             {
             pushFollow(FOLLOW_9);
             rule__Command__Group_1__0__Impl();
@@ -2018,21 +2120,21 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Command__Group_1__0__Impl"
-    // InternalXDrone.g:670:1: rule__Command__Group_1__0__Impl : ( () ) ;
+    // InternalXDrone.g:701:1: rule__Command__Group_1__0__Impl : ( () ) ;
     public final void rule__Command__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:674:1: ( ( () ) )
-            // InternalXDrone.g:675:1: ( () )
+            // InternalXDrone.g:705:1: ( ( () ) )
+            // InternalXDrone.g:706:1: ( () )
             {
-            // InternalXDrone.g:675:1: ( () )
-            // InternalXDrone.g:676:2: ()
+            // InternalXDrone.g:706:1: ( () )
+            // InternalXDrone.g:707:2: ()
             {
              before(grammarAccess.getCommandAccess().getCommandAction_1_0()); 
-            // InternalXDrone.g:677:2: ()
-            // InternalXDrone.g:677:3: 
+            // InternalXDrone.g:708:2: ()
+            // InternalXDrone.g:708:3: 
             {
             }
 
@@ -2055,14 +2157,14 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Command__Group_1__1"
-    // InternalXDrone.g:685:1: rule__Command__Group_1__1 : rule__Command__Group_1__1__Impl ;
+    // InternalXDrone.g:716:1: rule__Command__Group_1__1 : rule__Command__Group_1__1__Impl ;
     public final void rule__Command__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:689:1: ( rule__Command__Group_1__1__Impl )
-            // InternalXDrone.g:690:2: rule__Command__Group_1__1__Impl
+            // InternalXDrone.g:720:1: ( rule__Command__Group_1__1__Impl )
+            // InternalXDrone.g:721:2: rule__Command__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Command__Group_1__1__Impl();
@@ -2088,25 +2190,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Command__Group_1__1__Impl"
-    // InternalXDrone.g:696:1: rule__Command__Group_1__1__Impl : ( ruleEMERGENCY ) ;
+    // InternalXDrone.g:727:1: rule__Command__Group_1__1__Impl : ( ruleLand ) ;
     public final void rule__Command__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:700:1: ( ( ruleEMERGENCY ) )
-            // InternalXDrone.g:701:1: ( ruleEMERGENCY )
+            // InternalXDrone.g:731:1: ( ( ruleLand ) )
+            // InternalXDrone.g:732:1: ( ruleLand )
             {
-            // InternalXDrone.g:701:1: ( ruleEMERGENCY )
-            // InternalXDrone.g:702:2: ruleEMERGENCY
+            // InternalXDrone.g:732:1: ( ruleLand )
+            // InternalXDrone.g:733:2: ruleLand
             {
-             before(grammarAccess.getCommandAccess().getEMERGENCYParserRuleCall_1_1()); 
+             before(grammarAccess.getCommandAccess().getLandParserRuleCall_1_1()); 
             pushFollow(FOLLOW_2);
-            ruleEMERGENCY();
+            ruleLand();
 
             state._fsp--;
 
-             after(grammarAccess.getCommandAccess().getEMERGENCYParserRuleCall_1_1()); 
+             after(grammarAccess.getCommandAccess().getLandParserRuleCall_1_1()); 
 
             }
 
@@ -2128,23 +2230,23 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Command__Group_1__1__Impl"
 
 
-    // $ANTLR start "rule__UP__Group__0"
-    // InternalXDrone.g:712:1: rule__UP__Group__0 : rule__UP__Group__0__Impl rule__UP__Group__1 ;
-    public final void rule__UP__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Up__Group__0"
+    // InternalXDrone.g:743:1: rule__Up__Group__0 : rule__Up__Group__0__Impl rule__Up__Group__1 ;
+    public final void rule__Up__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:716:1: ( rule__UP__Group__0__Impl rule__UP__Group__1 )
-            // InternalXDrone.g:717:2: rule__UP__Group__0__Impl rule__UP__Group__1
+            // InternalXDrone.g:747:1: ( rule__Up__Group__0__Impl rule__Up__Group__1 )
+            // InternalXDrone.g:748:2: rule__Up__Group__0__Impl rule__Up__Group__1
             {
             pushFollow(FOLLOW_10);
-            rule__UP__Group__0__Impl();
+            rule__Up__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__UP__Group__1();
+            rule__Up__Group__1();
 
             state._fsp--;
 
@@ -2163,25 +2265,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UP__Group__0"
+    // $ANTLR end "rule__Up__Group__0"
 
 
-    // $ANTLR start "rule__UP__Group__0__Impl"
-    // InternalXDrone.g:724:1: rule__UP__Group__0__Impl : ( 'UP' ) ;
-    public final void rule__UP__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Up__Group__0__Impl"
+    // InternalXDrone.g:755:1: rule__Up__Group__0__Impl : ( 'UP' ) ;
+    public final void rule__Up__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:728:1: ( ( 'UP' ) )
-            // InternalXDrone.g:729:1: ( 'UP' )
+            // InternalXDrone.g:759:1: ( ( 'UP' ) )
+            // InternalXDrone.g:760:1: ( 'UP' )
             {
-            // InternalXDrone.g:729:1: ( 'UP' )
-            // InternalXDrone.g:730:2: 'UP'
+            // InternalXDrone.g:760:1: ( 'UP' )
+            // InternalXDrone.g:761:2: 'UP'
             {
-             before(grammarAccess.getUPAccess().getUPKeyword_0()); 
+             before(grammarAccess.getUpAccess().getUPKeyword_0()); 
             match(input,17,FOLLOW_2); 
-             after(grammarAccess.getUPAccess().getUPKeyword_0()); 
+             after(grammarAccess.getUpAccess().getUPKeyword_0()); 
 
             }
 
@@ -2200,26 +2302,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UP__Group__0__Impl"
+    // $ANTLR end "rule__Up__Group__0__Impl"
 
 
-    // $ANTLR start "rule__UP__Group__1"
-    // InternalXDrone.g:739:1: rule__UP__Group__1 : rule__UP__Group__1__Impl rule__UP__Group__2 ;
-    public final void rule__UP__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__Up__Group__1"
+    // InternalXDrone.g:770:1: rule__Up__Group__1 : rule__Up__Group__1__Impl rule__Up__Group__2 ;
+    public final void rule__Up__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:743:1: ( rule__UP__Group__1__Impl rule__UP__Group__2 )
-            // InternalXDrone.g:744:2: rule__UP__Group__1__Impl rule__UP__Group__2
+            // InternalXDrone.g:774:1: ( rule__Up__Group__1__Impl rule__Up__Group__2 )
+            // InternalXDrone.g:775:2: rule__Up__Group__1__Impl rule__Up__Group__2
             {
             pushFollow(FOLLOW_11);
-            rule__UP__Group__1__Impl();
+            rule__Up__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__UP__Group__2();
+            rule__Up__Group__2();
 
             state._fsp--;
 
@@ -2238,25 +2340,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UP__Group__1"
+    // $ANTLR end "rule__Up__Group__1"
 
 
-    // $ANTLR start "rule__UP__Group__1__Impl"
-    // InternalXDrone.g:751:1: rule__UP__Group__1__Impl : ( '(' ) ;
-    public final void rule__UP__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Up__Group__1__Impl"
+    // InternalXDrone.g:782:1: rule__Up__Group__1__Impl : ( '(' ) ;
+    public final void rule__Up__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:755:1: ( ( '(' ) )
-            // InternalXDrone.g:756:1: ( '(' )
+            // InternalXDrone.g:786:1: ( ( '(' ) )
+            // InternalXDrone.g:787:1: ( '(' )
             {
-            // InternalXDrone.g:756:1: ( '(' )
-            // InternalXDrone.g:757:2: '('
+            // InternalXDrone.g:787:1: ( '(' )
+            // InternalXDrone.g:788:2: '('
             {
-             before(grammarAccess.getUPAccess().getLeftParenthesisKeyword_1()); 
+             before(grammarAccess.getUpAccess().getLeftParenthesisKeyword_1()); 
             match(input,18,FOLLOW_2); 
-             after(grammarAccess.getUPAccess().getLeftParenthesisKeyword_1()); 
+             after(grammarAccess.getUpAccess().getLeftParenthesisKeyword_1()); 
 
             }
 
@@ -2275,26 +2377,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UP__Group__1__Impl"
+    // $ANTLR end "rule__Up__Group__1__Impl"
 
 
-    // $ANTLR start "rule__UP__Group__2"
-    // InternalXDrone.g:766:1: rule__UP__Group__2 : rule__UP__Group__2__Impl rule__UP__Group__3 ;
-    public final void rule__UP__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__Up__Group__2"
+    // InternalXDrone.g:797:1: rule__Up__Group__2 : rule__Up__Group__2__Impl rule__Up__Group__3 ;
+    public final void rule__Up__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:770:1: ( rule__UP__Group__2__Impl rule__UP__Group__3 )
-            // InternalXDrone.g:771:2: rule__UP__Group__2__Impl rule__UP__Group__3
+            // InternalXDrone.g:801:1: ( rule__Up__Group__2__Impl rule__Up__Group__3 )
+            // InternalXDrone.g:802:2: rule__Up__Group__2__Impl rule__Up__Group__3
             {
             pushFollow(FOLLOW_12);
-            rule__UP__Group__2__Impl();
+            rule__Up__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__UP__Group__3();
+            rule__Up__Group__3();
 
             state._fsp--;
 
@@ -2313,35 +2415,35 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UP__Group__2"
+    // $ANTLR end "rule__Up__Group__2"
 
 
-    // $ANTLR start "rule__UP__Group__2__Impl"
-    // InternalXDrone.g:778:1: rule__UP__Group__2__Impl : ( ( rule__UP__MillisecondsAssignment_2 ) ) ;
-    public final void rule__UP__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Up__Group__2__Impl"
+    // InternalXDrone.g:809:1: rule__Up__Group__2__Impl : ( ( rule__Up__MillisecondsAssignment_2 ) ) ;
+    public final void rule__Up__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:782:1: ( ( ( rule__UP__MillisecondsAssignment_2 ) ) )
-            // InternalXDrone.g:783:1: ( ( rule__UP__MillisecondsAssignment_2 ) )
+            // InternalXDrone.g:813:1: ( ( ( rule__Up__MillisecondsAssignment_2 ) ) )
+            // InternalXDrone.g:814:1: ( ( rule__Up__MillisecondsAssignment_2 ) )
             {
-            // InternalXDrone.g:783:1: ( ( rule__UP__MillisecondsAssignment_2 ) )
-            // InternalXDrone.g:784:2: ( rule__UP__MillisecondsAssignment_2 )
+            // InternalXDrone.g:814:1: ( ( rule__Up__MillisecondsAssignment_2 ) )
+            // InternalXDrone.g:815:2: ( rule__Up__MillisecondsAssignment_2 )
             {
-             before(grammarAccess.getUPAccess().getMillisecondsAssignment_2()); 
-            // InternalXDrone.g:785:2: ( rule__UP__MillisecondsAssignment_2 )
-            // InternalXDrone.g:785:3: rule__UP__MillisecondsAssignment_2
+             before(grammarAccess.getUpAccess().getMillisecondsAssignment_2()); 
+            // InternalXDrone.g:816:2: ( rule__Up__MillisecondsAssignment_2 )
+            // InternalXDrone.g:816:3: rule__Up__MillisecondsAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__UP__MillisecondsAssignment_2();
+            rule__Up__MillisecondsAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getUPAccess().getMillisecondsAssignment_2()); 
+             after(grammarAccess.getUpAccess().getMillisecondsAssignment_2()); 
 
             }
 
@@ -2360,21 +2462,21 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UP__Group__2__Impl"
+    // $ANTLR end "rule__Up__Group__2__Impl"
 
 
-    // $ANTLR start "rule__UP__Group__3"
-    // InternalXDrone.g:793:1: rule__UP__Group__3 : rule__UP__Group__3__Impl ;
-    public final void rule__UP__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__Up__Group__3"
+    // InternalXDrone.g:824:1: rule__Up__Group__3 : rule__Up__Group__3__Impl ;
+    public final void rule__Up__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:797:1: ( rule__UP__Group__3__Impl )
-            // InternalXDrone.g:798:2: rule__UP__Group__3__Impl
+            // InternalXDrone.g:828:1: ( rule__Up__Group__3__Impl )
+            // InternalXDrone.g:829:2: rule__Up__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__UP__Group__3__Impl();
+            rule__Up__Group__3__Impl();
 
             state._fsp--;
 
@@ -2393,25 +2495,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UP__Group__3"
+    // $ANTLR end "rule__Up__Group__3"
 
 
-    // $ANTLR start "rule__UP__Group__3__Impl"
-    // InternalXDrone.g:804:1: rule__UP__Group__3__Impl : ( ')' ) ;
-    public final void rule__UP__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Up__Group__3__Impl"
+    // InternalXDrone.g:835:1: rule__Up__Group__3__Impl : ( ')' ) ;
+    public final void rule__Up__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:808:1: ( ( ')' ) )
-            // InternalXDrone.g:809:1: ( ')' )
+            // InternalXDrone.g:839:1: ( ( ')' ) )
+            // InternalXDrone.g:840:1: ( ')' )
             {
-            // InternalXDrone.g:809:1: ( ')' )
-            // InternalXDrone.g:810:2: ')'
+            // InternalXDrone.g:840:1: ( ')' )
+            // InternalXDrone.g:841:2: ')'
             {
-             before(grammarAccess.getUPAccess().getRightParenthesisKeyword_3()); 
+             before(grammarAccess.getUpAccess().getRightParenthesisKeyword_3()); 
             match(input,19,FOLLOW_2); 
-             after(grammarAccess.getUPAccess().getRightParenthesisKeyword_3()); 
+             after(grammarAccess.getUpAccess().getRightParenthesisKeyword_3()); 
 
             }
 
@@ -2430,26 +2532,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UP__Group__3__Impl"
+    // $ANTLR end "rule__Up__Group__3__Impl"
 
 
-    // $ANTLR start "rule__DOWN__Group__0"
-    // InternalXDrone.g:820:1: rule__DOWN__Group__0 : rule__DOWN__Group__0__Impl rule__DOWN__Group__1 ;
-    public final void rule__DOWN__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Down__Group__0"
+    // InternalXDrone.g:851:1: rule__Down__Group__0 : rule__Down__Group__0__Impl rule__Down__Group__1 ;
+    public final void rule__Down__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:824:1: ( rule__DOWN__Group__0__Impl rule__DOWN__Group__1 )
-            // InternalXDrone.g:825:2: rule__DOWN__Group__0__Impl rule__DOWN__Group__1
+            // InternalXDrone.g:855:1: ( rule__Down__Group__0__Impl rule__Down__Group__1 )
+            // InternalXDrone.g:856:2: rule__Down__Group__0__Impl rule__Down__Group__1
             {
             pushFollow(FOLLOW_10);
-            rule__DOWN__Group__0__Impl();
+            rule__Down__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__DOWN__Group__1();
+            rule__Down__Group__1();
 
             state._fsp--;
 
@@ -2468,25 +2570,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__DOWN__Group__0"
+    // $ANTLR end "rule__Down__Group__0"
 
 
-    // $ANTLR start "rule__DOWN__Group__0__Impl"
-    // InternalXDrone.g:832:1: rule__DOWN__Group__0__Impl : ( 'DOWN' ) ;
-    public final void rule__DOWN__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Down__Group__0__Impl"
+    // InternalXDrone.g:863:1: rule__Down__Group__0__Impl : ( 'DOWN' ) ;
+    public final void rule__Down__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:836:1: ( ( 'DOWN' ) )
-            // InternalXDrone.g:837:1: ( 'DOWN' )
+            // InternalXDrone.g:867:1: ( ( 'DOWN' ) )
+            // InternalXDrone.g:868:1: ( 'DOWN' )
             {
-            // InternalXDrone.g:837:1: ( 'DOWN' )
-            // InternalXDrone.g:838:2: 'DOWN'
+            // InternalXDrone.g:868:1: ( 'DOWN' )
+            // InternalXDrone.g:869:2: 'DOWN'
             {
-             before(grammarAccess.getDOWNAccess().getDOWNKeyword_0()); 
+             before(grammarAccess.getDownAccess().getDOWNKeyword_0()); 
             match(input,20,FOLLOW_2); 
-             after(grammarAccess.getDOWNAccess().getDOWNKeyword_0()); 
+             after(grammarAccess.getDownAccess().getDOWNKeyword_0()); 
 
             }
 
@@ -2505,26 +2607,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__DOWN__Group__0__Impl"
+    // $ANTLR end "rule__Down__Group__0__Impl"
 
 
-    // $ANTLR start "rule__DOWN__Group__1"
-    // InternalXDrone.g:847:1: rule__DOWN__Group__1 : rule__DOWN__Group__1__Impl rule__DOWN__Group__2 ;
-    public final void rule__DOWN__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__Down__Group__1"
+    // InternalXDrone.g:878:1: rule__Down__Group__1 : rule__Down__Group__1__Impl rule__Down__Group__2 ;
+    public final void rule__Down__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:851:1: ( rule__DOWN__Group__1__Impl rule__DOWN__Group__2 )
-            // InternalXDrone.g:852:2: rule__DOWN__Group__1__Impl rule__DOWN__Group__2
+            // InternalXDrone.g:882:1: ( rule__Down__Group__1__Impl rule__Down__Group__2 )
+            // InternalXDrone.g:883:2: rule__Down__Group__1__Impl rule__Down__Group__2
             {
             pushFollow(FOLLOW_11);
-            rule__DOWN__Group__1__Impl();
+            rule__Down__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__DOWN__Group__2();
+            rule__Down__Group__2();
 
             state._fsp--;
 
@@ -2543,25 +2645,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__DOWN__Group__1"
+    // $ANTLR end "rule__Down__Group__1"
 
 
-    // $ANTLR start "rule__DOWN__Group__1__Impl"
-    // InternalXDrone.g:859:1: rule__DOWN__Group__1__Impl : ( '(' ) ;
-    public final void rule__DOWN__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Down__Group__1__Impl"
+    // InternalXDrone.g:890:1: rule__Down__Group__1__Impl : ( '(' ) ;
+    public final void rule__Down__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:863:1: ( ( '(' ) )
-            // InternalXDrone.g:864:1: ( '(' )
+            // InternalXDrone.g:894:1: ( ( '(' ) )
+            // InternalXDrone.g:895:1: ( '(' )
             {
-            // InternalXDrone.g:864:1: ( '(' )
-            // InternalXDrone.g:865:2: '('
+            // InternalXDrone.g:895:1: ( '(' )
+            // InternalXDrone.g:896:2: '('
             {
-             before(grammarAccess.getDOWNAccess().getLeftParenthesisKeyword_1()); 
+             before(grammarAccess.getDownAccess().getLeftParenthesisKeyword_1()); 
             match(input,18,FOLLOW_2); 
-             after(grammarAccess.getDOWNAccess().getLeftParenthesisKeyword_1()); 
+             after(grammarAccess.getDownAccess().getLeftParenthesisKeyword_1()); 
 
             }
 
@@ -2580,26 +2682,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__DOWN__Group__1__Impl"
+    // $ANTLR end "rule__Down__Group__1__Impl"
 
 
-    // $ANTLR start "rule__DOWN__Group__2"
-    // InternalXDrone.g:874:1: rule__DOWN__Group__2 : rule__DOWN__Group__2__Impl rule__DOWN__Group__3 ;
-    public final void rule__DOWN__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__Down__Group__2"
+    // InternalXDrone.g:905:1: rule__Down__Group__2 : rule__Down__Group__2__Impl rule__Down__Group__3 ;
+    public final void rule__Down__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:878:1: ( rule__DOWN__Group__2__Impl rule__DOWN__Group__3 )
-            // InternalXDrone.g:879:2: rule__DOWN__Group__2__Impl rule__DOWN__Group__3
+            // InternalXDrone.g:909:1: ( rule__Down__Group__2__Impl rule__Down__Group__3 )
+            // InternalXDrone.g:910:2: rule__Down__Group__2__Impl rule__Down__Group__3
             {
             pushFollow(FOLLOW_12);
-            rule__DOWN__Group__2__Impl();
+            rule__Down__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__DOWN__Group__3();
+            rule__Down__Group__3();
 
             state._fsp--;
 
@@ -2618,35 +2720,35 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__DOWN__Group__2"
+    // $ANTLR end "rule__Down__Group__2"
 
 
-    // $ANTLR start "rule__DOWN__Group__2__Impl"
-    // InternalXDrone.g:886:1: rule__DOWN__Group__2__Impl : ( ( rule__DOWN__MillisecondsAssignment_2 ) ) ;
-    public final void rule__DOWN__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Down__Group__2__Impl"
+    // InternalXDrone.g:917:1: rule__Down__Group__2__Impl : ( ( rule__Down__MillisecondsAssignment_2 ) ) ;
+    public final void rule__Down__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:890:1: ( ( ( rule__DOWN__MillisecondsAssignment_2 ) ) )
-            // InternalXDrone.g:891:1: ( ( rule__DOWN__MillisecondsAssignment_2 ) )
+            // InternalXDrone.g:921:1: ( ( ( rule__Down__MillisecondsAssignment_2 ) ) )
+            // InternalXDrone.g:922:1: ( ( rule__Down__MillisecondsAssignment_2 ) )
             {
-            // InternalXDrone.g:891:1: ( ( rule__DOWN__MillisecondsAssignment_2 ) )
-            // InternalXDrone.g:892:2: ( rule__DOWN__MillisecondsAssignment_2 )
+            // InternalXDrone.g:922:1: ( ( rule__Down__MillisecondsAssignment_2 ) )
+            // InternalXDrone.g:923:2: ( rule__Down__MillisecondsAssignment_2 )
             {
-             before(grammarAccess.getDOWNAccess().getMillisecondsAssignment_2()); 
-            // InternalXDrone.g:893:2: ( rule__DOWN__MillisecondsAssignment_2 )
-            // InternalXDrone.g:893:3: rule__DOWN__MillisecondsAssignment_2
+             before(grammarAccess.getDownAccess().getMillisecondsAssignment_2()); 
+            // InternalXDrone.g:924:2: ( rule__Down__MillisecondsAssignment_2 )
+            // InternalXDrone.g:924:3: rule__Down__MillisecondsAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__DOWN__MillisecondsAssignment_2();
+            rule__Down__MillisecondsAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDOWNAccess().getMillisecondsAssignment_2()); 
+             after(grammarAccess.getDownAccess().getMillisecondsAssignment_2()); 
 
             }
 
@@ -2665,21 +2767,21 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__DOWN__Group__2__Impl"
+    // $ANTLR end "rule__Down__Group__2__Impl"
 
 
-    // $ANTLR start "rule__DOWN__Group__3"
-    // InternalXDrone.g:901:1: rule__DOWN__Group__3 : rule__DOWN__Group__3__Impl ;
-    public final void rule__DOWN__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__Down__Group__3"
+    // InternalXDrone.g:932:1: rule__Down__Group__3 : rule__Down__Group__3__Impl ;
+    public final void rule__Down__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:905:1: ( rule__DOWN__Group__3__Impl )
-            // InternalXDrone.g:906:2: rule__DOWN__Group__3__Impl
+            // InternalXDrone.g:936:1: ( rule__Down__Group__3__Impl )
+            // InternalXDrone.g:937:2: rule__Down__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__DOWN__Group__3__Impl();
+            rule__Down__Group__3__Impl();
 
             state._fsp--;
 
@@ -2698,25 +2800,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__DOWN__Group__3"
+    // $ANTLR end "rule__Down__Group__3"
 
 
-    // $ANTLR start "rule__DOWN__Group__3__Impl"
-    // InternalXDrone.g:912:1: rule__DOWN__Group__3__Impl : ( ')' ) ;
-    public final void rule__DOWN__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Down__Group__3__Impl"
+    // InternalXDrone.g:943:1: rule__Down__Group__3__Impl : ( ')' ) ;
+    public final void rule__Down__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:916:1: ( ( ')' ) )
-            // InternalXDrone.g:917:1: ( ')' )
+            // InternalXDrone.g:947:1: ( ( ')' ) )
+            // InternalXDrone.g:948:1: ( ')' )
             {
-            // InternalXDrone.g:917:1: ( ')' )
-            // InternalXDrone.g:918:2: ')'
+            // InternalXDrone.g:948:1: ( ')' )
+            // InternalXDrone.g:949:2: ')'
             {
-             before(grammarAccess.getDOWNAccess().getRightParenthesisKeyword_3()); 
+             before(grammarAccess.getDownAccess().getRightParenthesisKeyword_3()); 
             match(input,19,FOLLOW_2); 
-             after(grammarAccess.getDOWNAccess().getRightParenthesisKeyword_3()); 
+             after(grammarAccess.getDownAccess().getRightParenthesisKeyword_3()); 
 
             }
 
@@ -2735,26 +2837,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__DOWN__Group__3__Impl"
+    // $ANTLR end "rule__Down__Group__3__Impl"
 
 
-    // $ANTLR start "rule__LEFT__Group__0"
-    // InternalXDrone.g:928:1: rule__LEFT__Group__0 : rule__LEFT__Group__0__Impl rule__LEFT__Group__1 ;
-    public final void rule__LEFT__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Left__Group__0"
+    // InternalXDrone.g:959:1: rule__Left__Group__0 : rule__Left__Group__0__Impl rule__Left__Group__1 ;
+    public final void rule__Left__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:932:1: ( rule__LEFT__Group__0__Impl rule__LEFT__Group__1 )
-            // InternalXDrone.g:933:2: rule__LEFT__Group__0__Impl rule__LEFT__Group__1
+            // InternalXDrone.g:963:1: ( rule__Left__Group__0__Impl rule__Left__Group__1 )
+            // InternalXDrone.g:964:2: rule__Left__Group__0__Impl rule__Left__Group__1
             {
             pushFollow(FOLLOW_10);
-            rule__LEFT__Group__0__Impl();
+            rule__Left__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__LEFT__Group__1();
+            rule__Left__Group__1();
 
             state._fsp--;
 
@@ -2773,25 +2875,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__LEFT__Group__0"
+    // $ANTLR end "rule__Left__Group__0"
 
 
-    // $ANTLR start "rule__LEFT__Group__0__Impl"
-    // InternalXDrone.g:940:1: rule__LEFT__Group__0__Impl : ( 'LEFT' ) ;
-    public final void rule__LEFT__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Left__Group__0__Impl"
+    // InternalXDrone.g:971:1: rule__Left__Group__0__Impl : ( 'LEFT' ) ;
+    public final void rule__Left__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:944:1: ( ( 'LEFT' ) )
-            // InternalXDrone.g:945:1: ( 'LEFT' )
+            // InternalXDrone.g:975:1: ( ( 'LEFT' ) )
+            // InternalXDrone.g:976:1: ( 'LEFT' )
             {
-            // InternalXDrone.g:945:1: ( 'LEFT' )
-            // InternalXDrone.g:946:2: 'LEFT'
+            // InternalXDrone.g:976:1: ( 'LEFT' )
+            // InternalXDrone.g:977:2: 'LEFT'
             {
-             before(grammarAccess.getLEFTAccess().getLEFTKeyword_0()); 
+             before(grammarAccess.getLeftAccess().getLEFTKeyword_0()); 
             match(input,21,FOLLOW_2); 
-             after(grammarAccess.getLEFTAccess().getLEFTKeyword_0()); 
+             after(grammarAccess.getLeftAccess().getLEFTKeyword_0()); 
 
             }
 
@@ -2810,26 +2912,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__LEFT__Group__0__Impl"
+    // $ANTLR end "rule__Left__Group__0__Impl"
 
 
-    // $ANTLR start "rule__LEFT__Group__1"
-    // InternalXDrone.g:955:1: rule__LEFT__Group__1 : rule__LEFT__Group__1__Impl rule__LEFT__Group__2 ;
-    public final void rule__LEFT__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__Left__Group__1"
+    // InternalXDrone.g:986:1: rule__Left__Group__1 : rule__Left__Group__1__Impl rule__Left__Group__2 ;
+    public final void rule__Left__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:959:1: ( rule__LEFT__Group__1__Impl rule__LEFT__Group__2 )
-            // InternalXDrone.g:960:2: rule__LEFT__Group__1__Impl rule__LEFT__Group__2
+            // InternalXDrone.g:990:1: ( rule__Left__Group__1__Impl rule__Left__Group__2 )
+            // InternalXDrone.g:991:2: rule__Left__Group__1__Impl rule__Left__Group__2
             {
             pushFollow(FOLLOW_11);
-            rule__LEFT__Group__1__Impl();
+            rule__Left__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__LEFT__Group__2();
+            rule__Left__Group__2();
 
             state._fsp--;
 
@@ -2848,25 +2950,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__LEFT__Group__1"
+    // $ANTLR end "rule__Left__Group__1"
 
 
-    // $ANTLR start "rule__LEFT__Group__1__Impl"
-    // InternalXDrone.g:967:1: rule__LEFT__Group__1__Impl : ( '(' ) ;
-    public final void rule__LEFT__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Left__Group__1__Impl"
+    // InternalXDrone.g:998:1: rule__Left__Group__1__Impl : ( '(' ) ;
+    public final void rule__Left__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:971:1: ( ( '(' ) )
-            // InternalXDrone.g:972:1: ( '(' )
+            // InternalXDrone.g:1002:1: ( ( '(' ) )
+            // InternalXDrone.g:1003:1: ( '(' )
             {
-            // InternalXDrone.g:972:1: ( '(' )
-            // InternalXDrone.g:973:2: '('
+            // InternalXDrone.g:1003:1: ( '(' )
+            // InternalXDrone.g:1004:2: '('
             {
-             before(grammarAccess.getLEFTAccess().getLeftParenthesisKeyword_1()); 
+             before(grammarAccess.getLeftAccess().getLeftParenthesisKeyword_1()); 
             match(input,18,FOLLOW_2); 
-             after(grammarAccess.getLEFTAccess().getLeftParenthesisKeyword_1()); 
+             after(grammarAccess.getLeftAccess().getLeftParenthesisKeyword_1()); 
 
             }
 
@@ -2885,26 +2987,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__LEFT__Group__1__Impl"
+    // $ANTLR end "rule__Left__Group__1__Impl"
 
 
-    // $ANTLR start "rule__LEFT__Group__2"
-    // InternalXDrone.g:982:1: rule__LEFT__Group__2 : rule__LEFT__Group__2__Impl rule__LEFT__Group__3 ;
-    public final void rule__LEFT__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__Left__Group__2"
+    // InternalXDrone.g:1013:1: rule__Left__Group__2 : rule__Left__Group__2__Impl rule__Left__Group__3 ;
+    public final void rule__Left__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:986:1: ( rule__LEFT__Group__2__Impl rule__LEFT__Group__3 )
-            // InternalXDrone.g:987:2: rule__LEFT__Group__2__Impl rule__LEFT__Group__3
+            // InternalXDrone.g:1017:1: ( rule__Left__Group__2__Impl rule__Left__Group__3 )
+            // InternalXDrone.g:1018:2: rule__Left__Group__2__Impl rule__Left__Group__3
             {
             pushFollow(FOLLOW_12);
-            rule__LEFT__Group__2__Impl();
+            rule__Left__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__LEFT__Group__3();
+            rule__Left__Group__3();
 
             state._fsp--;
 
@@ -2923,35 +3025,35 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__LEFT__Group__2"
+    // $ANTLR end "rule__Left__Group__2"
 
 
-    // $ANTLR start "rule__LEFT__Group__2__Impl"
-    // InternalXDrone.g:994:1: rule__LEFT__Group__2__Impl : ( ( rule__LEFT__MillisecondsAssignment_2 ) ) ;
-    public final void rule__LEFT__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Left__Group__2__Impl"
+    // InternalXDrone.g:1025:1: rule__Left__Group__2__Impl : ( ( rule__Left__MillisecondsAssignment_2 ) ) ;
+    public final void rule__Left__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:998:1: ( ( ( rule__LEFT__MillisecondsAssignment_2 ) ) )
-            // InternalXDrone.g:999:1: ( ( rule__LEFT__MillisecondsAssignment_2 ) )
+            // InternalXDrone.g:1029:1: ( ( ( rule__Left__MillisecondsAssignment_2 ) ) )
+            // InternalXDrone.g:1030:1: ( ( rule__Left__MillisecondsAssignment_2 ) )
             {
-            // InternalXDrone.g:999:1: ( ( rule__LEFT__MillisecondsAssignment_2 ) )
-            // InternalXDrone.g:1000:2: ( rule__LEFT__MillisecondsAssignment_2 )
+            // InternalXDrone.g:1030:1: ( ( rule__Left__MillisecondsAssignment_2 ) )
+            // InternalXDrone.g:1031:2: ( rule__Left__MillisecondsAssignment_2 )
             {
-             before(grammarAccess.getLEFTAccess().getMillisecondsAssignment_2()); 
-            // InternalXDrone.g:1001:2: ( rule__LEFT__MillisecondsAssignment_2 )
-            // InternalXDrone.g:1001:3: rule__LEFT__MillisecondsAssignment_2
+             before(grammarAccess.getLeftAccess().getMillisecondsAssignment_2()); 
+            // InternalXDrone.g:1032:2: ( rule__Left__MillisecondsAssignment_2 )
+            // InternalXDrone.g:1032:3: rule__Left__MillisecondsAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__LEFT__MillisecondsAssignment_2();
+            rule__Left__MillisecondsAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getLEFTAccess().getMillisecondsAssignment_2()); 
+             after(grammarAccess.getLeftAccess().getMillisecondsAssignment_2()); 
 
             }
 
@@ -2970,21 +3072,21 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__LEFT__Group__2__Impl"
+    // $ANTLR end "rule__Left__Group__2__Impl"
 
 
-    // $ANTLR start "rule__LEFT__Group__3"
-    // InternalXDrone.g:1009:1: rule__LEFT__Group__3 : rule__LEFT__Group__3__Impl ;
-    public final void rule__LEFT__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__Left__Group__3"
+    // InternalXDrone.g:1040:1: rule__Left__Group__3 : rule__Left__Group__3__Impl ;
+    public final void rule__Left__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1013:1: ( rule__LEFT__Group__3__Impl )
-            // InternalXDrone.g:1014:2: rule__LEFT__Group__3__Impl
+            // InternalXDrone.g:1044:1: ( rule__Left__Group__3__Impl )
+            // InternalXDrone.g:1045:2: rule__Left__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__LEFT__Group__3__Impl();
+            rule__Left__Group__3__Impl();
 
             state._fsp--;
 
@@ -3003,25 +3105,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__LEFT__Group__3"
+    // $ANTLR end "rule__Left__Group__3"
 
 
-    // $ANTLR start "rule__LEFT__Group__3__Impl"
-    // InternalXDrone.g:1020:1: rule__LEFT__Group__3__Impl : ( ')' ) ;
-    public final void rule__LEFT__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Left__Group__3__Impl"
+    // InternalXDrone.g:1051:1: rule__Left__Group__3__Impl : ( ')' ) ;
+    public final void rule__Left__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1024:1: ( ( ')' ) )
-            // InternalXDrone.g:1025:1: ( ')' )
+            // InternalXDrone.g:1055:1: ( ( ')' ) )
+            // InternalXDrone.g:1056:1: ( ')' )
             {
-            // InternalXDrone.g:1025:1: ( ')' )
-            // InternalXDrone.g:1026:2: ')'
+            // InternalXDrone.g:1056:1: ( ')' )
+            // InternalXDrone.g:1057:2: ')'
             {
-             before(grammarAccess.getLEFTAccess().getRightParenthesisKeyword_3()); 
+             before(grammarAccess.getLeftAccess().getRightParenthesisKeyword_3()); 
             match(input,19,FOLLOW_2); 
-             after(grammarAccess.getLEFTAccess().getRightParenthesisKeyword_3()); 
+             after(grammarAccess.getLeftAccess().getRightParenthesisKeyword_3()); 
 
             }
 
@@ -3040,26 +3142,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__LEFT__Group__3__Impl"
+    // $ANTLR end "rule__Left__Group__3__Impl"
 
 
-    // $ANTLR start "rule__RIGHT__Group__0"
-    // InternalXDrone.g:1036:1: rule__RIGHT__Group__0 : rule__RIGHT__Group__0__Impl rule__RIGHT__Group__1 ;
-    public final void rule__RIGHT__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Right__Group__0"
+    // InternalXDrone.g:1067:1: rule__Right__Group__0 : rule__Right__Group__0__Impl rule__Right__Group__1 ;
+    public final void rule__Right__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1040:1: ( rule__RIGHT__Group__0__Impl rule__RIGHT__Group__1 )
-            // InternalXDrone.g:1041:2: rule__RIGHT__Group__0__Impl rule__RIGHT__Group__1
+            // InternalXDrone.g:1071:1: ( rule__Right__Group__0__Impl rule__Right__Group__1 )
+            // InternalXDrone.g:1072:2: rule__Right__Group__0__Impl rule__Right__Group__1
             {
             pushFollow(FOLLOW_10);
-            rule__RIGHT__Group__0__Impl();
+            rule__Right__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__RIGHT__Group__1();
+            rule__Right__Group__1();
 
             state._fsp--;
 
@@ -3078,25 +3180,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RIGHT__Group__0"
+    // $ANTLR end "rule__Right__Group__0"
 
 
-    // $ANTLR start "rule__RIGHT__Group__0__Impl"
-    // InternalXDrone.g:1048:1: rule__RIGHT__Group__0__Impl : ( 'RIGHT' ) ;
-    public final void rule__RIGHT__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Right__Group__0__Impl"
+    // InternalXDrone.g:1079:1: rule__Right__Group__0__Impl : ( 'RIGHT' ) ;
+    public final void rule__Right__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1052:1: ( ( 'RIGHT' ) )
-            // InternalXDrone.g:1053:1: ( 'RIGHT' )
+            // InternalXDrone.g:1083:1: ( ( 'RIGHT' ) )
+            // InternalXDrone.g:1084:1: ( 'RIGHT' )
             {
-            // InternalXDrone.g:1053:1: ( 'RIGHT' )
-            // InternalXDrone.g:1054:2: 'RIGHT'
+            // InternalXDrone.g:1084:1: ( 'RIGHT' )
+            // InternalXDrone.g:1085:2: 'RIGHT'
             {
-             before(grammarAccess.getRIGHTAccess().getRIGHTKeyword_0()); 
+             before(grammarAccess.getRightAccess().getRIGHTKeyword_0()); 
             match(input,22,FOLLOW_2); 
-             after(grammarAccess.getRIGHTAccess().getRIGHTKeyword_0()); 
+             after(grammarAccess.getRightAccess().getRIGHTKeyword_0()); 
 
             }
 
@@ -3115,26 +3217,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RIGHT__Group__0__Impl"
+    // $ANTLR end "rule__Right__Group__0__Impl"
 
 
-    // $ANTLR start "rule__RIGHT__Group__1"
-    // InternalXDrone.g:1063:1: rule__RIGHT__Group__1 : rule__RIGHT__Group__1__Impl rule__RIGHT__Group__2 ;
-    public final void rule__RIGHT__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__Right__Group__1"
+    // InternalXDrone.g:1094:1: rule__Right__Group__1 : rule__Right__Group__1__Impl rule__Right__Group__2 ;
+    public final void rule__Right__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1067:1: ( rule__RIGHT__Group__1__Impl rule__RIGHT__Group__2 )
-            // InternalXDrone.g:1068:2: rule__RIGHT__Group__1__Impl rule__RIGHT__Group__2
+            // InternalXDrone.g:1098:1: ( rule__Right__Group__1__Impl rule__Right__Group__2 )
+            // InternalXDrone.g:1099:2: rule__Right__Group__1__Impl rule__Right__Group__2
             {
             pushFollow(FOLLOW_11);
-            rule__RIGHT__Group__1__Impl();
+            rule__Right__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__RIGHT__Group__2();
+            rule__Right__Group__2();
 
             state._fsp--;
 
@@ -3153,25 +3255,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RIGHT__Group__1"
+    // $ANTLR end "rule__Right__Group__1"
 
 
-    // $ANTLR start "rule__RIGHT__Group__1__Impl"
-    // InternalXDrone.g:1075:1: rule__RIGHT__Group__1__Impl : ( '(' ) ;
-    public final void rule__RIGHT__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Right__Group__1__Impl"
+    // InternalXDrone.g:1106:1: rule__Right__Group__1__Impl : ( '(' ) ;
+    public final void rule__Right__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1079:1: ( ( '(' ) )
-            // InternalXDrone.g:1080:1: ( '(' )
+            // InternalXDrone.g:1110:1: ( ( '(' ) )
+            // InternalXDrone.g:1111:1: ( '(' )
             {
-            // InternalXDrone.g:1080:1: ( '(' )
-            // InternalXDrone.g:1081:2: '('
+            // InternalXDrone.g:1111:1: ( '(' )
+            // InternalXDrone.g:1112:2: '('
             {
-             before(grammarAccess.getRIGHTAccess().getLeftParenthesisKeyword_1()); 
+             before(grammarAccess.getRightAccess().getLeftParenthesisKeyword_1()); 
             match(input,18,FOLLOW_2); 
-             after(grammarAccess.getRIGHTAccess().getLeftParenthesisKeyword_1()); 
+             after(grammarAccess.getRightAccess().getLeftParenthesisKeyword_1()); 
 
             }
 
@@ -3190,26 +3292,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RIGHT__Group__1__Impl"
+    // $ANTLR end "rule__Right__Group__1__Impl"
 
 
-    // $ANTLR start "rule__RIGHT__Group__2"
-    // InternalXDrone.g:1090:1: rule__RIGHT__Group__2 : rule__RIGHT__Group__2__Impl rule__RIGHT__Group__3 ;
-    public final void rule__RIGHT__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__Right__Group__2"
+    // InternalXDrone.g:1121:1: rule__Right__Group__2 : rule__Right__Group__2__Impl rule__Right__Group__3 ;
+    public final void rule__Right__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1094:1: ( rule__RIGHT__Group__2__Impl rule__RIGHT__Group__3 )
-            // InternalXDrone.g:1095:2: rule__RIGHT__Group__2__Impl rule__RIGHT__Group__3
+            // InternalXDrone.g:1125:1: ( rule__Right__Group__2__Impl rule__Right__Group__3 )
+            // InternalXDrone.g:1126:2: rule__Right__Group__2__Impl rule__Right__Group__3
             {
             pushFollow(FOLLOW_12);
-            rule__RIGHT__Group__2__Impl();
+            rule__Right__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__RIGHT__Group__3();
+            rule__Right__Group__3();
 
             state._fsp--;
 
@@ -3228,35 +3330,35 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RIGHT__Group__2"
+    // $ANTLR end "rule__Right__Group__2"
 
 
-    // $ANTLR start "rule__RIGHT__Group__2__Impl"
-    // InternalXDrone.g:1102:1: rule__RIGHT__Group__2__Impl : ( ( rule__RIGHT__MillisecondsAssignment_2 ) ) ;
-    public final void rule__RIGHT__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Right__Group__2__Impl"
+    // InternalXDrone.g:1133:1: rule__Right__Group__2__Impl : ( ( rule__Right__MillisecondsAssignment_2 ) ) ;
+    public final void rule__Right__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1106:1: ( ( ( rule__RIGHT__MillisecondsAssignment_2 ) ) )
-            // InternalXDrone.g:1107:1: ( ( rule__RIGHT__MillisecondsAssignment_2 ) )
+            // InternalXDrone.g:1137:1: ( ( ( rule__Right__MillisecondsAssignment_2 ) ) )
+            // InternalXDrone.g:1138:1: ( ( rule__Right__MillisecondsAssignment_2 ) )
             {
-            // InternalXDrone.g:1107:1: ( ( rule__RIGHT__MillisecondsAssignment_2 ) )
-            // InternalXDrone.g:1108:2: ( rule__RIGHT__MillisecondsAssignment_2 )
+            // InternalXDrone.g:1138:1: ( ( rule__Right__MillisecondsAssignment_2 ) )
+            // InternalXDrone.g:1139:2: ( rule__Right__MillisecondsAssignment_2 )
             {
-             before(grammarAccess.getRIGHTAccess().getMillisecondsAssignment_2()); 
-            // InternalXDrone.g:1109:2: ( rule__RIGHT__MillisecondsAssignment_2 )
-            // InternalXDrone.g:1109:3: rule__RIGHT__MillisecondsAssignment_2
+             before(grammarAccess.getRightAccess().getMillisecondsAssignment_2()); 
+            // InternalXDrone.g:1140:2: ( rule__Right__MillisecondsAssignment_2 )
+            // InternalXDrone.g:1140:3: rule__Right__MillisecondsAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__RIGHT__MillisecondsAssignment_2();
+            rule__Right__MillisecondsAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getRIGHTAccess().getMillisecondsAssignment_2()); 
+             after(grammarAccess.getRightAccess().getMillisecondsAssignment_2()); 
 
             }
 
@@ -3275,21 +3377,21 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RIGHT__Group__2__Impl"
+    // $ANTLR end "rule__Right__Group__2__Impl"
 
 
-    // $ANTLR start "rule__RIGHT__Group__3"
-    // InternalXDrone.g:1117:1: rule__RIGHT__Group__3 : rule__RIGHT__Group__3__Impl ;
-    public final void rule__RIGHT__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__Right__Group__3"
+    // InternalXDrone.g:1148:1: rule__Right__Group__3 : rule__Right__Group__3__Impl ;
+    public final void rule__Right__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1121:1: ( rule__RIGHT__Group__3__Impl )
-            // InternalXDrone.g:1122:2: rule__RIGHT__Group__3__Impl
+            // InternalXDrone.g:1152:1: ( rule__Right__Group__3__Impl )
+            // InternalXDrone.g:1153:2: rule__Right__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__RIGHT__Group__3__Impl();
+            rule__Right__Group__3__Impl();
 
             state._fsp--;
 
@@ -3308,25 +3410,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RIGHT__Group__3"
+    // $ANTLR end "rule__Right__Group__3"
 
 
-    // $ANTLR start "rule__RIGHT__Group__3__Impl"
-    // InternalXDrone.g:1128:1: rule__RIGHT__Group__3__Impl : ( ')' ) ;
-    public final void rule__RIGHT__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Right__Group__3__Impl"
+    // InternalXDrone.g:1159:1: rule__Right__Group__3__Impl : ( ')' ) ;
+    public final void rule__Right__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1132:1: ( ( ')' ) )
-            // InternalXDrone.g:1133:1: ( ')' )
+            // InternalXDrone.g:1163:1: ( ( ')' ) )
+            // InternalXDrone.g:1164:1: ( ')' )
             {
-            // InternalXDrone.g:1133:1: ( ')' )
-            // InternalXDrone.g:1134:2: ')'
+            // InternalXDrone.g:1164:1: ( ')' )
+            // InternalXDrone.g:1165:2: ')'
             {
-             before(grammarAccess.getRIGHTAccess().getRightParenthesisKeyword_3()); 
+             before(grammarAccess.getRightAccess().getRightParenthesisKeyword_3()); 
             match(input,19,FOLLOW_2); 
-             after(grammarAccess.getRIGHTAccess().getRightParenthesisKeyword_3()); 
+             after(grammarAccess.getRightAccess().getRightParenthesisKeyword_3()); 
 
             }
 
@@ -3345,26 +3447,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RIGHT__Group__3__Impl"
+    // $ANTLR end "rule__Right__Group__3__Impl"
 
 
-    // $ANTLR start "rule__FORWARD__Group__0"
-    // InternalXDrone.g:1144:1: rule__FORWARD__Group__0 : rule__FORWARD__Group__0__Impl rule__FORWARD__Group__1 ;
-    public final void rule__FORWARD__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Forward__Group__0"
+    // InternalXDrone.g:1175:1: rule__Forward__Group__0 : rule__Forward__Group__0__Impl rule__Forward__Group__1 ;
+    public final void rule__Forward__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1148:1: ( rule__FORWARD__Group__0__Impl rule__FORWARD__Group__1 )
-            // InternalXDrone.g:1149:2: rule__FORWARD__Group__0__Impl rule__FORWARD__Group__1
+            // InternalXDrone.g:1179:1: ( rule__Forward__Group__0__Impl rule__Forward__Group__1 )
+            // InternalXDrone.g:1180:2: rule__Forward__Group__0__Impl rule__Forward__Group__1
             {
             pushFollow(FOLLOW_10);
-            rule__FORWARD__Group__0__Impl();
+            rule__Forward__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__FORWARD__Group__1();
+            rule__Forward__Group__1();
 
             state._fsp--;
 
@@ -3383,25 +3485,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FORWARD__Group__0"
+    // $ANTLR end "rule__Forward__Group__0"
 
 
-    // $ANTLR start "rule__FORWARD__Group__0__Impl"
-    // InternalXDrone.g:1156:1: rule__FORWARD__Group__0__Impl : ( 'FORWARD' ) ;
-    public final void rule__FORWARD__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Forward__Group__0__Impl"
+    // InternalXDrone.g:1187:1: rule__Forward__Group__0__Impl : ( 'FORWARD' ) ;
+    public final void rule__Forward__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1160:1: ( ( 'FORWARD' ) )
-            // InternalXDrone.g:1161:1: ( 'FORWARD' )
+            // InternalXDrone.g:1191:1: ( ( 'FORWARD' ) )
+            // InternalXDrone.g:1192:1: ( 'FORWARD' )
             {
-            // InternalXDrone.g:1161:1: ( 'FORWARD' )
-            // InternalXDrone.g:1162:2: 'FORWARD'
+            // InternalXDrone.g:1192:1: ( 'FORWARD' )
+            // InternalXDrone.g:1193:2: 'FORWARD'
             {
-             before(grammarAccess.getFORWARDAccess().getFORWARDKeyword_0()); 
+             before(grammarAccess.getForwardAccess().getFORWARDKeyword_0()); 
             match(input,23,FOLLOW_2); 
-             after(grammarAccess.getFORWARDAccess().getFORWARDKeyword_0()); 
+             after(grammarAccess.getForwardAccess().getFORWARDKeyword_0()); 
 
             }
 
@@ -3420,26 +3522,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FORWARD__Group__0__Impl"
+    // $ANTLR end "rule__Forward__Group__0__Impl"
 
 
-    // $ANTLR start "rule__FORWARD__Group__1"
-    // InternalXDrone.g:1171:1: rule__FORWARD__Group__1 : rule__FORWARD__Group__1__Impl rule__FORWARD__Group__2 ;
-    public final void rule__FORWARD__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__Forward__Group__1"
+    // InternalXDrone.g:1202:1: rule__Forward__Group__1 : rule__Forward__Group__1__Impl rule__Forward__Group__2 ;
+    public final void rule__Forward__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1175:1: ( rule__FORWARD__Group__1__Impl rule__FORWARD__Group__2 )
-            // InternalXDrone.g:1176:2: rule__FORWARD__Group__1__Impl rule__FORWARD__Group__2
+            // InternalXDrone.g:1206:1: ( rule__Forward__Group__1__Impl rule__Forward__Group__2 )
+            // InternalXDrone.g:1207:2: rule__Forward__Group__1__Impl rule__Forward__Group__2
             {
             pushFollow(FOLLOW_11);
-            rule__FORWARD__Group__1__Impl();
+            rule__Forward__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__FORWARD__Group__2();
+            rule__Forward__Group__2();
 
             state._fsp--;
 
@@ -3458,25 +3560,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FORWARD__Group__1"
+    // $ANTLR end "rule__Forward__Group__1"
 
 
-    // $ANTLR start "rule__FORWARD__Group__1__Impl"
-    // InternalXDrone.g:1183:1: rule__FORWARD__Group__1__Impl : ( '(' ) ;
-    public final void rule__FORWARD__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Forward__Group__1__Impl"
+    // InternalXDrone.g:1214:1: rule__Forward__Group__1__Impl : ( '(' ) ;
+    public final void rule__Forward__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1187:1: ( ( '(' ) )
-            // InternalXDrone.g:1188:1: ( '(' )
+            // InternalXDrone.g:1218:1: ( ( '(' ) )
+            // InternalXDrone.g:1219:1: ( '(' )
             {
-            // InternalXDrone.g:1188:1: ( '(' )
-            // InternalXDrone.g:1189:2: '('
+            // InternalXDrone.g:1219:1: ( '(' )
+            // InternalXDrone.g:1220:2: '('
             {
-             before(grammarAccess.getFORWARDAccess().getLeftParenthesisKeyword_1()); 
+             before(grammarAccess.getForwardAccess().getLeftParenthesisKeyword_1()); 
             match(input,18,FOLLOW_2); 
-             after(grammarAccess.getFORWARDAccess().getLeftParenthesisKeyword_1()); 
+             after(grammarAccess.getForwardAccess().getLeftParenthesisKeyword_1()); 
 
             }
 
@@ -3495,26 +3597,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FORWARD__Group__1__Impl"
+    // $ANTLR end "rule__Forward__Group__1__Impl"
 
 
-    // $ANTLR start "rule__FORWARD__Group__2"
-    // InternalXDrone.g:1198:1: rule__FORWARD__Group__2 : rule__FORWARD__Group__2__Impl rule__FORWARD__Group__3 ;
-    public final void rule__FORWARD__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__Forward__Group__2"
+    // InternalXDrone.g:1229:1: rule__Forward__Group__2 : rule__Forward__Group__2__Impl rule__Forward__Group__3 ;
+    public final void rule__Forward__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1202:1: ( rule__FORWARD__Group__2__Impl rule__FORWARD__Group__3 )
-            // InternalXDrone.g:1203:2: rule__FORWARD__Group__2__Impl rule__FORWARD__Group__3
+            // InternalXDrone.g:1233:1: ( rule__Forward__Group__2__Impl rule__Forward__Group__3 )
+            // InternalXDrone.g:1234:2: rule__Forward__Group__2__Impl rule__Forward__Group__3
             {
             pushFollow(FOLLOW_12);
-            rule__FORWARD__Group__2__Impl();
+            rule__Forward__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__FORWARD__Group__3();
+            rule__Forward__Group__3();
 
             state._fsp--;
 
@@ -3533,35 +3635,35 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FORWARD__Group__2"
+    // $ANTLR end "rule__Forward__Group__2"
 
 
-    // $ANTLR start "rule__FORWARD__Group__2__Impl"
-    // InternalXDrone.g:1210:1: rule__FORWARD__Group__2__Impl : ( ( rule__FORWARD__MillisecondsAssignment_2 ) ) ;
-    public final void rule__FORWARD__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Forward__Group__2__Impl"
+    // InternalXDrone.g:1241:1: rule__Forward__Group__2__Impl : ( ( rule__Forward__MillisecondsAssignment_2 ) ) ;
+    public final void rule__Forward__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1214:1: ( ( ( rule__FORWARD__MillisecondsAssignment_2 ) ) )
-            // InternalXDrone.g:1215:1: ( ( rule__FORWARD__MillisecondsAssignment_2 ) )
+            // InternalXDrone.g:1245:1: ( ( ( rule__Forward__MillisecondsAssignment_2 ) ) )
+            // InternalXDrone.g:1246:1: ( ( rule__Forward__MillisecondsAssignment_2 ) )
             {
-            // InternalXDrone.g:1215:1: ( ( rule__FORWARD__MillisecondsAssignment_2 ) )
-            // InternalXDrone.g:1216:2: ( rule__FORWARD__MillisecondsAssignment_2 )
+            // InternalXDrone.g:1246:1: ( ( rule__Forward__MillisecondsAssignment_2 ) )
+            // InternalXDrone.g:1247:2: ( rule__Forward__MillisecondsAssignment_2 )
             {
-             before(grammarAccess.getFORWARDAccess().getMillisecondsAssignment_2()); 
-            // InternalXDrone.g:1217:2: ( rule__FORWARD__MillisecondsAssignment_2 )
-            // InternalXDrone.g:1217:3: rule__FORWARD__MillisecondsAssignment_2
+             before(grammarAccess.getForwardAccess().getMillisecondsAssignment_2()); 
+            // InternalXDrone.g:1248:2: ( rule__Forward__MillisecondsAssignment_2 )
+            // InternalXDrone.g:1248:3: rule__Forward__MillisecondsAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__FORWARD__MillisecondsAssignment_2();
+            rule__Forward__MillisecondsAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFORWARDAccess().getMillisecondsAssignment_2()); 
+             after(grammarAccess.getForwardAccess().getMillisecondsAssignment_2()); 
 
             }
 
@@ -3580,21 +3682,21 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FORWARD__Group__2__Impl"
+    // $ANTLR end "rule__Forward__Group__2__Impl"
 
 
-    // $ANTLR start "rule__FORWARD__Group__3"
-    // InternalXDrone.g:1225:1: rule__FORWARD__Group__3 : rule__FORWARD__Group__3__Impl ;
-    public final void rule__FORWARD__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__Forward__Group__3"
+    // InternalXDrone.g:1256:1: rule__Forward__Group__3 : rule__Forward__Group__3__Impl ;
+    public final void rule__Forward__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1229:1: ( rule__FORWARD__Group__3__Impl )
-            // InternalXDrone.g:1230:2: rule__FORWARD__Group__3__Impl
+            // InternalXDrone.g:1260:1: ( rule__Forward__Group__3__Impl )
+            // InternalXDrone.g:1261:2: rule__Forward__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__FORWARD__Group__3__Impl();
+            rule__Forward__Group__3__Impl();
 
             state._fsp--;
 
@@ -3613,25 +3715,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FORWARD__Group__3"
+    // $ANTLR end "rule__Forward__Group__3"
 
 
-    // $ANTLR start "rule__FORWARD__Group__3__Impl"
-    // InternalXDrone.g:1236:1: rule__FORWARD__Group__3__Impl : ( ')' ) ;
-    public final void rule__FORWARD__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Forward__Group__3__Impl"
+    // InternalXDrone.g:1267:1: rule__Forward__Group__3__Impl : ( ')' ) ;
+    public final void rule__Forward__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1240:1: ( ( ')' ) )
-            // InternalXDrone.g:1241:1: ( ')' )
+            // InternalXDrone.g:1271:1: ( ( ')' ) )
+            // InternalXDrone.g:1272:1: ( ')' )
             {
-            // InternalXDrone.g:1241:1: ( ')' )
-            // InternalXDrone.g:1242:2: ')'
+            // InternalXDrone.g:1272:1: ( ')' )
+            // InternalXDrone.g:1273:2: ')'
             {
-             before(grammarAccess.getFORWARDAccess().getRightParenthesisKeyword_3()); 
+             before(grammarAccess.getForwardAccess().getRightParenthesisKeyword_3()); 
             match(input,19,FOLLOW_2); 
-             after(grammarAccess.getFORWARDAccess().getRightParenthesisKeyword_3()); 
+             after(grammarAccess.getForwardAccess().getRightParenthesisKeyword_3()); 
 
             }
 
@@ -3650,26 +3752,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FORWARD__Group__3__Impl"
+    // $ANTLR end "rule__Forward__Group__3__Impl"
 
 
-    // $ANTLR start "rule__BACKWARD__Group__0"
-    // InternalXDrone.g:1252:1: rule__BACKWARD__Group__0 : rule__BACKWARD__Group__0__Impl rule__BACKWARD__Group__1 ;
-    public final void rule__BACKWARD__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Backward__Group__0"
+    // InternalXDrone.g:1283:1: rule__Backward__Group__0 : rule__Backward__Group__0__Impl rule__Backward__Group__1 ;
+    public final void rule__Backward__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1256:1: ( rule__BACKWARD__Group__0__Impl rule__BACKWARD__Group__1 )
-            // InternalXDrone.g:1257:2: rule__BACKWARD__Group__0__Impl rule__BACKWARD__Group__1
+            // InternalXDrone.g:1287:1: ( rule__Backward__Group__0__Impl rule__Backward__Group__1 )
+            // InternalXDrone.g:1288:2: rule__Backward__Group__0__Impl rule__Backward__Group__1
             {
             pushFollow(FOLLOW_10);
-            rule__BACKWARD__Group__0__Impl();
+            rule__Backward__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__BACKWARD__Group__1();
+            rule__Backward__Group__1();
 
             state._fsp--;
 
@@ -3688,25 +3790,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BACKWARD__Group__0"
+    // $ANTLR end "rule__Backward__Group__0"
 
 
-    // $ANTLR start "rule__BACKWARD__Group__0__Impl"
-    // InternalXDrone.g:1264:1: rule__BACKWARD__Group__0__Impl : ( 'BACKWARD' ) ;
-    public final void rule__BACKWARD__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Backward__Group__0__Impl"
+    // InternalXDrone.g:1295:1: rule__Backward__Group__0__Impl : ( 'BACKWARD' ) ;
+    public final void rule__Backward__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1268:1: ( ( 'BACKWARD' ) )
-            // InternalXDrone.g:1269:1: ( 'BACKWARD' )
+            // InternalXDrone.g:1299:1: ( ( 'BACKWARD' ) )
+            // InternalXDrone.g:1300:1: ( 'BACKWARD' )
             {
-            // InternalXDrone.g:1269:1: ( 'BACKWARD' )
-            // InternalXDrone.g:1270:2: 'BACKWARD'
+            // InternalXDrone.g:1300:1: ( 'BACKWARD' )
+            // InternalXDrone.g:1301:2: 'BACKWARD'
             {
-             before(grammarAccess.getBACKWARDAccess().getBACKWARDKeyword_0()); 
+             before(grammarAccess.getBackwardAccess().getBACKWARDKeyword_0()); 
             match(input,24,FOLLOW_2); 
-             after(grammarAccess.getBACKWARDAccess().getBACKWARDKeyword_0()); 
+             after(grammarAccess.getBackwardAccess().getBACKWARDKeyword_0()); 
 
             }
 
@@ -3725,26 +3827,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BACKWARD__Group__0__Impl"
+    // $ANTLR end "rule__Backward__Group__0__Impl"
 
 
-    // $ANTLR start "rule__BACKWARD__Group__1"
-    // InternalXDrone.g:1279:1: rule__BACKWARD__Group__1 : rule__BACKWARD__Group__1__Impl rule__BACKWARD__Group__2 ;
-    public final void rule__BACKWARD__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__Backward__Group__1"
+    // InternalXDrone.g:1310:1: rule__Backward__Group__1 : rule__Backward__Group__1__Impl rule__Backward__Group__2 ;
+    public final void rule__Backward__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1283:1: ( rule__BACKWARD__Group__1__Impl rule__BACKWARD__Group__2 )
-            // InternalXDrone.g:1284:2: rule__BACKWARD__Group__1__Impl rule__BACKWARD__Group__2
+            // InternalXDrone.g:1314:1: ( rule__Backward__Group__1__Impl rule__Backward__Group__2 )
+            // InternalXDrone.g:1315:2: rule__Backward__Group__1__Impl rule__Backward__Group__2
             {
             pushFollow(FOLLOW_11);
-            rule__BACKWARD__Group__1__Impl();
+            rule__Backward__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__BACKWARD__Group__2();
+            rule__Backward__Group__2();
 
             state._fsp--;
 
@@ -3763,25 +3865,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BACKWARD__Group__1"
+    // $ANTLR end "rule__Backward__Group__1"
 
 
-    // $ANTLR start "rule__BACKWARD__Group__1__Impl"
-    // InternalXDrone.g:1291:1: rule__BACKWARD__Group__1__Impl : ( '(' ) ;
-    public final void rule__BACKWARD__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Backward__Group__1__Impl"
+    // InternalXDrone.g:1322:1: rule__Backward__Group__1__Impl : ( '(' ) ;
+    public final void rule__Backward__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1295:1: ( ( '(' ) )
-            // InternalXDrone.g:1296:1: ( '(' )
+            // InternalXDrone.g:1326:1: ( ( '(' ) )
+            // InternalXDrone.g:1327:1: ( '(' )
             {
-            // InternalXDrone.g:1296:1: ( '(' )
-            // InternalXDrone.g:1297:2: '('
+            // InternalXDrone.g:1327:1: ( '(' )
+            // InternalXDrone.g:1328:2: '('
             {
-             before(grammarAccess.getBACKWARDAccess().getLeftParenthesisKeyword_1()); 
+             before(grammarAccess.getBackwardAccess().getLeftParenthesisKeyword_1()); 
             match(input,18,FOLLOW_2); 
-             after(grammarAccess.getBACKWARDAccess().getLeftParenthesisKeyword_1()); 
+             after(grammarAccess.getBackwardAccess().getLeftParenthesisKeyword_1()); 
 
             }
 
@@ -3800,26 +3902,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BACKWARD__Group__1__Impl"
+    // $ANTLR end "rule__Backward__Group__1__Impl"
 
 
-    // $ANTLR start "rule__BACKWARD__Group__2"
-    // InternalXDrone.g:1306:1: rule__BACKWARD__Group__2 : rule__BACKWARD__Group__2__Impl rule__BACKWARD__Group__3 ;
-    public final void rule__BACKWARD__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__Backward__Group__2"
+    // InternalXDrone.g:1337:1: rule__Backward__Group__2 : rule__Backward__Group__2__Impl rule__Backward__Group__3 ;
+    public final void rule__Backward__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1310:1: ( rule__BACKWARD__Group__2__Impl rule__BACKWARD__Group__3 )
-            // InternalXDrone.g:1311:2: rule__BACKWARD__Group__2__Impl rule__BACKWARD__Group__3
+            // InternalXDrone.g:1341:1: ( rule__Backward__Group__2__Impl rule__Backward__Group__3 )
+            // InternalXDrone.g:1342:2: rule__Backward__Group__2__Impl rule__Backward__Group__3
             {
             pushFollow(FOLLOW_12);
-            rule__BACKWARD__Group__2__Impl();
+            rule__Backward__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__BACKWARD__Group__3();
+            rule__Backward__Group__3();
 
             state._fsp--;
 
@@ -3838,35 +3940,35 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BACKWARD__Group__2"
+    // $ANTLR end "rule__Backward__Group__2"
 
 
-    // $ANTLR start "rule__BACKWARD__Group__2__Impl"
-    // InternalXDrone.g:1318:1: rule__BACKWARD__Group__2__Impl : ( ( rule__BACKWARD__MillisecondsAssignment_2 ) ) ;
-    public final void rule__BACKWARD__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Backward__Group__2__Impl"
+    // InternalXDrone.g:1349:1: rule__Backward__Group__2__Impl : ( ( rule__Backward__MillisecondsAssignment_2 ) ) ;
+    public final void rule__Backward__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1322:1: ( ( ( rule__BACKWARD__MillisecondsAssignment_2 ) ) )
-            // InternalXDrone.g:1323:1: ( ( rule__BACKWARD__MillisecondsAssignment_2 ) )
+            // InternalXDrone.g:1353:1: ( ( ( rule__Backward__MillisecondsAssignment_2 ) ) )
+            // InternalXDrone.g:1354:1: ( ( rule__Backward__MillisecondsAssignment_2 ) )
             {
-            // InternalXDrone.g:1323:1: ( ( rule__BACKWARD__MillisecondsAssignment_2 ) )
-            // InternalXDrone.g:1324:2: ( rule__BACKWARD__MillisecondsAssignment_2 )
+            // InternalXDrone.g:1354:1: ( ( rule__Backward__MillisecondsAssignment_2 ) )
+            // InternalXDrone.g:1355:2: ( rule__Backward__MillisecondsAssignment_2 )
             {
-             before(grammarAccess.getBACKWARDAccess().getMillisecondsAssignment_2()); 
-            // InternalXDrone.g:1325:2: ( rule__BACKWARD__MillisecondsAssignment_2 )
-            // InternalXDrone.g:1325:3: rule__BACKWARD__MillisecondsAssignment_2
+             before(grammarAccess.getBackwardAccess().getMillisecondsAssignment_2()); 
+            // InternalXDrone.g:1356:2: ( rule__Backward__MillisecondsAssignment_2 )
+            // InternalXDrone.g:1356:3: rule__Backward__MillisecondsAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__BACKWARD__MillisecondsAssignment_2();
+            rule__Backward__MillisecondsAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getBACKWARDAccess().getMillisecondsAssignment_2()); 
+             after(grammarAccess.getBackwardAccess().getMillisecondsAssignment_2()); 
 
             }
 
@@ -3885,21 +3987,21 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BACKWARD__Group__2__Impl"
+    // $ANTLR end "rule__Backward__Group__2__Impl"
 
 
-    // $ANTLR start "rule__BACKWARD__Group__3"
-    // InternalXDrone.g:1333:1: rule__BACKWARD__Group__3 : rule__BACKWARD__Group__3__Impl ;
-    public final void rule__BACKWARD__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__Backward__Group__3"
+    // InternalXDrone.g:1364:1: rule__Backward__Group__3 : rule__Backward__Group__3__Impl ;
+    public final void rule__Backward__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1337:1: ( rule__BACKWARD__Group__3__Impl )
-            // InternalXDrone.g:1338:2: rule__BACKWARD__Group__3__Impl
+            // InternalXDrone.g:1368:1: ( rule__Backward__Group__3__Impl )
+            // InternalXDrone.g:1369:2: rule__Backward__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__BACKWARD__Group__3__Impl();
+            rule__Backward__Group__3__Impl();
 
             state._fsp--;
 
@@ -3918,25 +4020,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BACKWARD__Group__3"
+    // $ANTLR end "rule__Backward__Group__3"
 
 
-    // $ANTLR start "rule__BACKWARD__Group__3__Impl"
-    // InternalXDrone.g:1344:1: rule__BACKWARD__Group__3__Impl : ( ')' ) ;
-    public final void rule__BACKWARD__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Backward__Group__3__Impl"
+    // InternalXDrone.g:1375:1: rule__Backward__Group__3__Impl : ( ')' ) ;
+    public final void rule__Backward__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1348:1: ( ( ')' ) )
-            // InternalXDrone.g:1349:1: ( ')' )
+            // InternalXDrone.g:1379:1: ( ( ')' ) )
+            // InternalXDrone.g:1380:1: ( ')' )
             {
-            // InternalXDrone.g:1349:1: ( ')' )
-            // InternalXDrone.g:1350:2: ')'
+            // InternalXDrone.g:1380:1: ( ')' )
+            // InternalXDrone.g:1381:2: ')'
             {
-             before(grammarAccess.getBACKWARDAccess().getRightParenthesisKeyword_3()); 
+             before(grammarAccess.getBackwardAccess().getRightParenthesisKeyword_3()); 
             match(input,19,FOLLOW_2); 
-             after(grammarAccess.getBACKWARDAccess().getRightParenthesisKeyword_3()); 
+             after(grammarAccess.getBackwardAccess().getRightParenthesisKeyword_3()); 
 
             }
 
@@ -3955,26 +4057,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BACKWARD__Group__3__Impl"
+    // $ANTLR end "rule__Backward__Group__3__Impl"
 
 
-    // $ANTLR start "rule__ROTATE__Group__0"
-    // InternalXDrone.g:1360:1: rule__ROTATE__Group__0 : rule__ROTATE__Group__0__Impl rule__ROTATE__Group__1 ;
-    public final void rule__ROTATE__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__RotateL__Group__0"
+    // InternalXDrone.g:1391:1: rule__RotateL__Group__0 : rule__RotateL__Group__0__Impl rule__RotateL__Group__1 ;
+    public final void rule__RotateL__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1364:1: ( rule__ROTATE__Group__0__Impl rule__ROTATE__Group__1 )
-            // InternalXDrone.g:1365:2: rule__ROTATE__Group__0__Impl rule__ROTATE__Group__1
+            // InternalXDrone.g:1395:1: ( rule__RotateL__Group__0__Impl rule__RotateL__Group__1 )
+            // InternalXDrone.g:1396:2: rule__RotateL__Group__0__Impl rule__RotateL__Group__1
             {
             pushFollow(FOLLOW_10);
-            rule__ROTATE__Group__0__Impl();
+            rule__RotateL__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__ROTATE__Group__1();
+            rule__RotateL__Group__1();
 
             state._fsp--;
 
@@ -3993,25 +4095,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ROTATE__Group__0"
+    // $ANTLR end "rule__RotateL__Group__0"
 
 
-    // $ANTLR start "rule__ROTATE__Group__0__Impl"
-    // InternalXDrone.g:1372:1: rule__ROTATE__Group__0__Impl : ( 'ROTATE' ) ;
-    public final void rule__ROTATE__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__RotateL__Group__0__Impl"
+    // InternalXDrone.g:1403:1: rule__RotateL__Group__0__Impl : ( 'ROTATELEFT' ) ;
+    public final void rule__RotateL__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1376:1: ( ( 'ROTATE' ) )
-            // InternalXDrone.g:1377:1: ( 'ROTATE' )
+            // InternalXDrone.g:1407:1: ( ( 'ROTATELEFT' ) )
+            // InternalXDrone.g:1408:1: ( 'ROTATELEFT' )
             {
-            // InternalXDrone.g:1377:1: ( 'ROTATE' )
-            // InternalXDrone.g:1378:2: 'ROTATE'
+            // InternalXDrone.g:1408:1: ( 'ROTATELEFT' )
+            // InternalXDrone.g:1409:2: 'ROTATELEFT'
             {
-             before(grammarAccess.getROTATEAccess().getROTATEKeyword_0()); 
+             before(grammarAccess.getRotateLAccess().getROTATELEFTKeyword_0()); 
             match(input,25,FOLLOW_2); 
-             after(grammarAccess.getROTATEAccess().getROTATEKeyword_0()); 
+             after(grammarAccess.getRotateLAccess().getROTATELEFTKeyword_0()); 
 
             }
 
@@ -4030,26 +4132,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ROTATE__Group__0__Impl"
+    // $ANTLR end "rule__RotateL__Group__0__Impl"
 
 
-    // $ANTLR start "rule__ROTATE__Group__1"
-    // InternalXDrone.g:1387:1: rule__ROTATE__Group__1 : rule__ROTATE__Group__1__Impl rule__ROTATE__Group__2 ;
-    public final void rule__ROTATE__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__RotateL__Group__1"
+    // InternalXDrone.g:1418:1: rule__RotateL__Group__1 : rule__RotateL__Group__1__Impl rule__RotateL__Group__2 ;
+    public final void rule__RotateL__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1391:1: ( rule__ROTATE__Group__1__Impl rule__ROTATE__Group__2 )
-            // InternalXDrone.g:1392:2: rule__ROTATE__Group__1__Impl rule__ROTATE__Group__2
+            // InternalXDrone.g:1422:1: ( rule__RotateL__Group__1__Impl rule__RotateL__Group__2 )
+            // InternalXDrone.g:1423:2: rule__RotateL__Group__1__Impl rule__RotateL__Group__2
             {
             pushFollow(FOLLOW_11);
-            rule__ROTATE__Group__1__Impl();
+            rule__RotateL__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__ROTATE__Group__2();
+            rule__RotateL__Group__2();
 
             state._fsp--;
 
@@ -4068,25 +4170,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ROTATE__Group__1"
+    // $ANTLR end "rule__RotateL__Group__1"
 
 
-    // $ANTLR start "rule__ROTATE__Group__1__Impl"
-    // InternalXDrone.g:1399:1: rule__ROTATE__Group__1__Impl : ( '(' ) ;
-    public final void rule__ROTATE__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__RotateL__Group__1__Impl"
+    // InternalXDrone.g:1430:1: rule__RotateL__Group__1__Impl : ( '(' ) ;
+    public final void rule__RotateL__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1403:1: ( ( '(' ) )
-            // InternalXDrone.g:1404:1: ( '(' )
+            // InternalXDrone.g:1434:1: ( ( '(' ) )
+            // InternalXDrone.g:1435:1: ( '(' )
             {
-            // InternalXDrone.g:1404:1: ( '(' )
-            // InternalXDrone.g:1405:2: '('
+            // InternalXDrone.g:1435:1: ( '(' )
+            // InternalXDrone.g:1436:2: '('
             {
-             before(grammarAccess.getROTATEAccess().getLeftParenthesisKeyword_1()); 
+             before(grammarAccess.getRotateLAccess().getLeftParenthesisKeyword_1()); 
             match(input,18,FOLLOW_2); 
-             after(grammarAccess.getROTATEAccess().getLeftParenthesisKeyword_1()); 
+             after(grammarAccess.getRotateLAccess().getLeftParenthesisKeyword_1()); 
 
             }
 
@@ -4105,26 +4207,26 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ROTATE__Group__1__Impl"
+    // $ANTLR end "rule__RotateL__Group__1__Impl"
 
 
-    // $ANTLR start "rule__ROTATE__Group__2"
-    // InternalXDrone.g:1414:1: rule__ROTATE__Group__2 : rule__ROTATE__Group__2__Impl rule__ROTATE__Group__3 ;
-    public final void rule__ROTATE__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__RotateL__Group__2"
+    // InternalXDrone.g:1445:1: rule__RotateL__Group__2 : rule__RotateL__Group__2__Impl rule__RotateL__Group__3 ;
+    public final void rule__RotateL__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1418:1: ( rule__ROTATE__Group__2__Impl rule__ROTATE__Group__3 )
-            // InternalXDrone.g:1419:2: rule__ROTATE__Group__2__Impl rule__ROTATE__Group__3
+            // InternalXDrone.g:1449:1: ( rule__RotateL__Group__2__Impl rule__RotateL__Group__3 )
+            // InternalXDrone.g:1450:2: rule__RotateL__Group__2__Impl rule__RotateL__Group__3
             {
             pushFollow(FOLLOW_12);
-            rule__ROTATE__Group__2__Impl();
+            rule__RotateL__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__ROTATE__Group__3();
+            rule__RotateL__Group__3();
 
             state._fsp--;
 
@@ -4143,35 +4245,35 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ROTATE__Group__2"
+    // $ANTLR end "rule__RotateL__Group__2"
 
 
-    // $ANTLR start "rule__ROTATE__Group__2__Impl"
-    // InternalXDrone.g:1426:1: rule__ROTATE__Group__2__Impl : ( ( rule__ROTATE__DegreesAssignment_2 ) ) ;
-    public final void rule__ROTATE__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__RotateL__Group__2__Impl"
+    // InternalXDrone.g:1457:1: rule__RotateL__Group__2__Impl : ( ( rule__RotateL__MillisecondsAssignment_2 ) ) ;
+    public final void rule__RotateL__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1430:1: ( ( ( rule__ROTATE__DegreesAssignment_2 ) ) )
-            // InternalXDrone.g:1431:1: ( ( rule__ROTATE__DegreesAssignment_2 ) )
+            // InternalXDrone.g:1461:1: ( ( ( rule__RotateL__MillisecondsAssignment_2 ) ) )
+            // InternalXDrone.g:1462:1: ( ( rule__RotateL__MillisecondsAssignment_2 ) )
             {
-            // InternalXDrone.g:1431:1: ( ( rule__ROTATE__DegreesAssignment_2 ) )
-            // InternalXDrone.g:1432:2: ( rule__ROTATE__DegreesAssignment_2 )
+            // InternalXDrone.g:1462:1: ( ( rule__RotateL__MillisecondsAssignment_2 ) )
+            // InternalXDrone.g:1463:2: ( rule__RotateL__MillisecondsAssignment_2 )
             {
-             before(grammarAccess.getROTATEAccess().getDegreesAssignment_2()); 
-            // InternalXDrone.g:1433:2: ( rule__ROTATE__DegreesAssignment_2 )
-            // InternalXDrone.g:1433:3: rule__ROTATE__DegreesAssignment_2
+             before(grammarAccess.getRotateLAccess().getMillisecondsAssignment_2()); 
+            // InternalXDrone.g:1464:2: ( rule__RotateL__MillisecondsAssignment_2 )
+            // InternalXDrone.g:1464:3: rule__RotateL__MillisecondsAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__ROTATE__DegreesAssignment_2();
+            rule__RotateL__MillisecondsAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getROTATEAccess().getDegreesAssignment_2()); 
+             after(grammarAccess.getRotateLAccess().getMillisecondsAssignment_2()); 
 
             }
 
@@ -4190,21 +4292,21 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ROTATE__Group__2__Impl"
+    // $ANTLR end "rule__RotateL__Group__2__Impl"
 
 
-    // $ANTLR start "rule__ROTATE__Group__3"
-    // InternalXDrone.g:1441:1: rule__ROTATE__Group__3 : rule__ROTATE__Group__3__Impl ;
-    public final void rule__ROTATE__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__RotateL__Group__3"
+    // InternalXDrone.g:1472:1: rule__RotateL__Group__3 : rule__RotateL__Group__3__Impl ;
+    public final void rule__RotateL__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1445:1: ( rule__ROTATE__Group__3__Impl )
-            // InternalXDrone.g:1446:2: rule__ROTATE__Group__3__Impl
+            // InternalXDrone.g:1476:1: ( rule__RotateL__Group__3__Impl )
+            // InternalXDrone.g:1477:2: rule__RotateL__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ROTATE__Group__3__Impl();
+            rule__RotateL__Group__3__Impl();
 
             state._fsp--;
 
@@ -4223,25 +4325,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ROTATE__Group__3"
+    // $ANTLR end "rule__RotateL__Group__3"
 
 
-    // $ANTLR start "rule__ROTATE__Group__3__Impl"
-    // InternalXDrone.g:1452:1: rule__ROTATE__Group__3__Impl : ( ')' ) ;
-    public final void rule__ROTATE__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__RotateL__Group__3__Impl"
+    // InternalXDrone.g:1483:1: rule__RotateL__Group__3__Impl : ( ')' ) ;
+    public final void rule__RotateL__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1456:1: ( ( ')' ) )
-            // InternalXDrone.g:1457:1: ( ')' )
+            // InternalXDrone.g:1487:1: ( ( ')' ) )
+            // InternalXDrone.g:1488:1: ( ')' )
             {
-            // InternalXDrone.g:1457:1: ( ')' )
-            // InternalXDrone.g:1458:2: ')'
+            // InternalXDrone.g:1488:1: ( ')' )
+            // InternalXDrone.g:1489:2: ')'
             {
-             before(grammarAccess.getROTATEAccess().getRightParenthesisKeyword_3()); 
+             before(grammarAccess.getRotateLAccess().getRightParenthesisKeyword_3()); 
             match(input,19,FOLLOW_2); 
-             after(grammarAccess.getROTATEAccess().getRightParenthesisKeyword_3()); 
+             after(grammarAccess.getRotateLAccess().getRightParenthesisKeyword_3()); 
 
             }
 
@@ -4260,21 +4362,326 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ROTATE__Group__3__Impl"
+    // $ANTLR end "rule__RotateL__Group__3__Impl"
+
+
+    // $ANTLR start "rule__RotateR__Group__0"
+    // InternalXDrone.g:1499:1: rule__RotateR__Group__0 : rule__RotateR__Group__0__Impl rule__RotateR__Group__1 ;
+    public final void rule__RotateR__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXDrone.g:1503:1: ( rule__RotateR__Group__0__Impl rule__RotateR__Group__1 )
+            // InternalXDrone.g:1504:2: rule__RotateR__Group__0__Impl rule__RotateR__Group__1
+            {
+            pushFollow(FOLLOW_10);
+            rule__RotateR__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__RotateR__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotateR__Group__0"
+
+
+    // $ANTLR start "rule__RotateR__Group__0__Impl"
+    // InternalXDrone.g:1511:1: rule__RotateR__Group__0__Impl : ( 'ROTATERIGHT' ) ;
+    public final void rule__RotateR__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXDrone.g:1515:1: ( ( 'ROTATERIGHT' ) )
+            // InternalXDrone.g:1516:1: ( 'ROTATERIGHT' )
+            {
+            // InternalXDrone.g:1516:1: ( 'ROTATERIGHT' )
+            // InternalXDrone.g:1517:2: 'ROTATERIGHT'
+            {
+             before(grammarAccess.getRotateRAccess().getROTATERIGHTKeyword_0()); 
+            match(input,26,FOLLOW_2); 
+             after(grammarAccess.getRotateRAccess().getROTATERIGHTKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotateR__Group__0__Impl"
+
+
+    // $ANTLR start "rule__RotateR__Group__1"
+    // InternalXDrone.g:1526:1: rule__RotateR__Group__1 : rule__RotateR__Group__1__Impl rule__RotateR__Group__2 ;
+    public final void rule__RotateR__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXDrone.g:1530:1: ( rule__RotateR__Group__1__Impl rule__RotateR__Group__2 )
+            // InternalXDrone.g:1531:2: rule__RotateR__Group__1__Impl rule__RotateR__Group__2
+            {
+            pushFollow(FOLLOW_11);
+            rule__RotateR__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__RotateR__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotateR__Group__1"
+
+
+    // $ANTLR start "rule__RotateR__Group__1__Impl"
+    // InternalXDrone.g:1538:1: rule__RotateR__Group__1__Impl : ( '(' ) ;
+    public final void rule__RotateR__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXDrone.g:1542:1: ( ( '(' ) )
+            // InternalXDrone.g:1543:1: ( '(' )
+            {
+            // InternalXDrone.g:1543:1: ( '(' )
+            // InternalXDrone.g:1544:2: '('
+            {
+             before(grammarAccess.getRotateRAccess().getLeftParenthesisKeyword_1()); 
+            match(input,18,FOLLOW_2); 
+             after(grammarAccess.getRotateRAccess().getLeftParenthesisKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotateR__Group__1__Impl"
+
+
+    // $ANTLR start "rule__RotateR__Group__2"
+    // InternalXDrone.g:1553:1: rule__RotateR__Group__2 : rule__RotateR__Group__2__Impl rule__RotateR__Group__3 ;
+    public final void rule__RotateR__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXDrone.g:1557:1: ( rule__RotateR__Group__2__Impl rule__RotateR__Group__3 )
+            // InternalXDrone.g:1558:2: rule__RotateR__Group__2__Impl rule__RotateR__Group__3
+            {
+            pushFollow(FOLLOW_12);
+            rule__RotateR__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__RotateR__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotateR__Group__2"
+
+
+    // $ANTLR start "rule__RotateR__Group__2__Impl"
+    // InternalXDrone.g:1565:1: rule__RotateR__Group__2__Impl : ( ( rule__RotateR__MillisecondsAssignment_2 ) ) ;
+    public final void rule__RotateR__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXDrone.g:1569:1: ( ( ( rule__RotateR__MillisecondsAssignment_2 ) ) )
+            // InternalXDrone.g:1570:1: ( ( rule__RotateR__MillisecondsAssignment_2 ) )
+            {
+            // InternalXDrone.g:1570:1: ( ( rule__RotateR__MillisecondsAssignment_2 ) )
+            // InternalXDrone.g:1571:2: ( rule__RotateR__MillisecondsAssignment_2 )
+            {
+             before(grammarAccess.getRotateRAccess().getMillisecondsAssignment_2()); 
+            // InternalXDrone.g:1572:2: ( rule__RotateR__MillisecondsAssignment_2 )
+            // InternalXDrone.g:1572:3: rule__RotateR__MillisecondsAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__RotateR__MillisecondsAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRotateRAccess().getMillisecondsAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotateR__Group__2__Impl"
+
+
+    // $ANTLR start "rule__RotateR__Group__3"
+    // InternalXDrone.g:1580:1: rule__RotateR__Group__3 : rule__RotateR__Group__3__Impl ;
+    public final void rule__RotateR__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXDrone.g:1584:1: ( rule__RotateR__Group__3__Impl )
+            // InternalXDrone.g:1585:2: rule__RotateR__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__RotateR__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotateR__Group__3"
+
+
+    // $ANTLR start "rule__RotateR__Group__3__Impl"
+    // InternalXDrone.g:1591:1: rule__RotateR__Group__3__Impl : ( ')' ) ;
+    public final void rule__RotateR__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXDrone.g:1595:1: ( ( ')' ) )
+            // InternalXDrone.g:1596:1: ( ')' )
+            {
+            // InternalXDrone.g:1596:1: ( ')' )
+            // InternalXDrone.g:1597:2: ')'
+            {
+             before(grammarAccess.getRotateRAccess().getRightParenthesisKeyword_3()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getRotateRAccess().getRightParenthesisKeyword_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotateR__Group__3__Impl"
 
 
     // $ANTLR start "rule__Program__MainAssignment"
-    // InternalXDrone.g:1468:1: rule__Program__MainAssignment : ( ruleMain ) ;
+    // InternalXDrone.g:1607:1: rule__Program__MainAssignment : ( ruleMain ) ;
     public final void rule__Program__MainAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1472:1: ( ( ruleMain ) )
-            // InternalXDrone.g:1473:2: ( ruleMain )
+            // InternalXDrone.g:1611:1: ( ( ruleMain ) )
+            // InternalXDrone.g:1612:2: ( ruleMain )
             {
-            // InternalXDrone.g:1473:2: ( ruleMain )
-            // InternalXDrone.g:1474:3: ruleMain
+            // InternalXDrone.g:1612:2: ( ruleMain )
+            // InternalXDrone.g:1613:3: ruleMain
             {
              before(grammarAccess.getProgramAccess().getMainMainParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -4305,17 +4712,17 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Main__NameAssignment_1"
-    // InternalXDrone.g:1483:1: rule__Main__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalXDrone.g:1622:1: rule__Main__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Main__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1487:1: ( ( RULE_ID ) )
-            // InternalXDrone.g:1488:2: ( RULE_ID )
+            // InternalXDrone.g:1626:1: ( ( RULE_ID ) )
+            // InternalXDrone.g:1627:2: ( RULE_ID )
             {
-            // InternalXDrone.g:1488:2: ( RULE_ID )
-            // InternalXDrone.g:1489:3: RULE_ID
+            // InternalXDrone.g:1627:2: ( RULE_ID )
+            // InternalXDrone.g:1628:3: RULE_ID
             {
              before(grammarAccess.getMainAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -4342,17 +4749,17 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Main__CommandsAssignment_3_0"
-    // InternalXDrone.g:1498:1: rule__Main__CommandsAssignment_3_0 : ( ruleCommand ) ;
+    // InternalXDrone.g:1637:1: rule__Main__CommandsAssignment_3_0 : ( ruleCommand ) ;
     public final void rule__Main__CommandsAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1502:1: ( ( ruleCommand ) )
-            // InternalXDrone.g:1503:2: ( ruleCommand )
+            // InternalXDrone.g:1641:1: ( ( ruleCommand ) )
+            // InternalXDrone.g:1642:2: ( ruleCommand )
             {
-            // InternalXDrone.g:1503:2: ( ruleCommand )
-            // InternalXDrone.g:1504:3: ruleCommand
+            // InternalXDrone.g:1642:2: ( ruleCommand )
+            // InternalXDrone.g:1643:3: ruleCommand
             {
              before(grammarAccess.getMainAccess().getCommandsCommandParserRuleCall_3_0_0()); 
             pushFollow(FOLLOW_2);
@@ -4382,22 +4789,22 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Main__CommandsAssignment_3_0"
 
 
-    // $ANTLR start "rule__UP__MillisecondsAssignment_2"
-    // InternalXDrone.g:1513:1: rule__UP__MillisecondsAssignment_2 : ( RULE_INT ) ;
-    public final void rule__UP__MillisecondsAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Up__MillisecondsAssignment_2"
+    // InternalXDrone.g:1652:1: rule__Up__MillisecondsAssignment_2 : ( RULE_INT ) ;
+    public final void rule__Up__MillisecondsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1517:1: ( ( RULE_INT ) )
-            // InternalXDrone.g:1518:2: ( RULE_INT )
+            // InternalXDrone.g:1656:1: ( ( RULE_INT ) )
+            // InternalXDrone.g:1657:2: ( RULE_INT )
             {
-            // InternalXDrone.g:1518:2: ( RULE_INT )
-            // InternalXDrone.g:1519:3: RULE_INT
+            // InternalXDrone.g:1657:2: ( RULE_INT )
+            // InternalXDrone.g:1658:3: RULE_INT
             {
-             before(grammarAccess.getUPAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
+             before(grammarAccess.getUpAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getUPAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
+             after(grammarAccess.getUpAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
 
             }
 
@@ -4416,25 +4823,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UP__MillisecondsAssignment_2"
+    // $ANTLR end "rule__Up__MillisecondsAssignment_2"
 
 
-    // $ANTLR start "rule__DOWN__MillisecondsAssignment_2"
-    // InternalXDrone.g:1528:1: rule__DOWN__MillisecondsAssignment_2 : ( RULE_INT ) ;
-    public final void rule__DOWN__MillisecondsAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Down__MillisecondsAssignment_2"
+    // InternalXDrone.g:1667:1: rule__Down__MillisecondsAssignment_2 : ( RULE_INT ) ;
+    public final void rule__Down__MillisecondsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1532:1: ( ( RULE_INT ) )
-            // InternalXDrone.g:1533:2: ( RULE_INT )
+            // InternalXDrone.g:1671:1: ( ( RULE_INT ) )
+            // InternalXDrone.g:1672:2: ( RULE_INT )
             {
-            // InternalXDrone.g:1533:2: ( RULE_INT )
-            // InternalXDrone.g:1534:3: RULE_INT
+            // InternalXDrone.g:1672:2: ( RULE_INT )
+            // InternalXDrone.g:1673:3: RULE_INT
             {
-             before(grammarAccess.getDOWNAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
+             before(grammarAccess.getDownAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getDOWNAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
+             after(grammarAccess.getDownAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
 
             }
 
@@ -4453,25 +4860,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__DOWN__MillisecondsAssignment_2"
+    // $ANTLR end "rule__Down__MillisecondsAssignment_2"
 
 
-    // $ANTLR start "rule__LEFT__MillisecondsAssignment_2"
-    // InternalXDrone.g:1543:1: rule__LEFT__MillisecondsAssignment_2 : ( RULE_INT ) ;
-    public final void rule__LEFT__MillisecondsAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Left__MillisecondsAssignment_2"
+    // InternalXDrone.g:1682:1: rule__Left__MillisecondsAssignment_2 : ( RULE_INT ) ;
+    public final void rule__Left__MillisecondsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1547:1: ( ( RULE_INT ) )
-            // InternalXDrone.g:1548:2: ( RULE_INT )
+            // InternalXDrone.g:1686:1: ( ( RULE_INT ) )
+            // InternalXDrone.g:1687:2: ( RULE_INT )
             {
-            // InternalXDrone.g:1548:2: ( RULE_INT )
-            // InternalXDrone.g:1549:3: RULE_INT
+            // InternalXDrone.g:1687:2: ( RULE_INT )
+            // InternalXDrone.g:1688:3: RULE_INT
             {
-             before(grammarAccess.getLEFTAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
+             before(grammarAccess.getLeftAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getLEFTAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
+             after(grammarAccess.getLeftAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
 
             }
 
@@ -4490,25 +4897,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__LEFT__MillisecondsAssignment_2"
+    // $ANTLR end "rule__Left__MillisecondsAssignment_2"
 
 
-    // $ANTLR start "rule__RIGHT__MillisecondsAssignment_2"
-    // InternalXDrone.g:1558:1: rule__RIGHT__MillisecondsAssignment_2 : ( RULE_INT ) ;
-    public final void rule__RIGHT__MillisecondsAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Right__MillisecondsAssignment_2"
+    // InternalXDrone.g:1697:1: rule__Right__MillisecondsAssignment_2 : ( RULE_INT ) ;
+    public final void rule__Right__MillisecondsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1562:1: ( ( RULE_INT ) )
-            // InternalXDrone.g:1563:2: ( RULE_INT )
+            // InternalXDrone.g:1701:1: ( ( RULE_INT ) )
+            // InternalXDrone.g:1702:2: ( RULE_INT )
             {
-            // InternalXDrone.g:1563:2: ( RULE_INT )
-            // InternalXDrone.g:1564:3: RULE_INT
+            // InternalXDrone.g:1702:2: ( RULE_INT )
+            // InternalXDrone.g:1703:3: RULE_INT
             {
-             before(grammarAccess.getRIGHTAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
+             before(grammarAccess.getRightAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getRIGHTAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
+             after(grammarAccess.getRightAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
 
             }
 
@@ -4527,25 +4934,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RIGHT__MillisecondsAssignment_2"
+    // $ANTLR end "rule__Right__MillisecondsAssignment_2"
 
 
-    // $ANTLR start "rule__FORWARD__MillisecondsAssignment_2"
-    // InternalXDrone.g:1573:1: rule__FORWARD__MillisecondsAssignment_2 : ( RULE_INT ) ;
-    public final void rule__FORWARD__MillisecondsAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Forward__MillisecondsAssignment_2"
+    // InternalXDrone.g:1712:1: rule__Forward__MillisecondsAssignment_2 : ( RULE_INT ) ;
+    public final void rule__Forward__MillisecondsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1577:1: ( ( RULE_INT ) )
-            // InternalXDrone.g:1578:2: ( RULE_INT )
+            // InternalXDrone.g:1716:1: ( ( RULE_INT ) )
+            // InternalXDrone.g:1717:2: ( RULE_INT )
             {
-            // InternalXDrone.g:1578:2: ( RULE_INT )
-            // InternalXDrone.g:1579:3: RULE_INT
+            // InternalXDrone.g:1717:2: ( RULE_INT )
+            // InternalXDrone.g:1718:3: RULE_INT
             {
-             before(grammarAccess.getFORWARDAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
+             before(grammarAccess.getForwardAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getFORWARDAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
+             after(grammarAccess.getForwardAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
 
             }
 
@@ -4564,25 +4971,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FORWARD__MillisecondsAssignment_2"
+    // $ANTLR end "rule__Forward__MillisecondsAssignment_2"
 
 
-    // $ANTLR start "rule__BACKWARD__MillisecondsAssignment_2"
-    // InternalXDrone.g:1588:1: rule__BACKWARD__MillisecondsAssignment_2 : ( RULE_INT ) ;
-    public final void rule__BACKWARD__MillisecondsAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Backward__MillisecondsAssignment_2"
+    // InternalXDrone.g:1727:1: rule__Backward__MillisecondsAssignment_2 : ( RULE_INT ) ;
+    public final void rule__Backward__MillisecondsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1592:1: ( ( RULE_INT ) )
-            // InternalXDrone.g:1593:2: ( RULE_INT )
+            // InternalXDrone.g:1731:1: ( ( RULE_INT ) )
+            // InternalXDrone.g:1732:2: ( RULE_INT )
             {
-            // InternalXDrone.g:1593:2: ( RULE_INT )
-            // InternalXDrone.g:1594:3: RULE_INT
+            // InternalXDrone.g:1732:2: ( RULE_INT )
+            // InternalXDrone.g:1733:3: RULE_INT
             {
-             before(grammarAccess.getBACKWARDAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
+             before(grammarAccess.getBackwardAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getBACKWARDAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
+             after(grammarAccess.getBackwardAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
 
             }
 
@@ -4601,25 +5008,25 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BACKWARD__MillisecondsAssignment_2"
+    // $ANTLR end "rule__Backward__MillisecondsAssignment_2"
 
 
-    // $ANTLR start "rule__ROTATE__DegreesAssignment_2"
-    // InternalXDrone.g:1603:1: rule__ROTATE__DegreesAssignment_2 : ( RULE_INT ) ;
-    public final void rule__ROTATE__DegreesAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__RotateL__MillisecondsAssignment_2"
+    // InternalXDrone.g:1742:1: rule__RotateL__MillisecondsAssignment_2 : ( RULE_INT ) ;
+    public final void rule__RotateL__MillisecondsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXDrone.g:1607:1: ( ( RULE_INT ) )
-            // InternalXDrone.g:1608:2: ( RULE_INT )
+            // InternalXDrone.g:1746:1: ( ( RULE_INT ) )
+            // InternalXDrone.g:1747:2: ( RULE_INT )
             {
-            // InternalXDrone.g:1608:2: ( RULE_INT )
-            // InternalXDrone.g:1609:3: RULE_INT
+            // InternalXDrone.g:1747:2: ( RULE_INT )
+            // InternalXDrone.g:1748:3: RULE_INT
             {
-             before(grammarAccess.getROTATEAccess().getDegreesINTTerminalRuleCall_2_0()); 
+             before(grammarAccess.getRotateLAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getROTATEAccess().getDegreesINTTerminalRuleCall_2_0()); 
+             after(grammarAccess.getRotateLAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
 
             }
 
@@ -4638,7 +5045,44 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ROTATE__DegreesAssignment_2"
+    // $ANTLR end "rule__RotateL__MillisecondsAssignment_2"
+
+
+    // $ANTLR start "rule__RotateR__MillisecondsAssignment_2"
+    // InternalXDrone.g:1757:1: rule__RotateR__MillisecondsAssignment_2 : ( RULE_INT ) ;
+    public final void rule__RotateR__MillisecondsAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXDrone.g:1761:1: ( ( RULE_INT ) )
+            // InternalXDrone.g:1762:2: ( RULE_INT )
+            {
+            // InternalXDrone.g:1762:2: ( RULE_INT )
+            // InternalXDrone.g:1763:3: RULE_INT
+            {
+             before(grammarAccess.getRotateRAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getRotateRAccess().getMillisecondsINTTerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotateR__MillisecondsAssignment_2"
 
     // Delegated rules
 
@@ -4649,8 +5093,8 @@ public class InternalXDroneParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000003F29800L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000003F21802L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000007F29800L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000007F21802L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000800L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000001000L});

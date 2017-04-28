@@ -3,8 +3,11 @@
  */
 package uk.ac.ox.cs.xdrone.xDrone.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import uk.ac.ox.cs.xdrone.xDrone.Command;
@@ -14,11 +17,37 @@ import uk.ac.ox.cs.xdrone.xDrone.XDronePackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Command</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link uk.ac.ox.cs.xdrone.xDrone.impl.CommandImpl#getMilliseconds <em>Milliseconds</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 {
+  /**
+   * The default value of the '{@link #getMilliseconds() <em>Milliseconds</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMilliseconds()
+   * @generated
+   * @ordered
+   */
+  protected static final int MILLISECONDS_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getMilliseconds() <em>Milliseconds</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMilliseconds()
+   * @generated
+   * @ordered
+   */
+  protected int milliseconds = MILLISECONDS_EDEFAULT;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -38,6 +67,112 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
   protected EClass eStaticClass()
   {
     return XDronePackage.Literals.COMMAND;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getMilliseconds()
+  {
+    return milliseconds;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMilliseconds(int newMilliseconds)
+  {
+    int oldMilliseconds = milliseconds;
+    milliseconds = newMilliseconds;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XDronePackage.COMMAND__MILLISECONDS, oldMilliseconds, milliseconds));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case XDronePackage.COMMAND__MILLISECONDS:
+        return getMilliseconds();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case XDronePackage.COMMAND__MILLISECONDS:
+        setMilliseconds((Integer)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case XDronePackage.COMMAND__MILLISECONDS:
+        setMilliseconds(MILLISECONDS_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case XDronePackage.COMMAND__MILLISECONDS:
+        return milliseconds != MILLISECONDS_EDEFAULT;
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (milliseconds: ");
+    result.append(milliseconds);
+    result.append(')');
+    return result.toString();
   }
 
 } //CommandImpl

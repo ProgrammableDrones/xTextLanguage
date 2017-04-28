@@ -9,26 +9,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"
         eType="#//Command" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Command"/>
-  <eClassifiers xsi:type="ecore:EClass" name="UP" eSuperTypes="#//Command">
+  <eClassifiers xsi:type="ecore:EClass" name="Command">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="milliseconds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DOWN" eSuperTypes="#//Command">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="milliseconds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LEFT" eSuperTypes="#//Command">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="milliseconds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RIGHT" eSuperTypes="#//Command">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="milliseconds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FORWARD" eSuperTypes="#//Command">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="milliseconds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BACKWARD" eSuperTypes="#//Command">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="milliseconds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ROTATE" eSuperTypes="#//Command">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="degrees" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Up" eSuperTypes="#//Command"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Down" eSuperTypes="#//Command"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Left" eSuperTypes="#//Command"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Right" eSuperTypes="#//Command"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Forward" eSuperTypes="#//Command"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Backward" eSuperTypes="#//Command"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RotateL" eSuperTypes="#//Command"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RotateR" eSuperTypes="#//Command"/>
 </ecore:EPackage>

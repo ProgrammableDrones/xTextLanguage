@@ -51,67 +51,76 @@ public interface XDroneFactory extends EFactory
   Command createCommand();
 
   /**
-   * Returns a new object of class '<em>UP</em>'.
+   * Returns a new object of class '<em>Up</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>UP</em>'.
+   * @return a new object of class '<em>Up</em>'.
    * @generated
    */
-  UP createUP();
+  Up createUp();
 
   /**
-   * Returns a new object of class '<em>DOWN</em>'.
+   * Returns a new object of class '<em>Down</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>DOWN</em>'.
+   * @return a new object of class '<em>Down</em>'.
    * @generated
    */
-  DOWN createDOWN();
+  Down createDown();
 
   /**
-   * Returns a new object of class '<em>LEFT</em>'.
+   * Returns a new object of class '<em>Left</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>LEFT</em>'.
+   * @return a new object of class '<em>Left</em>'.
    * @generated
    */
-  LEFT createLEFT();
+  Left createLeft();
 
   /**
-   * Returns a new object of class '<em>RIGHT</em>'.
+   * Returns a new object of class '<em>Right</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>RIGHT</em>'.
+   * @return a new object of class '<em>Right</em>'.
    * @generated
    */
-  RIGHT createRIGHT();
+  Right createRight();
 
   /**
-   * Returns a new object of class '<em>FORWARD</em>'.
+   * Returns a new object of class '<em>Forward</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>FORWARD</em>'.
+   * @return a new object of class '<em>Forward</em>'.
    * @generated
    */
-  FORWARD createFORWARD();
+  Forward createForward();
 
   /**
-   * Returns a new object of class '<em>BACKWARD</em>'.
+   * Returns a new object of class '<em>Backward</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>BACKWARD</em>'.
+   * @return a new object of class '<em>Backward</em>'.
    * @generated
    */
-  BACKWARD createBACKWARD();
+  Backward createBackward();
 
   /**
-   * Returns a new object of class '<em>ROTATE</em>'.
+   * Returns a new object of class '<em>Rotate L</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>ROTATE</em>'.
+   * @return a new object of class '<em>Rotate L</em>'.
    * @generated
    */
-  ROTATE createROTATE();
+  RotateL createRotateL();
+
+  /**
+   * Returns a new object of class '<em>Rotate R</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rotate R</em>'.
+   * @generated
+   */
+  RotateR createRotateR();
 
   /**
    * Returns the package supported by this factory.

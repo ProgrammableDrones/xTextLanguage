@@ -19,41 +19,47 @@ Main :
  
 
 Command:
-	  {Command} HOME 
-	| {Command} EMERGENCY
-	| UP 
-	| DOWN 
-	| LEFT 
-	| RIGHT 
-	| FORWARD 
-	| BACKWARD
-	| ROTATE
+	  {Command} Takeoff
+	| {Command} Land
+	| Up 
+	| Down 
+	| Left 
+	| Right 
+	| Forward 
+	| Backward
+	| RotateL
+	| RotateR
 	
 ;
 
-HOME : 'home';
-EMERGENCY: 'emergencyStop';  
-  
-UP: 
+
+Takeoff: 'TAKEOFF';
+Land : 'LAND';
+ 
+
+Up: 
 	'UP' '('milliseconds = INT')'
 ;
-DOWN: 
+Down: 
 	'DOWN' '('milliseconds = INT')'
 ;
-LEFT: 
+Left: 
 	'LEFT' '('milliseconds = INT')'
 ;
-RIGHT: 
+Right: 
 	'RIGHT' '('milliseconds = INT')'
 ;
-FORWARD: 
+Forward: 
 	'FORWARD' '('milliseconds = INT')'
 ;
-BACKWARD: 
+Backward: 
 	'BACKWARD' '('milliseconds = INT')'
 ;
-ROTATE: 
-	'ROTATE' '('degrees = INT')'
+RotateL: 
+	'ROTATELEFT' '('milliseconds = INT')'
+;
+RotateR: 
+	'ROTATERIGHT' '('milliseconds = INT')'
 ;
   
    

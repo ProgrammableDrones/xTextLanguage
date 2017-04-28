@@ -91,39 +91,44 @@ public class XDroneAdapterFactory extends AdapterFactoryImpl
         return createCommandAdapter();
       }
       @Override
-      public Adapter caseUP(UP object)
+      public Adapter caseUp(Up object)
       {
-        return createUPAdapter();
+        return createUpAdapter();
       }
       @Override
-      public Adapter caseDOWN(DOWN object)
+      public Adapter caseDown(Down object)
       {
-        return createDOWNAdapter();
+        return createDownAdapter();
       }
       @Override
-      public Adapter caseLEFT(LEFT object)
+      public Adapter caseLeft(Left object)
       {
-        return createLEFTAdapter();
+        return createLeftAdapter();
       }
       @Override
-      public Adapter caseRIGHT(RIGHT object)
+      public Adapter caseRight(Right object)
       {
-        return createRIGHTAdapter();
+        return createRightAdapter();
       }
       @Override
-      public Adapter caseFORWARD(FORWARD object)
+      public Adapter caseForward(Forward object)
       {
-        return createFORWARDAdapter();
+        return createForwardAdapter();
       }
       @Override
-      public Adapter caseBACKWARD(BACKWARD object)
+      public Adapter caseBackward(Backward object)
       {
-        return createBACKWARDAdapter();
+        return createBackwardAdapter();
       }
       @Override
-      public Adapter caseROTATE(ROTATE object)
+      public Adapter caseRotateL(RotateL object)
       {
-        return createROTATEAdapter();
+        return createRotateLAdapter();
+      }
+      @Override
+      public Adapter caseRotateR(RotateR object)
+      {
+        return createRotateRAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -193,106 +198,121 @@ public class XDroneAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.UP <em>UP</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.Up <em>Up</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.ox.cs.xdrone.xDrone.UP
+   * @see uk.ac.ox.cs.xdrone.xDrone.Up
    * @generated
    */
-  public Adapter createUPAdapter()
+  public Adapter createUpAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.DOWN <em>DOWN</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.Down <em>Down</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.ox.cs.xdrone.xDrone.DOWN
+   * @see uk.ac.ox.cs.xdrone.xDrone.Down
    * @generated
    */
-  public Adapter createDOWNAdapter()
+  public Adapter createDownAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.LEFT <em>LEFT</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.Left <em>Left</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.ox.cs.xdrone.xDrone.LEFT
+   * @see uk.ac.ox.cs.xdrone.xDrone.Left
    * @generated
    */
-  public Adapter createLEFTAdapter()
+  public Adapter createLeftAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.RIGHT <em>RIGHT</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.Right <em>Right</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.ox.cs.xdrone.xDrone.RIGHT
+   * @see uk.ac.ox.cs.xdrone.xDrone.Right
    * @generated
    */
-  public Adapter createRIGHTAdapter()
+  public Adapter createRightAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.FORWARD <em>FORWARD</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.Forward <em>Forward</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.ox.cs.xdrone.xDrone.FORWARD
+   * @see uk.ac.ox.cs.xdrone.xDrone.Forward
    * @generated
    */
-  public Adapter createFORWARDAdapter()
+  public Adapter createForwardAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.BACKWARD <em>BACKWARD</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.Backward <em>Backward</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.ox.cs.xdrone.xDrone.BACKWARD
+   * @see uk.ac.ox.cs.xdrone.xDrone.Backward
    * @generated
    */
-  public Adapter createBACKWARDAdapter()
+  public Adapter createBackwardAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.ROTATE <em>ROTATE</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.RotateL <em>Rotate L</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.ox.cs.xdrone.xDrone.ROTATE
+   * @see uk.ac.ox.cs.xdrone.xDrone.RotateL
    * @generated
    */
-  public Adapter createROTATEAdapter()
+  public Adapter createRotateLAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.RotateR <em>Rotate R</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.ox.cs.xdrone.xDrone.RotateR
+   * @generated
+   */
+  public Adapter createRotateRAdapter()
   {
     return null;
   }

@@ -19,9 +19,16 @@ import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import uk.ac.ox.cs.xdrone.xDrone.Backward;
 import uk.ac.ox.cs.xdrone.xDrone.Command;
+import uk.ac.ox.cs.xdrone.xDrone.Down;
+import uk.ac.ox.cs.xdrone.xDrone.Forward;
+import uk.ac.ox.cs.xdrone.xDrone.Left;
 import uk.ac.ox.cs.xdrone.xDrone.Main;
-import uk.ac.ox.cs.xdrone.xDrone.UP;
+import uk.ac.ox.cs.xdrone.xDrone.Right;
+import uk.ac.ox.cs.xdrone.xDrone.RotateL;
+import uk.ac.ox.cs.xdrone.xDrone.RotateR;
+import uk.ac.ox.cs.xdrone.xDrone.Up;
 
 /**
  * Generates code from your model files on save.
@@ -36,6 +43,13 @@ public class XDroneGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("var client  = arDrone.createClient();");
     _builder.newLine();
+    _builder.append("client.takeoff();");
+    _builder.newLine();
+    _builder.append("client");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append(".after(5000, function() {");
+    _builder.newLine();
     {
       EList<Command> _commands = main.getCommands();
       for(final Command f : _commands) {
@@ -44,46 +58,130 @@ public class XDroneGenerator extends AbstractGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
+    _builder.append("   ");
+    _builder.append("this.stop();");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("this.land();");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("});");
+    _builder.newLine();
     return _builder;
   }
   
-  public CharSequence compile(final Command up) {
+  public CharSequence compile(final Command cmd) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      if ((up instanceof UP)) {
-        _builder.newLine();
-        _builder.append("client.takeoff();");
-        _builder.newLine();
-        _builder.newLine();
-        _builder.append("client");
-        _builder.newLine();
+      if ((cmd instanceof Up)) {
         _builder.append("  ");
-        _builder.append(".after(");
-        int _milliseconds = ((UP)up).getMilliseconds();
-        _builder.append(_milliseconds, "  ");
-        _builder.append(", function() {");
-        _builder.newLineIfNotEmpty();
-        _builder.append("    ");
-        _builder.append("this.clockwise(0.5);");
+        _builder.append("this.up(0.5);");
         _builder.newLine();
-        _builder.append("  ");
         _builder.append("})");
         _builder.newLine();
-        _builder.append("  ");
         _builder.append(".after(");
-        int _milliseconds_1 = ((UP)up).getMilliseconds();
-        _builder.append(_milliseconds_1, "  ");
+        int _milliseconds = ((Up)cmd).getMilliseconds();
+        _builder.append(_milliseconds, "");
         _builder.append(", function() {");
         _builder.newLineIfNotEmpty();
-        _builder.append("    ");
-        _builder.append("this.stop();");
+      }
+    }
+    {
+      if ((cmd instanceof Down)) {
+        _builder.append("  ");
+        _builder.append("this.down(0.5);");
         _builder.newLine();
-        _builder.append("    ");
-        _builder.append("this.land();");
+        _builder.append("})");
         _builder.newLine();
-        _builder.append("\t  \t  ");
-        _builder.append("});");
+        _builder.append(".after(");
+        int _milliseconds_1 = ((Down)cmd).getMilliseconds();
+        _builder.append(_milliseconds_1, "");
+        _builder.append(", function() {");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      if ((cmd instanceof Left)) {
+        _builder.append("  ");
+        _builder.append("this.left(0.5);");
         _builder.newLine();
+        _builder.append("})");
+        _builder.newLine();
+        _builder.append(".after(");
+        int _milliseconds_2 = ((Left)cmd).getMilliseconds();
+        _builder.append(_milliseconds_2, "");
+        _builder.append(", function() {");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      if ((cmd instanceof Right)) {
+        _builder.append("  ");
+        _builder.append("this.right(0.5);");
+        _builder.newLine();
+        _builder.append("})");
+        _builder.newLine();
+        _builder.append(".after(");
+        int _milliseconds_3 = ((Right)cmd).getMilliseconds();
+        _builder.append(_milliseconds_3, "");
+        _builder.append(", function() {");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      if ((cmd instanceof Forward)) {
+        _builder.append("  ");
+        _builder.append("this.front(0.5);");
+        _builder.newLine();
+        _builder.append("})");
+        _builder.newLine();
+        _builder.append(".after(");
+        int _milliseconds_4 = ((Forward)cmd).getMilliseconds();
+        _builder.append(_milliseconds_4, "");
+        _builder.append(", function() {");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      if ((cmd instanceof Backward)) {
+        _builder.append("  ");
+        _builder.append("this.back(0.5);");
+        _builder.newLine();
+        _builder.append("})");
+        _builder.newLine();
+        _builder.append(".after(");
+        int _milliseconds_5 = ((Backward)cmd).getMilliseconds();
+        _builder.append(_milliseconds_5, "");
+        _builder.append(", function() {");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      if ((cmd instanceof RotateL)) {
+        _builder.append("  ");
+        _builder.append("this.counterClockwise(0.5);");
+        _builder.newLine();
+        _builder.append("})");
+        _builder.newLine();
+        _builder.append(".after(");
+        int _milliseconds_6 = ((RotateL)cmd).getMilliseconds();
+        _builder.append(_milliseconds_6, "");
+        _builder.append(", function() {");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      if ((cmd instanceof RotateR)) {
+        _builder.append("  ");
+        _builder.append("this.clockwise(0.5);");
+        _builder.newLine();
+        _builder.append("})");
+        _builder.newLine();
+        _builder.append(".after(");
+        int _milliseconds_7 = ((RotateR)cmd).getMilliseconds();
+        _builder.append(_milliseconds_7, "");
+        _builder.append(", function() {");
+        _builder.newLineIfNotEmpty();
       }
     }
     return _builder;

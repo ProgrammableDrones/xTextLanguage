@@ -13,27 +13,16 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//Main/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XDrone.ecore#//Main/commands"/>
     </genClasses>
-    <genClasses ecoreClass="XDrone.ecore#//Command"/>
-    <genClasses ecoreClass="XDrone.ecore#//UP">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//UP/milliseconds"/>
+    <genClasses ecoreClass="XDrone.ecore#//Command">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//Command/milliseconds"/>
     </genClasses>
-    <genClasses ecoreClass="XDrone.ecore#//DOWN">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//DOWN/milliseconds"/>
-    </genClasses>
-    <genClasses ecoreClass="XDrone.ecore#//LEFT">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//LEFT/milliseconds"/>
-    </genClasses>
-    <genClasses ecoreClass="XDrone.ecore#//RIGHT">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//RIGHT/milliseconds"/>
-    </genClasses>
-    <genClasses ecoreClass="XDrone.ecore#//FORWARD">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//FORWARD/milliseconds"/>
-    </genClasses>
-    <genClasses ecoreClass="XDrone.ecore#//BACKWARD">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//BACKWARD/milliseconds"/>
-    </genClasses>
-    <genClasses ecoreClass="XDrone.ecore#//ROTATE">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XDrone.ecore#//ROTATE/degrees"/>
-    </genClasses>
+    <genClasses ecoreClass="XDrone.ecore#//Up"/>
+    <genClasses ecoreClass="XDrone.ecore#//Down"/>
+    <genClasses ecoreClass="XDrone.ecore#//Left"/>
+    <genClasses ecoreClass="XDrone.ecore#//Right"/>
+    <genClasses ecoreClass="XDrone.ecore#//Forward"/>
+    <genClasses ecoreClass="XDrone.ecore#//Backward"/>
+    <genClasses ecoreClass="XDrone.ecore#//RotateL"/>
+    <genClasses ecoreClass="XDrone.ecore#//RotateR"/>
   </genPackages>
 </genmodel:GenModel>
