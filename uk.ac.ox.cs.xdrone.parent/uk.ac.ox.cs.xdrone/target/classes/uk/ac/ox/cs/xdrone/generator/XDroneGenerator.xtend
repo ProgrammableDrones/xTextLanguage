@@ -48,41 +48,49 @@ class XDroneGenerator extends AbstractGenerator {
 	'''
 	def compile(Command cmd) '''
 		«IF cmd instanceof Up »
+		    this.stop();
 		    this.up(0.5);
 		  })
 		  .after(«cmd.milliseconds», function() {
 	  	«ENDIF»
 	  	«IF cmd instanceof Down »
+		    this.stop();
 		    this.down(0.5);
 		  })
 		  .after(«cmd.milliseconds», function() {
 	  	«ENDIF»
 	  	«IF cmd instanceof Left »
+		    this.stop();
 		    this.left(0.5);
 		  })
 		  .after(«cmd.milliseconds», function() {
 	  	«ENDIF»
 	  	«IF cmd instanceof Right »
+		    this.stop();
 		    this.right(0.5);
 		  })
 		  .after(«cmd.milliseconds», function() {
 	  	«ENDIF»
 	  	«IF cmd instanceof Forward »
+		    this.stop();
 		    this.front(0.5);
 		  })
 		  .after(«cmd.milliseconds», function() {
 	  	«ENDIF»
 	  	«IF cmd instanceof Backward »
+		    this.stop();
 		    this.back(0.5);
 		  })
 		  .after(«cmd.milliseconds», function() {
 	  	«ENDIF»
 	  	«IF cmd instanceof RotateL »
+		    this.stop();
 		    this.counterClockwise(0.5);
 		  })
 		  .after(«cmd.milliseconds», function() {
 	  	«ENDIF»
 	  	«IF cmd instanceof RotateR »
+		    this.stop();
 		    this.clockwise(0.5);
 		  })
 		  .after(«cmd.milliseconds», function() {

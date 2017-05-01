@@ -81,6 +81,9 @@ public class XDroneGenerator extends AbstractGenerator {
     {
       if ((cmd instanceof Up)) {
         _builder.append("  ");
+        _builder.append("this.stop();");
+        _builder.newLine();
+        _builder.append("  ");
         _builder.append("this.up(0.5);");
         _builder.newLine();
         _builder.append("})");
@@ -94,6 +97,9 @@ public class XDroneGenerator extends AbstractGenerator {
     }
     {
       if ((cmd instanceof Down)) {
+        _builder.append("  ");
+        _builder.append("this.stop();");
+        _builder.newLine();
         _builder.append("  ");
         _builder.append("this.down(0.5);");
         _builder.newLine();
@@ -109,6 +115,9 @@ public class XDroneGenerator extends AbstractGenerator {
     {
       if ((cmd instanceof Left)) {
         _builder.append("  ");
+        _builder.append("this.stop();");
+        _builder.newLine();
+        _builder.append("  ");
         _builder.append("this.left(0.5);");
         _builder.newLine();
         _builder.append("})");
@@ -122,6 +131,9 @@ public class XDroneGenerator extends AbstractGenerator {
     }
     {
       if ((cmd instanceof Right)) {
+        _builder.append("  ");
+        _builder.append("this.stop();");
+        _builder.newLine();
         _builder.append("  ");
         _builder.append("this.right(0.5);");
         _builder.newLine();
@@ -137,6 +149,9 @@ public class XDroneGenerator extends AbstractGenerator {
     {
       if ((cmd instanceof Forward)) {
         _builder.append("  ");
+        _builder.append("this.stop();");
+        _builder.newLine();
+        _builder.append("  ");
         _builder.append("this.front(0.5);");
         _builder.newLine();
         _builder.append("})");
@@ -150,6 +165,9 @@ public class XDroneGenerator extends AbstractGenerator {
     }
     {
       if ((cmd instanceof Backward)) {
+        _builder.append("  ");
+        _builder.append("this.stop();");
+        _builder.newLine();
         _builder.append("  ");
         _builder.append("this.back(0.5);");
         _builder.newLine();
@@ -165,6 +183,9 @@ public class XDroneGenerator extends AbstractGenerator {
     {
       if ((cmd instanceof RotateL)) {
         _builder.append("  ");
+        _builder.append("this.stop();");
+        _builder.newLine();
+        _builder.append("  ");
         _builder.append("this.counterClockwise(0.5);");
         _builder.newLine();
         _builder.append("})");
@@ -178,6 +199,9 @@ public class XDroneGenerator extends AbstractGenerator {
     }
     {
       if ((cmd instanceof RotateR)) {
+        _builder.append("  ");
+        _builder.append("this.stop();");
+        _builder.newLine();
         _builder.append("  ");
         _builder.append("this.clockwise(0.5);");
         _builder.newLine();
