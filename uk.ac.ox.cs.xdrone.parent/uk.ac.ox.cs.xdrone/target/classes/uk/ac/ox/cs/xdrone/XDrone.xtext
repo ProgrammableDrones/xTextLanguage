@@ -29,7 +29,7 @@ Command:
 	| Backward
 	| RotateL
 	| RotateR
-	
+	| Wait
 ;
 
 
@@ -60,6 +60,9 @@ RotateL:
 ;
 RotateR: 
 	'ROTATERIGHT' '('milliseconds = INT')'
+;
+Wait:
+	'WAIT' '(' milliseconds = INT ')'
 ;
   
    

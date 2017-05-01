@@ -76,6 +76,7 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
       case XDronePackage.BACKWARD: return createBackward();
       case XDronePackage.ROTATE_L: return createRotateL();
       case XDronePackage.ROTATE_R: return createRotateR();
+      case XDronePackage.WAIT: return createWait();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -200,6 +201,17 @@ public class XDroneFactoryImpl extends EFactoryImpl implements XDroneFactory
   {
     RotateRImpl rotateR = new RotateRImpl();
     return rotateR;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Wait createWait()
+  {
+    WaitImpl wait = new WaitImpl();
+    return wait;
   }
 
   /**

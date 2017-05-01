@@ -29,6 +29,7 @@ import uk.ac.ox.cs.xdrone.xDrone.Right;
 import uk.ac.ox.cs.xdrone.xDrone.RotateL;
 import uk.ac.ox.cs.xdrone.xDrone.RotateR;
 import uk.ac.ox.cs.xdrone.xDrone.Up;
+import uk.ac.ox.cs.xdrone.xDrone.Wait;
 
 /**
  * Generates code from your model files on save.
@@ -186,7 +187,7 @@ public class XDroneGenerator extends AbstractGenerator {
         _builder.append("this.stop();");
         _builder.newLine();
         _builder.append("  ");
-        _builder.append("this.counterClockwise(0.5);");
+        _builder.append("this.counterClockwise(0.1);");
         _builder.newLine();
         _builder.append("})");
         _builder.newLine();
@@ -203,13 +204,27 @@ public class XDroneGenerator extends AbstractGenerator {
         _builder.append("this.stop();");
         _builder.newLine();
         _builder.append("  ");
-        _builder.append("this.clockwise(0.5);");
+        _builder.append("this.clockwise(0.1);");
         _builder.newLine();
         _builder.append("})");
         _builder.newLine();
         _builder.append(".after(");
         int _milliseconds_7 = ((RotateR)cmd).getMilliseconds();
         _builder.append(_milliseconds_7, "");
+        _builder.append(", function() {");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      if ((cmd instanceof Wait)) {
+        _builder.append("  ");
+        _builder.append("this.stop();\t");
+        _builder.newLine();
+        _builder.append("})");
+        _builder.newLine();
+        _builder.append(".after(");
+        int _milliseconds_8 = ((Wait)cmd).getMilliseconds();
+        _builder.append(_milliseconds_8, "");
         _builder.append(", function() {");
         _builder.newLineIfNotEmpty();
       }

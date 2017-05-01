@@ -131,6 +131,11 @@ public class XDroneAdapterFactory extends AdapterFactoryImpl
         return createRotateRAdapter();
       }
       @Override
+      public Adapter caseWait(Wait object)
+      {
+        return createWaitAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -313,6 +318,21 @@ public class XDroneAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRotateRAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.ox.cs.xdrone.xDrone.Wait <em>Wait</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.ox.cs.xdrone.xDrone.Wait
+   * @generated
+   */
+  public Adapter createWaitAdapter()
   {
     return null;
   }

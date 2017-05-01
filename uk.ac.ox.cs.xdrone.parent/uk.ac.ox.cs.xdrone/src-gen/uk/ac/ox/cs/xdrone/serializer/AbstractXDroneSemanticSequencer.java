@@ -26,6 +26,7 @@ import uk.ac.ox.cs.xdrone.xDrone.Right;
 import uk.ac.ox.cs.xdrone.xDrone.RotateL;
 import uk.ac.ox.cs.xdrone.xDrone.RotateR;
 import uk.ac.ox.cs.xdrone.xDrone.Up;
+import uk.ac.ox.cs.xdrone.xDrone.Wait;
 import uk.ac.ox.cs.xdrone.xDrone.XDronePackage;
 
 @SuppressWarnings("all")
@@ -74,6 +75,9 @@ public abstract class AbstractXDroneSemanticSequencer extends AbstractDelegating
 				return; 
 			case XDronePackage.UP:
 				sequence_Up(context, (Up) semanticObject); 
+				return; 
+			case XDronePackage.WAIT:
+				sequence_Wait(context, (Wait) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -270,6 +274,25 @@ public abstract class AbstractXDroneSemanticSequencer extends AbstractDelegating
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getUpAccess().getMillisecondsINTTerminalRuleCall_2_0(), semanticObject.getMilliseconds());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Command returns Wait
+	 *     Wait returns Wait
+	 *
+	 * Constraint:
+	 *     milliseconds=INT
+	 */
+	protected void sequence_Wait(ISerializationContext context, Wait semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, XDronePackage.Literals.COMMAND__MILLISECONDS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XDronePackage.Literals.COMMAND__MILLISECONDS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getWaitAccess().getMillisecondsINTTerminalRuleCall_2_0(), semanticObject.getMilliseconds());
 		feeder.finish();
 	}
 	

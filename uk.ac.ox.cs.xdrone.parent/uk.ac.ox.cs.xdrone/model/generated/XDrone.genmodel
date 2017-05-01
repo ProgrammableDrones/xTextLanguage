@@ -24,5 +24,6 @@
     <genClasses ecoreClass="XDrone.ecore#//Backward"/>
     <genClasses ecoreClass="XDrone.ecore#//RotateL"/>
     <genClasses ecoreClass="XDrone.ecore#//RotateR"/>
+    <genClasses ecoreClass="XDrone.ecore#//Wait"/>
   </genPackages>
 </genmodel:GenModel>

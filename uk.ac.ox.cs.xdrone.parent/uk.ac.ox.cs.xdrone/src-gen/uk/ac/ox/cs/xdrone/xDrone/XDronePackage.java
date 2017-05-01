@@ -374,6 +374,34 @@ public interface XDronePackage extends EPackage
    */
   int ROTATE_R_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 0;
 
+  /**
+   * The meta object id for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.WaitImpl <em>Wait</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.WaitImpl
+   * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getWait()
+   * @generated
+   */
+  int WAIT = 11;
+
+  /**
+   * The feature id for the '<em><b>Milliseconds</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WAIT__MILLISECONDS = COMMAND__MILLISECONDS;
+
+  /**
+   * The number of structural features of the '<em>Wait</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WAIT_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 0;
+
 
   /**
    * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.Program <em>Program</em>}'.
@@ -528,6 +556,16 @@ public interface XDronePackage extends EPackage
    * @generated
    */
   EClass getRotateR();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.ox.cs.xdrone.xDrone.Wait <em>Wait</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Wait</em>'.
+   * @see uk.ac.ox.cs.xdrone.xDrone.Wait
+   * @generated
+   */
+  EClass getWait();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -693,6 +731,16 @@ public interface XDronePackage extends EPackage
      * @generated
      */
     EClass ROTATE_R = eINSTANCE.getRotateR();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.ox.cs.xdrone.xDrone.impl.WaitImpl <em>Wait</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.WaitImpl
+     * @see uk.ac.ox.cs.xdrone.xDrone.impl.XDronePackageImpl#getWait()
+     * @generated
+     */
+    EClass WAIT = eINSTANCE.getWait();
 
   }
 

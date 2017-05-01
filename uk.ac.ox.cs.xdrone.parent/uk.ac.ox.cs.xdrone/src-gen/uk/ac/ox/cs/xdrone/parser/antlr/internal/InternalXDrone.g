@@ -293,6 +293,15 @@ ruleCommand returns [EObject current=null]
 			$current = $this_RotateR_11.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getCommandAccess().getWaitParserRuleCall_10());
+		}
+		this_Wait_12=ruleWait
+		{
+			$current = $this_Wait_12.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -728,6 +737,55 @@ ruleRotateR returns [EObject current=null]
 		otherlv_3=')'
 		{
 			newLeafNode(otherlv_3, grammarAccess.getRotateRAccess().getRightParenthesisKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRuleWait
+entryRuleWait returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getWaitRule()); }
+	iv_ruleWait=ruleWait
+	{ $current=$iv_ruleWait.current; }
+	EOF;
+
+// Rule Wait
+ruleWait returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='WAIT'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getWaitAccess().getWAITKeyword_0());
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getWaitAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				lv_milliseconds_2_0=RULE_INT
+				{
+					newLeafNode(lv_milliseconds_2_0, grammarAccess.getWaitAccess().getMillisecondsINTTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getWaitRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"milliseconds",
+						lv_milliseconds_2_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getWaitAccess().getRightParenthesisKeyword_3());
 		}
 	)
 ;

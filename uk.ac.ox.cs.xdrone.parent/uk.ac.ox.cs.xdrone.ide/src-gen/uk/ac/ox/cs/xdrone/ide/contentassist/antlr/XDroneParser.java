@@ -48,6 +48,7 @@ public class XDroneParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBackwardAccess().getGroup(), "rule__Backward__Group__0");
 					put(grammarAccess.getRotateLAccess().getGroup(), "rule__RotateL__Group__0");
 					put(grammarAccess.getRotateRAccess().getGroup(), "rule__RotateR__Group__0");
+					put(grammarAccess.getWaitAccess().getGroup(), "rule__Wait__Group__0");
 					put(grammarAccess.getProgramAccess().getMainAssignment(), "rule__Program__MainAssignment");
 					put(grammarAccess.getMainAccess().getNameAssignment_1(), "rule__Main__NameAssignment_1");
 					put(grammarAccess.getMainAccess().getCommandsAssignment_3_0(), "rule__Main__CommandsAssignment_3_0");
@@ -59,6 +60,7 @@ public class XDroneParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBackwardAccess().getMillisecondsAssignment_2(), "rule__Backward__MillisecondsAssignment_2");
 					put(grammarAccess.getRotateLAccess().getMillisecondsAssignment_2(), "rule__RotateL__MillisecondsAssignment_2");
 					put(grammarAccess.getRotateRAccess().getMillisecondsAssignment_2(), "rule__RotateR__MillisecondsAssignment_2");
+					put(grammarAccess.getWaitAccess().getMillisecondsAssignment_2(), "rule__Wait__MillisecondsAssignment_2");
 				}
 			};
 		}

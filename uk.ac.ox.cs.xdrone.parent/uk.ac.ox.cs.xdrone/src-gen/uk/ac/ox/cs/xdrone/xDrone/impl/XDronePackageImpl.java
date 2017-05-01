@@ -21,6 +21,7 @@ import uk.ac.ox.cs.xdrone.xDrone.Right;
 import uk.ac.ox.cs.xdrone.xDrone.RotateL;
 import uk.ac.ox.cs.xdrone.xDrone.RotateR;
 import uk.ac.ox.cs.xdrone.xDrone.Up;
+import uk.ac.ox.cs.xdrone.xDrone.Wait;
 import uk.ac.ox.cs.xdrone.xDrone.XDroneFactory;
 import uk.ac.ox.cs.xdrone.xDrone.XDronePackage;
 
@@ -108,6 +109,13 @@ public class XDronePackageImpl extends EPackageImpl implements XDronePackage
    * @generated
    */
   private EClass rotateREClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass waitEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -327,6 +335,16 @@ public class XDronePackageImpl extends EPackageImpl implements XDronePackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getWait()
+  {
+    return waitEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public XDroneFactory getXDroneFactory()
   {
     return (XDroneFactory)getEFactoryInstance();
@@ -377,6 +395,8 @@ public class XDronePackageImpl extends EPackageImpl implements XDronePackage
     rotateLEClass = createEClass(ROTATE_L);
 
     rotateREClass = createEClass(ROTATE_R);
+
+    waitEClass = createEClass(WAIT);
   }
 
   /**
@@ -416,6 +436,7 @@ public class XDronePackageImpl extends EPackageImpl implements XDronePackage
     backwardEClass.getESuperTypes().add(this.getCommand());
     rotateLEClass.getESuperTypes().add(this.getCommand());
     rotateREClass.getESuperTypes().add(this.getCommand());
+    waitEClass.getESuperTypes().add(this.getCommand());
 
     // Initialize classes and features; add operations and parameters
     initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -443,6 +464,8 @@ public class XDronePackageImpl extends EPackageImpl implements XDronePackage
     initEClass(rotateLEClass, RotateL.class, "RotateL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(rotateREClass, RotateR.class, "RotateR", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(waitEClass, Wait.class, "Wait", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

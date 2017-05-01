@@ -104,6 +104,7 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBackwardParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		private final RuleCall cRotateLParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
 		private final RuleCall cRotateRParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
+		private final RuleCall cWaitParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
 		
 		//Command:
 		//	{Command} Takeoff
@@ -115,10 +116,11 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 		//	| Forward
 		//	| Backward
 		//	| RotateL
-		//	| RotateR;
+		//	| RotateR
+		//	| Wait;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Command} Takeoff | {Command} Land | Up | Down | Left | Right | Forward | Backward | RotateL | RotateR
+		//{Command} Takeoff | {Command} Land | Up | Down | Left | Right | Forward | Backward | RotateL | RotateR | Wait
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{Command} Takeoff
@@ -162,6 +164,9 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//RotateR
 		public RuleCall getRotateRParserRuleCall_9() { return cRotateRParserRuleCall_9; }
+		
+		//Wait
+		public RuleCall getWaitParserRuleCall_10() { return cWaitParserRuleCall_10; }
 	}
 	public class TakeoffElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.ox.cs.xdrone.XDrone.Takeoff");
@@ -433,6 +438,37 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
+	public class WaitElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.ox.cs.xdrone.XDrone.Wait");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cWAITKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cMillisecondsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cMillisecondsINTTerminalRuleCall_2_0 = (RuleCall)cMillisecondsAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//Wait:
+		//	'WAIT' '(' milliseconds=INT ')';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'WAIT' '(' milliseconds=INT ')'
+		public Group getGroup() { return cGroup; }
+		
+		//'WAIT'
+		public Keyword getWAITKeyword_0() { return cWAITKeyword_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//milliseconds=INT
+		public Assignment getMillisecondsAssignment_2() { return cMillisecondsAssignment_2; }
+		
+		//INT
+		public RuleCall getMillisecondsINTTerminalRuleCall_2_0() { return cMillisecondsINTTerminalRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
 	
 	
 	private final ProgramElements pProgram;
@@ -448,6 +484,7 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 	private final BackwardElements pBackward;
 	private final RotateLElements pRotateL;
 	private final RotateRElements pRotateR;
+	private final WaitElements pWait;
 	
 	private final Grammar grammar;
 	
@@ -471,6 +508,7 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 		this.pBackward = new BackwardElements();
 		this.pRotateL = new RotateLElements();
 		this.pRotateR = new RotateRElements();
+		this.pWait = new WaitElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -532,7 +570,8 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 	//	| Forward
 	//	| Backward
 	//	| RotateL
-	//	| RotateR;
+	//	| RotateR
+	//	| Wait;
 	public CommandElements getCommandAccess() {
 		return pCommand;
 	}
@@ -639,6 +678,16 @@ public class XDroneGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getRotateRRule() {
 		return getRotateRAccess().getRule();
+	}
+	
+	//Wait:
+	//	'WAIT' '(' milliseconds=INT ')';
+	public WaitElements getWaitAccess() {
+		return pWait;
+	}
+	
+	public ParserRule getWaitRule() {
+		return getWaitAccess().getRule();
 	}
 	
 	//terminal ID:

@@ -23,6 +23,7 @@ import uk.ac.ox.cs.xdrone.xDrone.Forward
 import uk.ac.ox.cs.xdrone.xDrone.Backward
 import uk.ac.ox.cs.xdrone.xDrone.RotateL
 import uk.ac.ox.cs.xdrone.xDrone.RotateR
+import uk.ac.ox.cs.xdrone.xDrone.Wait
 
 /**
  * Generates code from your model files on save.
@@ -85,13 +86,18 @@ class XDroneGenerator extends AbstractGenerator {
 	  	«ENDIF»
 	  	«IF cmd instanceof RotateL »
 		    this.stop();
-		    this.counterClockwise(0.5);
+		    this.counterClockwise(0.1);
 		  })
 		  .after(«cmd.milliseconds», function() {
 	  	«ENDIF»
 	  	«IF cmd instanceof RotateR »
 		    this.stop();
-		    this.clockwise(0.5);
+		    this.clockwise(0.1);
+		  })
+		  .after(«cmd.milliseconds», function() {
+	  	«ENDIF»
+	  	«IF cmd instanceof Wait »
+		    this.stop();	
 		  })
 		  .after(«cmd.milliseconds», function() {
 	  	«ENDIF»

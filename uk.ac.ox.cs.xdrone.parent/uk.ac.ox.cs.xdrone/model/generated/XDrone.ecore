@@ -20,4 +20,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="Backward" eSuperTypes="#//Command"/>
   <eClassifiers xsi:type="ecore:EClass" name="RotateL" eSuperTypes="#//Command"/>
   <eClassifiers xsi:type="ecore:EClass" name="RotateR" eSuperTypes="#//Command"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Wait" eSuperTypes="#//Command"/>
 </ecore:EPackage>

@@ -158,6 +158,14 @@ public class XDroneSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case XDronePackage.WAIT:
+      {
+        Wait wait = (Wait)theEObject;
+        T result = caseWait(wait);
+        if (result == null) result = caseCommand(wait);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -334,6 +342,22 @@ public class XDroneSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRotateR(RotateR object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Wait</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Wait</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWait(Wait object)
   {
     return null;
   }
