@@ -61,8 +61,14 @@ public class XDroneGenerator extends AbstractGenerator {
     _builder.append("   ");
     _builder.append("this.stop();");
     _builder.newLine();
-    _builder.append("    ");
+    _builder.append("   ");
     _builder.append("this.land();");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("}).after(5000, function () {");
+    _builder.newLine();
+    _builder.append("  \t");
+    _builder.append("process.exit(0);");
     _builder.newLine();
     _builder.append("  ");
     _builder.append("});");

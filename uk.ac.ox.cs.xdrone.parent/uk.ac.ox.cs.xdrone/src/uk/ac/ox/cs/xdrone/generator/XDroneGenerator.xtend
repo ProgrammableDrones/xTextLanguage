@@ -41,7 +41,9 @@ class XDroneGenerator extends AbstractGenerator {
 			«f.compile»
 		«ENDFOR»
 		   this.stop();
-		    this.land();
+		   this.land();
+		  }).after(5000, function () {
+		  	process.exit(0);
 		  });
 	'''
 	def compile(Command cmd) '''
