@@ -28,6 +28,8 @@ class XDroneServiceDispatcher extends XtextServiceDispatcher {
                 getDeployService(context)
             case 'compile':
             	getCompileService(context)
+            case 'emergencystop':
+            	getStopService(context)
             default:
                 super.createServiceDescriptor(serviceType, context)
         }
@@ -49,6 +51,47 @@ class XDroneServiceDispatcher extends XtextServiceDispatcher {
 					handleError(throwable)
 				}
 			]
+		]
+	}
+	
+	protected def getStopService(IServiceContext context) throws InvalidRequestException {
+		val resourceId = context.getParameter('resource')
+		if (resourceId === null)
+			throw new InvalidRequestException('The parameter \'resource\' is required.')
+		
+		new ServiceDescriptor => [
+			service = [
+				try {
+						val uri = resourceBaseProvider.getFileURI(resourceId)
+						val file = new File(uri.toFileString)
+						var FileWriter writer
+						try {
+							writer = new FileWriter(file)
+							val fullText = context.getParameter('fullText')
+							if (fullText !== null)
+								writer.write(fullText)
+						} finally {
+							if (writer !== null)
+								writer.close()
+						}
+						val document = getResourceDocument(resourceId, context)
+						println("preparing to run command: /xdrone/xdrone-emergencystop.sh")
+						
+						val pb = new ProcessBuilder().inheritIO()
+						.command("/xdrone/xdrone-emergencystop.sh").start();
+						
+						if (!pb.alive){
+							println("exit code: "+pb.exitValue)
+							
+						}
+						
+						return new DocumentStateResult(document.stateId)
+						
+				} catch (Throwable throwable) {
+					handleError(throwable)
+				}
+			]
+			hasSideEffects = true
 		]
 	}
 
@@ -74,7 +117,7 @@ class XDroneServiceDispatcher extends XtextServiceDispatcher {
 						}
 						val document = getResourceDocument(resourceId, context)
 						
-						println("preparing to run command: /bin/bash -c /xdrone/booster-deploy.sh "+file.getAbsolutePath()+" > /tmp/xdrone.log")
+						println("preparing to run command: /bin/bash -c /xdrone/xdrone-deploy.sh "+file.getAbsolutePath()+" > /tmp/xdrone.log")
 						
 						val pb = new ProcessBuilder().inheritIO()
 						.command("/bin/bash", "-c", "/xdrone/xdrone-deploy.sh "+file.getAbsolutePath()+" > /tmp/xdrone.log").start();

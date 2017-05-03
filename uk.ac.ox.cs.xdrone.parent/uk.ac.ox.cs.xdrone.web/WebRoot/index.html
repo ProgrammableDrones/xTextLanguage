@@ -2,7 +2,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="Content-Language" content="en-us">
-	<title>Example Web Editor</title>
+	<title>xDrone Web Editor</title>
 	<link rel="stylesheet" type="text/css" href="xtext/2.10.0/xtext-ace.css"/>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<script src="webjars/requirejs/2.2.0/require.min.js"></script>
@@ -84,6 +84,20 @@
 				}
 				
 				);
+				
+				jQuery('#stop-button').bind("click", function(e){
+					var data = {
+						resource : editor.xtextServices.options.resourceId,
+						fullText : editor.getValue()
+					};	
+					console.log(data);	
+					jQuery.post(baseUrl+'xtext-service/emergencystop?resource='+editor.xtextServices.options.resourceId, data, function(result){
+						console.log("resource generated");
+					}); 				
+					e.preventDefault();
+				}
+				
+				);
 			});
 		});
 	</script>
@@ -101,7 +115,10 @@
 	</div>
 	
 	<div class="content">
-		<div id="xtext-editor" data-editor-xtext-lang="xdrone"></div>
+		<div id="xtext-editor" data-editor-xtext-lang="xdrone">// This is a simple program
+xdrone simple
+begin
+end</div>
 		
 	</div>
 	
