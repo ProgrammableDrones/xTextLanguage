@@ -85,7 +85,7 @@ public class XDroneGenerator extends AbstractGenerator {
         _builder.append("this.stop();");
         _builder.newLine();
         _builder.append("  ");
-        _builder.append("this.up(0.5);");
+        _builder.append("this.up(0.1);");
         _builder.newLine();
         _builder.append("})");
         _builder.newLine();
@@ -102,7 +102,7 @@ public class XDroneGenerator extends AbstractGenerator {
         _builder.append("this.stop();");
         _builder.newLine();
         _builder.append("  ");
-        _builder.append("this.down(0.5);");
+        _builder.append("this.down(0.1);");
         _builder.newLine();
         _builder.append("})");
         _builder.newLine();
@@ -119,7 +119,7 @@ public class XDroneGenerator extends AbstractGenerator {
         _builder.append("this.stop();");
         _builder.newLine();
         _builder.append("  ");
-        _builder.append("this.left(0.5);");
+        _builder.append("this.left(0.1);");
         _builder.newLine();
         _builder.append("})");
         _builder.newLine();
@@ -136,7 +136,7 @@ public class XDroneGenerator extends AbstractGenerator {
         _builder.append("this.stop();");
         _builder.newLine();
         _builder.append("  ");
-        _builder.append("this.right(0.5);");
+        _builder.append("this.right(0.1);");
         _builder.newLine();
         _builder.append("})");
         _builder.newLine();
@@ -153,7 +153,7 @@ public class XDroneGenerator extends AbstractGenerator {
         _builder.append("this.stop();");
         _builder.newLine();
         _builder.append("  ");
-        _builder.append("this.front(0.5);");
+        _builder.append("this.front(0.1);");
         _builder.newLine();
         _builder.append("})");
         _builder.newLine();
@@ -170,7 +170,7 @@ public class XDroneGenerator extends AbstractGenerator {
         _builder.append("this.stop();");
         _builder.newLine();
         _builder.append("  ");
-        _builder.append("this.back(0.5);");
+        _builder.append("this.back(0.1);");
         _builder.newLine();
         _builder.append("})");
         _builder.newLine();
