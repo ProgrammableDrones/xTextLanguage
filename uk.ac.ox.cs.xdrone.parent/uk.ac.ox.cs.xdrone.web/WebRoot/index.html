@@ -115,9 +115,15 @@
 	</div>
 	
 	<div class="content">
-		<div id="xtext-editor" data-editor-xtext-lang="xdrone">// This is a simple program
-xdrone simple
+		<div id="xtext-editor" data-editor-xtext-lang="xdrone">// This is a simple program to control the drone
+// The program automatically begins by taking off and ends by landing
+xdrone SampleProgram
 begin
+FORWARD(2500)
+WAIT(1000)
+LEFT(1500)
+UP(5000)
+ROTATERIGHT(2000)
 end</div>
 		
 	</div>
