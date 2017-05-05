@@ -95,6 +95,20 @@
 				}
 				
 				);
+								
+				jQuery('#restart-button').bind("click", function(e){
+					var data = {
+						resource : editor.xtextServices.options.resourceId,
+						fullText : editor.getValue()
+					};	
+					console.log(data);	
+					jQuery.post(baseUrl+'xtext-service/emergencystop?resource='+editor.xtextServices.options.resourceId, data, function(result){
+						console.log("resource generated");
+					}); 				
+					e.preventDefault();
+				}
+				
+				);
 			});
 		});
 	</script>
@@ -106,6 +120,7 @@
 	<input type="button" name="Save" value="Save" id="save-button"/>
 	<input type="button" name="Compile" value="Compile" id="compile-button"/>
 	<input type="button" name="Deploy" value="Deploy" id="deploy-button"/>
+	<input type="button" name="Restart" value="Restart" id="restart-button"/>
 	<input type="button" name="EMERGENCY STOP" value="EMERGENCY STOP" id="stop-button"/>
 	
 		<h1>xDrone Web Editor</h1>
